@@ -1,0 +1,378 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Humax.ESS.Models.Profile.Relationship
+@model RelationshipModel
+@inject IViewLocalizer T
+
+<script>
+    function jsQuanHe_changed(data) {
+        console.log(data.value);
+    }
+
+    $('#formSubmit').submit(function (e) {
+        e.preventDefault();
+
+        var _action = $('form#formSubmit').attr('action');
+        var _data = $('form#formSubmit').serializeArray();
+
+        //var _files = document.getElementById("FileUpload").files;
+        //var _file = {};
+        //_file.name = "FileAttachment";
+        //var reader = new FileReader();
+        //reader.readAsDataURL(_files[0]);
+        //reader.onload = function () {
+        //    _file.value = reader.result;
+        //};
+        //reader.onerror = function (error) {
+        //    _file.value = "";
+        //};
+        //_data.push(_file);
+        //console.log(_data);
+
+        $.ajax({
+            dataType: 'json',
+            type: 'POST',
+            url: _action,
+            data: _data,
+            success: function (res, status, jqXHR) {
+                //console.log(res);
+                if (res.success == 1) {
+                    toastr.success("Thực hiện thành công");
+
+                    if ($('#gridContainer').length)
+                        $("#gridContainer").dxDataGrid('instance').refresh();
+
+                    ClosePopup();
+                } else if (res.success == 99) {
+                    toastr.warning("Dữ liệu không đúng định dạng");
+                    console.log(res.validation);
+                } else {
+                    toastr.warning("Có lỗi trong quá trình xử lý");
+                }
+            },
+            error: function (jqXHR, status, err) {
+                toastr.error("Lỗi Server");
+            },
+            complete: function () {
+                //$("body").removeClass("loading");
+            }
+        });
+    });
+    //jQuery.each(jQuery('#file')[0].files, function (i, file) {
+    //    data.append('file[]', file);
+    //});
+
+    function jsFile_focus(data) {
+        $('input[type="file"][name="FileUpload"]').click();
+    }
+
+    $(function () {
+        $('input[type="file"][name="FileUpload"]').change(function () {
+            $('input[name="FileName"]').val($(this).val());
+        });
+    });
+</script>
+
+<form id="formSubmit" method="post" action="@Url.Action("PostRelationship", "Profile")" enctype="multipart/form-data">
+    @(Html.DevExtreme().Form<RelationshipModel>()
+    .ShowValidationSummary(false)
+    .ID("form")
+    .ColCount(12)
+    .Items(items => {
+        items.AddSimpleFor(m => m.QTQuanHeGiaDinhID)
+                .ColSpan(12)
+                .Label(l => l.Visible(false))
+                .CssClass("hidden-control");
+
+        items.AddSimpleFor(m => m.HoTen)
+                        .ColSpan(12)
+                        .Label(e => e
+                            .Text("Họ tên")
+                        )
+                        .Editor(e => e
+                            .TextBox()
+                            .Placeholder("Họ tên Nhân thân")
+                            .Width("100%")
+                            .Disabled(false)
+                        );
+
+        items.AddSimpleFor(m => m.QuanHe)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Quan hệ")
+            )
+            .Editor(e => e
+                .SelectBox()
+                .DataSource(new JS("jsQuanHe"))
+                .SearchEnabled(true)
+                .ValueExpr("Id")
+                .DisplayExpr("Name")
+                .OnValueChanged("jsQuanHe_changed")
+                .Placeholder("Quan hệ")
+                .Width("100%")
+            );
+
+        items.AddSimpleFor(m => m.GioiTinh)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Giới tính")
+            )
+            .CssClass("dev-radio-control")
+            .Editor(e => e
+                .RadioGroup()
+                .DataSource(new JS("jsGioiTinh"))
+                .ValueExpr("Id")
+                .DisplayExpr("Name")
+                .Layout(Orientation.Horizontal)
+                .Width("100%")
+            );
+
+        items.AddSimpleFor(m => m.NgaySinh)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Ngày sinh")
+            )
+            .Editor(e => e
+                .DateBox()
+                .Width("100%")
+                .DisplayFormat("dd-MM-yyyy")
+            )
+            .IsRequired(false);
+
+        items.AddSimpleFor(m => m.CMND)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Số CMT/TCC")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Số CMT/TCC")
+                .Width("100%")
+                .Disabled(false)
+            );
+
+        items.AddSimpleFor(m => m.DiaChiThuongTru)
+            .ColSpan(12)
+            .Label(e => e
+                .Text("Địa chỉ")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Địa chỉ thưởng chú")
+                .Width("100%")
+                .Disabled(false)
+            );
+
+        items.AddSimpleFor(m => m.DienThoaiLienHe)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Số ĐT")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Điện thoại liên hệ")
+                .Width("100%")
+                .Disabled(false)
+            );
+
+        items.AddSimpleFor(m => m.NgheNghiepHienNay)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Nghề nghiệp")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Nghề nghiệp hiện nay")
+                .Width("100%")
+                .Disabled(false)
+            );
+
+        items.AddSimpleFor(m => m.MaSoThue)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("MS Thuế")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Mã số thuế")
+                .Width("100%")
+                .Disabled(false)
+            );
+
+        items.AddSimpleFor(m => m.MaSoBHXH)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("MS BH")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Mã số Bảo hiểm")
+                .Width("100%")
+                .Disabled(false)
+            );
+
+        items.AddSimpleFor(m => m.QuanHe_ChuHo)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("QH Chủ hộ")
+            )
+            .Editor(e => e
+                .SelectBox()
+                .Placeholder("Quan Hệ chủ hộ")
+                .DataSource(new JS("jsQuanHe"))
+                .SearchEnabled(true)
+                .ValueExpr("Id")
+                .DisplayExpr("Name")
+                .Width("100%")
+            );
+
+        items.AddSimpleFor(m => m.GiayKhaiSinhSo)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Giấy KS số")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Giấy khai sinh số")
+                .Width("100%")
+                .Disabled(false)
+            );
+
+        items.AddSimpleFor(m => m.NoiDangKyGiayKhaiSinh)
+            .ColSpan(12)
+            .Label(e => e
+                .Text("Nơi đăng ký")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Nơi đăng ký Giấy khai sinh")
+                .Width("100%")
+                .Disabled(false)
+            );
+
+        items.AddSimpleFor(m => m.QuocTich)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Quốc tịch")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Quốc tịch")
+                .Width("100%")
+                .Disabled(false)
+            );
+
+        items.AddSimpleFor(m => m.LoaiGiayToID)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Giấy tờ")
+            )
+            .Editor(e => e
+                .SelectBox()
+                .Placeholder("Loại giấy tờ")
+                .DataSource(new JS("jsLoaiGiayTo"))
+                .SearchEnabled(true)
+                .ValueExpr("Id")
+                .DisplayExpr("Name")
+                .Value(Model.LoaiGiayToID)
+                .Width("100%")
+            );
+
+        items.AddSimpleFor(m => m.SoHoKhau)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Số giấy tờ")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Số giấy tờ")
+                .Width("100%")
+                .Disabled(false)
+            );
+
+        items.AddSimpleFor(m => m.QuyenSo)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Quyển số")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Quyển số")
+                .Width("100%")
+                .Disabled(false)
+            );
+
+        items.AddSimpleFor(m => m.GhiChu)
+            .ColSpan(12)
+            .Label(e => e
+                .Text("Ghi chú")
+            )
+            .Editor(e => e
+                .TextArea()
+                .Height(65)
+                .Placeholder("Ghi chú")
+                .Width("100%")
+                .Disabled(false)
+            );
+
+        items.AddSimpleFor(m => m.FileName)
+            .ColSpan(12)
+            .Label(e => e
+                .Text("File")
+            )
+            .CssClass("file-input-control")
+            .Editor(e => e
+                .TextBox()
+                //.ReadOnly(true)
+                .ElementAttr("event", "none")
+                .Width("100%")
+                .Disabled(false)
+                .StylingMode(EditorStylingMode.Filled)
+                .Buttons(buttons =>
+                {
+                    buttons.Add()
+                        .Name("ChooseFile")
+                        .Location(TextEditorButtonLocation.After)
+                        .Widget(w => w.Button()
+                            .Type(ButtonType.Default)
+                            .Text("Chọn file")
+                            .Visible(true)
+                            //.Icon(Url.Content("~/Content/Images/icons/eye.png"))
+                            .OnClick("jsFile_focus"));
+                })
+            //.OnFocusIn("jsFile_focus")
+            );
+    }).FormData(Model)
+        @*.OnContentReady(@<text>
+            function(e) {
+            e.component.validate();
+            }
+        </text>)*@
+    )
+    <input type="file" name="FileUpload" id="FileUpload" class="file-hidden-control" accept=".png, .jpg, .pdf " />
+
+    <button class="group__btn btn btn_blue flr mgt-10 mgr-0" type="submit">
+        <i class="icon dx-icon-check"></i>@T["Lưu"]
+    </button>
+
+    <button class="group__btn btn btn_yellow flr mgt-10 mgr-6" type="button" onclick="ClosePopup();">
+        <i class="icon dx-icon-close"></i>@T["Đóng"]
+    </button>
+</form>
+@*//.ValidationRules(r => r
+    //    .AddRequired()
+    //    .Message("Quan hệ không để trống")
+    //);
+
+        //.Mask("0X00000000")
+                            //.MaskRules(new { X = new JS("/[01-9]/") })
+                            //.MaskInvalidMessage("The phone must have a correct USA phone format")
+                            //.UseMaskedValue(true)
+
+    items.AddGroup()
+                //.Caption("Credentials")
+                .ColCount(12)
+                .Items(groupItems =>
+                {
+
+                });
+*@

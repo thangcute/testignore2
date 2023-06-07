@@ -1,0 +1,125 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer T
+@{
+    ViewData["Title"] = T["Nhân viên mới"];
+}
+
+<div class="friends">
+    <div class="sorting1">
+        <div class="sorting1__row">
+            <h1 class="sorting1__title title">@T["Nhân viên mới"]</h1>
+            <div class="sorting1__options">
+                <div class="sorting1__search js-sorting-search">
+                    <button class="sorting1__open js-sorting-open">
+                        <svg class="icon icon-search">
+                            <use xlink:href="/img/sprite.svg#icon-search"></use>
+                        </svg>
+                    </button>
+                    <div class="sorting1__box"><input class="sorting1__input" type="text" placeholder="Search ..."></div>
+                </div>
+                <div class="dropdown js-dropdown">
+                    <a class="dropdown__head js-dropdown-head" href="#">
+                        <div class="dropdown__text">Sort by:</div>
+                        <div class="dropdown__category">Newest Post</div>
+                    </a>
+                    <div class="dropdown__body js-dropdown-body"><label class="checkbox checkbox_sm checkbox_green"><input class="checkbox__input" type="checkbox"><span class="checkbox__in"><span class="checkbox__tick"></span><span class="checkbox__text">Project Name</span></span></label><label class="checkbox checkbox_sm checkbox_green"><input class="checkbox__input" type="checkbox" checked="checked"><span class="checkbox__in"><span class="checkbox__tick"></span><span class="checkbox__text">Newest Project</span></span></label><label class="checkbox checkbox_sm checkbox_green"><input class="checkbox__input" type="checkbox" checked="checked"><span class="checkbox__in"><span class="checkbox__tick"></span><span class="checkbox__text">Due Date</span></span></label><label class="checkbox checkbox_sm checkbox_green"><input class="checkbox__input" type="checkbox"><span class="checkbox__in"><span class="checkbox__tick"></span><span class="checkbox__text">Project Type</span></span></label></div>
+                </div><a class="sorting1__filters" href="#">
+                    <svg class="icon icon-filters">
+                        <use xlink:href="/img/sprite.svg#icon-filters"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="friends__list">
+        <div class="friends__item">
+            <div class="friends__bg" style="background-image: url(/img/friends-bg-1.jpg)"></div>
+            <div class="friends__body">
+                <div class="friends__ava"><img class="friends__pic" src="~/img/ava-big-1.jpg" alt=""></div>
+                <div class="friends__details">
+                    <div class="friends__user">Mayke Schuurs</div>
+                    <div class="friends__login">@@maymayke</div>
+                    <div class="friends__text">Not a Man but a Ghost 👻</div><a class="friends__status active" href="#">Following</a>
+                </div>
+            </div>
+        </div>
+        <div class="friends__item">
+            <div class="friends__bg" style="background-image: url(/img/friends-bg-2.jpg)"></div>
+            <div class="friends__body">
+                <div class="friends__ava"><img class="friends__pic" src="~/img/ava-big-2.jpg" alt=""></div>
+                <div class="friends__details">
+                    <div class="friends__user">Tiontay Carroll</div>
+                    <div class="friends__login">@@tatay</div>
+                    <div class="friends__text">Interaction Designer | Coffe Addict | Part time Traveller | Full time Mom of Baby and Bayi.</div><a class="friends__status active" href="#">Following</a>
+                </div>
+            </div>
+        </div>
+        <div class="friends__item">
+            <div class="friends__bg" style="background-image: url(/img/friends-bg-3.jpg)"></div>
+            <div class="friends__body">
+                <div class="friends__ava"><img class="friends__pic" src="~/img/ava-big-3.jpg" alt=""></div>
+                <div class="friends__details">
+                    <div class="friends__user">Ngô Hải Giang</div>
+                    <div class="friends__login">@@ngohaitong</div>
+                    <div class="friends__text">Pushing pixels and experiences in digital products for onetwothree | Coffee(nosugar)</div><a class="friends__status" href="#">Follow</a>
+                </div>
+            </div>
+        </div>
+        <div class="friends__item">
+            <div class="friends__bg" style="background-image: url(/img/friends-bg-4.jpg)"></div>
+            <div class="friends__body">
+                <div class="friends__ava"><img class="friends__pic" src="~/img/ava-big-4.jpg" alt=""></div>
+                <div class="friends__details">
+                    <div class="friends__user">Chineze Uchechey</div>
+                    <div class="friends__login">@@chinezeulala</div>
+                    <div class="friends__text">Youtube Content Creator | Photography | Profesional Videographer</div><a class="friends__status active" href="#">Following</a>
+                </div>
+            </div>
+        </div>
+        <div class="friends__item">
+            <div class="friends__bg" style="background-image: url(/img/friends-bg-5.jpg)"></div>
+            <div class="friends__body">
+                <div class="friends__ava"><img class="friends__pic" src="~/img/ava-big-5.jpg" alt=""></div>
+                <div class="friends__details">
+                    <div class="friends__user">Xian Zhou</div>
+                    <div class="friends__login">@@Xianzon</div>
+                    <div class="friends__text">Life is a Choice baby :)</div><a class="friends__status" href="#">Follow</a>
+                </div>
+            </div>
+        </div>
+        <div class="friends__item">
+            <div class="friends__bg" style="background-image: url(/img/friends-bg-6.jpg)"></div>
+            <div class="friends__body">
+                <div class="friends__ava"><img class="friends__pic" src="~/img/ava-big-6.jpg" alt=""></div>
+                <div class="friends__details">
+                    <div class="friends__user">Anje Keizer</div>
+                    <div class="friends__login">@@anjedrive</div>
+                    <div class="friends__text">Not a Man but a Ghost 👻</div><a class="friends__status" href="#">Follow</a>
+                </div>
+            </div>
+        </div>
+        <div class="friends__item">
+            <div class="friends__bg" style="background-image: url(/img/friends-bg-1.jpg)"></div>
+            <div class="friends__body">
+                <div class="friends__ava"><img class="friends__pic" src="~/img/ava-big-1.jpg" alt=""></div>
+                <div class="friends__details">
+                    <div class="friends__user">Mayke Schuurs</div>
+                    <div class="friends__login">@@maymayke</div>
+                    <div class="friends__text">Not a Man but a Ghost 👻</div><a class="friends__status active" href="#">Following</a>
+                </div>
+            </div>
+        </div>
+        <div class="friends__item">
+            <div class="friends__bg" style="background-image: url(/img/friends-bg-2.jpg)"></div>
+            <div class="friends__body">
+                <div class="friends__ava"><img class="friends__pic" src="~/img/ava-big-2.jpg" alt=""></div>
+                <div class="friends__details">
+                    <div class="friends__user">Tiontay Carroll</div>
+                    <div class="friends__login">@@tatay</div>
+                    <div class="friends__text">Interaction Designer | Coffe Addict | Part time Traveller | Full time Mom of Baby and Bayi.</div><a class="friends__status active" href="#">Following</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

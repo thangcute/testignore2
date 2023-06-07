@@ -1,0 +1,248 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer T
+@{
+    ViewBag.Module = "Tsk";
+    ViewData["Title"] = T["Đào tạo"];
+
+    string errorMessage = null;
+    if (ViewData["ErrorMessage"] != null)
+        errorMessage = ViewData["ErrorMessage"].ToString();
+}
+
+@section Styles{
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+    <link href="~/kanban/scrumboard.css" rel="stylesheet" type="text/css" />
+    <link href="~/kanban/theme-checkbox-radio.css" rel="stylesheet" type="text/css">
+    <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+    <style>
+        .projects__container {
+            margin-top: 15px !important;
+        }
+
+        .card,
+        .scrumboard .card-done {
+            border: none !important;
+            border-radius: 4px !important;
+            margin-bottom: 30px !important;
+            box-shadow: 2px 5px 17px 0 rgb(31 45 61 / 10%) !important;
+        }
+
+        .card-done {
+            position: relative !important;
+            display: flex !important;
+            flex-direction: column !important;
+            min-width: 0 !important;
+            word-wrap: break-word !important;
+            background-color: #fff !important;
+            background-clip: border-box !important;
+        }
+    </style>
+}
+
+@section Scripts{
+    <script src="~/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    <script src="~/kanban/ie11fix/fn.fix-padStart.js"></script>
+    @*<script src="~/cork/assets/js/apps/scrumboard.js"></script>*@
+    <script src="~/kanban/kanban.board.js"></script>
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+}
+
+
+<div class="sorting1">
+    <div class="sorting1__row">
+        <h1 class="sorting1__title title">@T["Quản lý công việc"]</h1>
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <div class="error-messsage">@errorMessage</div>
+        }
+        <div class="sorting1__options">
+            <div class="sorting1__search js-sorting-search">
+                <a class="group__btn btn btn_blue js-popup-open" href="#popup-details" data-effect="mfp-zoom-in">
+                    <i class="icon dx-icon-plus"></i>@T["Đăng ký"]
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-block">
+    <div class="player__container">
+        <div class="player__control">
+            <div class="player__nav">
+                <a class="player__link active" data-type="tabs" href="javascript:void(0);">Danh sách công việc</a>
+            </div>
+
+            <div class="player__settings">
+                <a class="player__link" title="List" href="@Url.Action("Index", "TaskWork")">
+                    <img src="/img/table.svg">
+                </a>
+                <a class="player__link" title="Kanban" href="@Url.Action("Kanban", "TaskWork")">
+                    <img src="/img/dashboard.svg">
+                </a>
+                <a class="player__link" title="Grantt" href="@Url.Action("Grantt", "TaskWork")">
+                    <img src="/img/sorting-3.svg">
+                </a>
+            </div>
+
+            <div id="kanban" data-type="tabs-content" class="player__list tab-active">
+                <div class="projects__container cell js-projects-container scrumboard">
+                    <!--Start-->
+                    <div class="task-list-section">
+
+                        <div data-section="s-new" data-status="new" class="task-list-container" data-connect="sorting">
+                            <div class="connect-sorting">
+                                <div class="task-container-header">
+                                    <h6 class="s-heading" data-listTitle="In Progress">In Progress</h6>
+                                </div>
+
+                                <div class="connect-sorting-content" data-sortable="true">
+
+                                    <div data-draggable="true" class="card img-task" style="">
+                                        <div class="card-body">
+
+                                            <div class="task-content">
+                                                <img src="~/img/400x168.jpg" class="img-fluid" alt="scrumboard">
+                                            </div>
+
+                                            <div class="task-header">
+                                                <div class="">
+                                                    <h4 class="" data-taskTitle="Creating a new Portfolio on Dribble">Creating a new Portfolio on Dribble</h4>
+                                                </div>
+                                            </div>
+
+                                            <div class="task-body">
+
+                                                <div class="task-bottom">
+                                                    <div class="tb-section-1">
+                                                        <span data-taskDate="08 Aug 2019"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 08 Aug, 2019</span>
+                                                    </div>
+                                                    <div class="tb-section-2">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 s-task-edit"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2 s-task-delete"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div data-draggable="true" class="card simple-title-task" style="">
+                                        <div class="card-body">
+
+                                            <div class="task-header">
+                                                <div class="">
+                                                    <h4 class="" data-taskTitle="Singapore Team Meet">Singapore Team Meet</h4>
+                                                </div>
+                                                <div class="">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 s-task-edit"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2 s-task-delete"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="add-s-task">
+                                    <a class="addTask"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Add Task</a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div data-section="s-in-progress" data-status="processing" class="task-list-container" data-connect="sorting">
+                            <div class="connect-sorting">
+                                <div class="task-container-header">
+                                    <h6 class="s-heading" data-listTitle="Complete">Complete</h6>
+                                </div>
+
+                                <div class="connect-sorting-content" data-sortable="true">
+                                    <div data-draggable="true" class="card simple-title-task ui-sortable-handle" style="">
+                                        <div class="card-body">
+
+                                            <div class="task-header">
+                                                <div class="">
+                                                    <h4 class="" data-tasktitle="Dinner with Kelly Young">Dinner with Kelly Young</h4>
+                                                </div>
+                                                <div class="">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 s-task-edit"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2 s-task-delete"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div data-draggable="true" class="card task-text-progress" style="">
+                                        <div class="card-body">
+
+                                            <div class="task-header">
+
+                                                <div class="">
+                                                    <h4 class="" data-taskTitle="Launch New SEO Wordpress Theme ">Launch New SEO Wordpress Theme </h4>
+                                                </div>
+
+                                                <div class="">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 s-task-edit"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="task-body">
+
+                                                <div class="task-content">
+                                                    <p class="" data-taskText="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                                                    <div class="">
+                                                        <div class="progress br-30">
+                                                            <div class="progress-bar bg-success" role="progressbar" data-progressState="20" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+
+                                                        <p class="progress-count">20%</p>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="task-bottom">
+                                                    <div class="tb-section-1">
+                                                        <span data-taskDate="08 Aug 2019"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 08 Aug, 2019</span>
+                                                    </div>
+                                                    <div class="tb-section-2">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2 s-task-delete"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="add-s-task">
+                                    <a class="addTask"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Add Task</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div data-section="s-approved" data-status="done" class="task-list-container" data-connect="sorting">
+                            <div class="connect-sorting">
+                                <div class="task-container-header">
+                                    <h6 class="s-heading" data-listTitle="New">New</h6>
+                                </div>
+                                <div class="connect-sorting-content" data-sortable="true">
+
+                                </div>
+                                <div class="add-s-task">
+                                    <a class="addTask"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Add Task</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--End-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

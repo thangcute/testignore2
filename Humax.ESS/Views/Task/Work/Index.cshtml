@@ -1,0 +1,111 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer T
+@{
+    ViewBag.Module = "Tsk";
+    ViewData["Title"] = T["Đào tạo"];
+
+    string errorMessage = null;
+    if (ViewData["ErrorMessage"] != null)
+        errorMessage = ViewData["ErrorMessage"].ToString();
+}
+
+<link href="~/menu.css" rel="stylesheet" />
+<style>
+    .player__list {
+        display: none;
+    }
+
+    .tab-active {
+        display: block !important;
+    }
+
+    .dropdown-toggle::after {
+        content: '\2192' !important;
+    }
+</style>
+
+@section Scripts{
+    <script src="~/menu/tether.min.js"></script>
+    <script src="~/menu/jquery.context-menu.min.js"></script>
+    <script src="~/menu.js"></script>
+    <script>
+        $(function () {
+            $('a[data-type="tabs"]').click(function () {
+                var _href = $(this).attr('href');
+                $('a[data-type="tabs"]').removeClass('active');
+                $(this).addClass('active');
+
+                $('div[data-type="tabs-content"]').removeClass('tab-active');
+                $(_href).addClass('tab-active');
+            });
+        });
+    </script>
+}
+
+<div class="sorting1">
+    <div class="sorting1__row">
+        <h1 class="sorting1__title title">@T["Quản lý công việc"]</h1>
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <div class="error-messsage">@errorMessage</div>
+        }
+        <div class="sorting1__options">
+            <div class="sorting1__search js-sorting-search">
+                <button class="group__btn btn btn_blue js-popup-open btn-modal" modal-href="@Url.Action("Detail", "TaskWork")" modal-title="Thêm mới công việc" data-effect="mfp-zoom-in">
+                    <i class="icon dx-icon-plus"></i>@T["Đăng ký"]
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-block">
+    <div class="player__container">
+        <div class="player__control">
+            <div class="player__nav">
+                <a class="player__link active" data-type="tabs" href="#process">Đang thực hiện</a>
+                <a class="player__link" data-type="tabs" href="#complete">Hoàn thành</a>
+                <a class="player__link" data-type="tabs" href="#outofdate">Quá hạn<div class="player__counter">3</div></a>
+                <a class="player__link" data-type="tabs" href="#pause">Tạm dừng</a>
+                <a class="player__link" data-type="tabs" href="#cancelled">Đã hủy</a>
+                <a class="player__link" data-type="tabs" href="#all">Tất cả</a>
+            </div>
+
+            <div class="player__settings">
+                <a class="player__link" title="List" href="@Url.Action("Index", "TaskWork")">
+                    <img src="/img/table.svg">
+                </a>
+                <a class="player__link" title="Kanban" href="@Url.Action("Kanban", "TaskWork")">
+                    <img src="/img/dashboard.svg">
+                </a>
+                <a class="player__link" title="Grantt" href="@Url.Action("Grantt", "TaskWork")">
+                    <img src="/img/sorting-3.svg">
+                </a>
+            </div>
+
+            <div id="process" data-type="tabs-content" class="player__list tab-active">
+                <partial name="~/Views/Task/Work/Partial/_Process.cshtml" />
+            </div>
+
+            <div id="complete" data-type="tabs-content" class="player__list">
+                <partial name="~/Views/Task/Work/Partial/_Complete.cshtml" />
+            </div>
+
+            <div id="outofdate" data-type="tabs-content" class="player__list">
+                <partial name="~/Views/Task/Work/Partial/_Outofdate.cshtml" />
+            </div>
+
+            <div id="pause" data-type="tabs-content" class="player__list">
+                <partial name="~/Views/Task/Work/Partial/_Pause.cshtml" />
+            </div>
+
+            <div id="cancelled" data-type="tabs-content" class="player__list">
+                <partial name="~/Views/Task/Work/Partial/_Cancelled.cshtml" />
+            </div>
+
+            <div id="all" data-type="tabs-content" class="player__list">
+                <partial name="~/Views/Task/Work/Partial/_All.cshtml" />
+            </div>
+        </div>
+    </div>
+</div>

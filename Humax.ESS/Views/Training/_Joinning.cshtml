@@ -1,0 +1,92 @@
+﻿@using Humax.ESS.Models.Trainning;
+@using Microsoft.AspNetCore.Mvc.Localization;
+
+@model List<TrainningJoinningModel>
+
+@inject IViewLocalizer T
+
+@{
+    if (Model != null && Model.Any())
+    {
+        foreach (var item in Model)
+        {
+            <div class="courses__item">
+                <div class="courses__preview"><img class="courses__pic" src="img/courses-pic-6.jpg" alt=""></div>
+                <div class="courses__wrap">
+                    <div class="courses__info">@item.TenKhoaHoc</div>
+                    <div class="courses__details">
+                        <span class="courses__desc">Địa điểm đào tạo</span>
+                        <span class="courses__category">@item.DiaDiemDaoTao</span>
+                    </div>
+                    <div class="courses__details">
+                        <span class="courses__desc">Số tháng cam kết:</span>
+                        <span class="courses__category">@item.SoThangCamKet</span>
+                    </div>
+                    <div class="courses__line">
+                        <div class="courses__box">
+                            <svg class="icon icon-clock">
+                                <use xlink:href="/img/sprite.svg#icon-clock"></use>
+                            </svg><span>@(string.Format("{0}-{1}", (item.TuNgay.HasValue ? item.TuNgay.Value.ToString("dd/MM/yyyy") : "#"), (item.ToiNgay.HasValue ? item.ToiNgay.Value.ToString("dd/MM/yyyy") : "#")))</span>
+                        </div>
+                        <div class="courses__box">
+                            @{
+                                switch (item.XetDuyet.GetValueOrDefault(-999))
+                                {
+                                    case 1:
+                                        <svg class="icon icon-check-circle">
+                                            <use xlink:href="/img/sprite.svg#icon-check-circle"></use>
+                                        </svg>
+                                        <span>Đã duyệt</span>
+                                        break;
+
+                                    case -1:
+                                        <svg class="icon icon-close-circle">
+                                            <use xlink:href="/img/sprite.svg#icon-close-circle"></use>
+                                        </svg>
+                                        <span>Từ chối</span>
+                                        break;
+
+                                    case 2:
+                                        <svg class="icon icon-close-circle">
+                                            <use xlink:href="/img/sprite.svg#icon-close-circle"></use>
+                                        </svg>
+                                        <span>Đang chơ hủy</span>
+                                        break;
+
+                                    case -2:
+                                        <svg class="icon icon-trash">
+                                            <use xlink:href="/img/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                        <span>Đã xóa / hủy</span>
+                                        break;
+
+                                    case 100:
+                                        <svg class="icon icon-close-circle">
+                                            <use xlink:href="/img/sprite.svg#icon-close-circle"></use>
+                                        </svg>
+                                        <span>Đang duyệt</span>
+                                        break;
+
+                                    default:
+                                        <svg class="icon icon-draft">
+                                            <use xlink:href="/img/sprite.svg#icon-draft"></use>
+                                        </svg>
+                                        <span>Đợi duyệt</span>
+                                        break;
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div class="courses__line">
+                        <div class="courses__box">
+                            <button class="player__btn btn btn_blue" onclick="OpenEvaluate(2021, 'Đánh giá khóa học', 0)">Đánh giá khóa học</button>
+                        </div>
+                        <div class="courses__box">
+                            <button class="player__btn btn btn_brown">Hủy khóa học</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+}

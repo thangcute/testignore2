@@ -1,0 +1,168 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Humax.ESS.Models.Profile.TrainingProcess
+@inject IViewLocalizer T
+@{
+    ViewData["Title"] = T["Quá trình đào tạo"];
+    string errorMessage = null;
+    if (ViewData["ErrorMessage"] != null)
+        errorMessage = ViewData["ErrorMessage"].ToString();
+}
+
+<link href="~/css/devextreme/dx-site.css" rel="stylesheet" />
+<script src="~/js/devextreme/dx-site.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    function OpenPopup(_id, _title = '', _approve = 0) {
+        var __title = _title != '' ? _title : '@T["Thêm mới Quá trình Đào tạo"]';
+        var __url = '/Profile/DetailTrainingProcess';
+        var __popup = 'popup';
+        var __data = {
+            id: _id,
+            approve: _approve
+        };
+        FormDetail(_id, __title, __url, __popup, __data);
+    }
+
+    // Hien thi html trang thai xet duyet
+    function cellTempApproveStatus(container, options) {
+        var _data = options.data;
+        $("<div />").html(_data.ApproveStatusDisplay).appendTo(container);
+    }
+
+    // Xoa thong tin
+    function jsDelete(e) {
+        // success-info-warning-error
+        var _data = e.row.data;
+        var _QTDaoTaoID = _data.QTDaoTaoID;
+        var _XetDuyet = _data.XetDuyet;
+
+        if (typeof _QTDaoTaoID != 'undefined' && _QTDaoTaoID > 0) {
+            if (_XetDuyet == null || _XetDuyet == 0) {
+                Confirm("Bạn muốn tiếp tục thực hiện thao tác ?").show().done(function (dialogResult) {
+                    if (dialogResult.status) {
+                        $.ajax({
+                            url: '/Profile/DeleteTrainingProcess',
+                            //contentType: "application/json",
+                            dataType: "json",
+                            type: 'POST',
+                            async: false,
+                            data: {
+                                id: _QTDaoTaoID
+                            },
+                            success: function (response, status, jqXHR) {
+                                console.log(response);
+                                if (response.success == 1) {
+                                    toastr.success("Xóa Quá trình Đạo tạo thành công !");
+
+                                    if ($('#gridContainer').length)
+                                        $("#gridContainer").dxDataGrid('instance').refresh();
+                                }
+                                else
+                                    toastr.warning(response.message);
+                            },
+                            error: function (jqXHR, status, err) {
+                                toastr.warning("Lỗi xử lý !");
+                            },
+                            complete: function (jqXHR, status) {
+                            }
+                        });
+                    } else
+                        toastr.warning("Bạn đã hủy thao táo !");
+                });
+            } else
+                toastr.warning("Bạn không thể xóa dữ liệu này !");
+        } else
+            toastr.warning("Không có thông tin chọn !");
+    }
+
+    // Sua thong tin
+    function jsEdit(e) {
+        var _data = e.row.data;
+        var _QTDaoTaoID = _data.QTDaoTaoID;
+        var _LopDaoTao = _data.LopDaoTao;
+        var _XetDuyet = _data.XetDuyet;
+        if (typeof _XetDuyet == 'undefined' || _XetDuyet == null)
+            _XetDuyet = 0;
+
+        if (typeof _QTDaoTaoID != 'undefined' && _QTDaoTaoID > 0) {
+            OpenPopup(_QTDaoTaoID, _LopDaoTao, _XetDuyet);
+        } else
+            toastr.warning("Không có thông tin chọn");
+    }
+</script>
+
+<div class="sorting1">
+    <div class="sorting1__row">
+        <h1 class="sorting1__title title">@T["Quá trình đào tạo"]</h1>
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <div class="error-messsage">@errorMessage</div>
+        }
+        <div class="sorting1__options">
+            <div class="sorting1__search js-sorting-search">
+                <button class="group__btn btn btn_blue" onClick="OpenPopup(0, '');">
+                    <i class="icon dx-icon-plus"></i>@T["Đăng ký"]
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-block">
+    @(Html.DevExtreme().DataGrid<TrainingProcessListModel>()
+        .ID("gridContainer")
+        .DataSource(d => d.Mvc()
+            .Controller("Profile")
+            .LoadAction("GetTrainingProcess")
+            .Key("QTDaoTaoID")
+        )
+        .DateSerializationFormat("yyyy-MM-dd HH:mm:ss")
+        .ShowBorders(true)
+        .ShowRowLines(true)
+        .ShowColumnLines(true)
+        .ColumnAutoWidth(true)
+        .ColumnHidingEnabled(true)
+        .RowAlternationEnabled(true)
+        .Columns(columns => {
+            columns.Add().Caption("No").Alignment(HorizontalAlignment.Center).CellTemplate(new JS("dataGrid_rowIndex_cellTemplate")).Width(80);
+            columns.Add().Caption(T["Thời gian Làm việc"].Value).CellTemplate(@<text>
+                <div>@T["Lớp đào tạo"]: <span class="dev-grid-title"><%- (data.LopDaoTao != null ? data.LopDaoTao : "") %></span></div>
+                <div>@T["Nơi đào tạo"]: <span class="dev-grid-title"><%- data.NoiDaoTao %></span></div>
+                <div>@T["Từ ngày"]: <span class="dev-grid-start-time"><%- data.FromDateDisplay %></span> - @T["Đến ngày"]: <span class="dev-grid-end-time"><%- data.ToDateDisplay %></span></div>
+            </text>);
+            columns.Add().Caption(T["Vị trí công tác"].Value).CellTemplate(@<text>
+                <div>@T["Số tháng cam kết"]: <span class="dev-grid-start-time"><%- data.CommitMonthDisplay %></span></div>
+                <div>@T["Ngày Cam kết"]: <span class="dev-grid-start-time"><%- data.CommitDateDisplay %></span></div>
+                <div>@T["Kết quả"]: <span class="dev-grid-start-time"><%- data.TenKetQuaDaoTao==null ? "" : data.TenKetQuaDaoTao %></span></div>
+            </text>);
+            columns.AddFor(m => m.GhiChu).Caption("Ghi chú");
+            columns.Add().Caption(T["Trạng thái"].Value).CellTemplate(new JS("cellTempApproveStatus")).Width(160);
+            columns.Add().Caption(T["#"].Value)
+            .Type(GridCommandColumnType.Buttons)
+            .Width(80)
+            .Buttons(b =>
+            {
+                b.Add().Icon("edit").OnClick("jsEdit");
+                b.Add().Icon("trash").OnClick("jsDelete");
+            });
+        })
+        .Paging(p => p.PageSize(20))
+        .Pager(p => p
+            .Visible(true)
+            .ShowPageSizeSelector(false)
+            .ShowInfo(true)
+            .InfoText(new JS("gridInfoText"))
+            .ShowNavigationButtons(true)
+        )
+    )
+    @(Html.DevExtreme().Popup()
+        .ID("popup")
+        //.Width(300)
+        //.Height('auto')
+        .ShowTitle(true)
+        .Title("Thêm mới Quá trình Đào tạo")
+        .Visible(false)
+        .DragEnabled(false)
+        .CloseOnOutsideClick(true)
+    )
+</div>

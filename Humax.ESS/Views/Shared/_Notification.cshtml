@@ -1,0 +1,108 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Humax.ESS.Helpers
+
+@inject IViewLocalizer T
+@{
+    var userInfo = Context.Session.GetCurrentUser();
+    //var isDarkMode = Context.Request.IsDarkMode();
+}
+
+<ul class="notification-drop">
+    <li class="item comment" id="notify-comment" title="Tin nhắn">
+        <svg class="icon icon-comment">
+            <use xlink:href="/img/sprite.svg#icon-comment"></use>
+        </svg>
+        <span class="btn__badge pulse-button ">4</span>
+        <ul>
+            <li><a href="javascript:void(0);">First Item <div class="sidebar__counter">3</div></a></li>
+            <li><a href="javascript:void(0);">Second Item <div class="sidebar__counter">3</div></a></li>
+            <li><a href="javascript:void(0);">Third Item <div class="sidebar__counter">13</div></a></li>
+            <li class="see-all"><a href="javascript:void(0);">Xem tất cả</a></li>
+        </ul>
+    </li>
+
+    <li class="item notification" id="notify-notification" title="Thông báo">
+        <svg class="icon icon-bell">
+            <use xlink:href="/img/sprite.svg#icon-bell"></use>
+        </svg>
+        <span class="btn__badge pulse-button ">4</span>
+        <ul>
+            <li><a href="javascript:void(0);">First Item <div class="sidebar__counter">3</div></a></li>
+            <li><a href="javascript:void(0);">Second Item <div class="sidebar__counter">3</div></a></li>
+            <li><a href="javascript:void(0);">Third Item <div class="sidebar__counter">13</div></a></li>
+            <li class="see-all"><a href="@Url.Action("Index", "Notification")">Xem tất cả</a></li>
+        </ul>
+    </li>
+
+    @*<li class="item warning" id="notify-warning" title="Cảnh báo">
+            <svg class="icon icon-bell">
+                <use xlink:href="/img/sprite.svg#icon-bell"></use>
+            </svg>
+            <span class="btn__badge pulse-button ">4</span>
+            <ul>
+                <li><a href="javascript:void(0);">First Item <div class="sidebar__counter">3</div></a></li>
+                <li><a href="javascript:void(0);">Second Item <div class="sidebar__counter">3</div></a></li>
+                <li><a href="javascript:void(0);">Third Item <div class="sidebar__counter">13</div></a></li>
+                <li class="see-all"><a href="javascript:void(0);">Xem tất cả</a></li>
+            </ul>
+        </li>*@
+
+    <li class="item account-info" id="account-info" title="Thông báo" style="padding-top: 0px;">
+        <img style="width:38px; height:38px;" class="header2__pic" src="@(userInfo.AvatarUrl)" alt="" />
+        <ul>
+            <li>
+                <a href="@Url.Action("Index", "Profile")">Hồ sơ</a>
+            </li>
+            <li>
+                <a href="@Url.Action("Logout", "Account")">Đăng xuất</a>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+    $(function () {
+        // Clicked outside
+        $(document).click(function (e) {
+            if (
+                ($(e.target).closest("#notify-warning").attr("id") != "notify-warning") &&
+                ($(e.target).closest("#notify-notification").attr("id") != "notify-notification") &&
+                ($(e.target).closest("#notify-comment").attr("id") != "notify-comment") &&
+                ($(e.target).closest("#account-info").attr("id") != "account-info")
+            ) {
+                $(".notification-drop .notification ul").hide();
+                $(".notification-drop .comment ul").hide();
+                $(".notification-drop .warning ul").hide();
+                $(".notification-drop .account-info ul").hide();
+            }
+        });
+        //
+        $(".notification-drop .warning").on('click', function () {
+            $(".notification-drop .notification ul").hide();
+            $(".notification-drop .comment ul").hide();
+            $(".notification-drop .account-info ul").hide();
+            $(this).find('ul').toggle();
+        });
+
+        $(".notification-drop .comment").on('click', function () {
+            $(".notification-drop .notification ul").hide();
+            $(".notification-drop .warning ul").hide();
+            $(".notification-drop .account-info ul").hide();
+            $(this).find('ul').toggle();
+        });
+
+        $(".notification-drop .notification").on('click', function () {
+            $(".notification-drop .warning ul").hide();
+            $(".notification-drop .comment ul").hide();
+            $(".notification-drop .account-info ul").hide();
+            $(this).find('ul').toggle();
+        });
+
+        $(".notification-drop .account-info").on('click', function () {
+            $(".notification-drop .warning ul").hide();
+            $(".notification-drop .comment ul").hide();
+            $(".notification-drop .notification ul").hide();
+            $(this).find('ul').toggle();
+        });
+    });
+</script>

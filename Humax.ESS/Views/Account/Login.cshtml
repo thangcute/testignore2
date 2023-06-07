@@ -1,0 +1,76 @@
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Options
+
+@inject IViewLocalizer T
+@inject IOptions<RequestLocalizationOptions> LocOptions
+@model Humax.ESS.Models.LoginModel
+@{
+    Layout = "_AccountLayout";
+    ViewData["Title"] = T["Đăng nhập"];
+
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+
+    var cultureItems = LocOptions.Value.SupportedUICultures
+        .Select(c => new SelectListItem { Value = c.Name, Text = c.NativeName })
+        .ToList();
+}
+
+<div class="login__form">
+    <div class="login__body">
+        <div class="login__title login__title_sm">@T["Đăng nhập"]</div>
+        @if (Model.Status == 0 && !string.IsNullOrEmpty(Model.Message))
+        {
+            <div class="error-messsage">
+                @Model.Message
+            </div>
+        }
+        <form id="login-form" method="post" action="@Url.Action("Login", "Account")">
+            @(Html.DevExtreme().Form<LoginModel>()
+            .FormData(Model)
+            .LabelLocation(FormLabelLocation.Top)
+            .MinColWidth(300)
+            .ReadOnly(false)
+            .ShowColonAfterLabel(true)
+            .Items(items =>
+            {
+                items.AddSimpleFor(m => m.UserName).Label(l => l.Visible(false))
+                    .Editor(e => e
+                        .TextBox().Placeholder(T["Tên đăng nhập"].Value)
+                    );
+                items.AddSimpleFor(m => m.Password).Label(l => l.Visible(false))
+                    .Editor(e => e
+                        .TextBox().Mode(TextBoxMode.Password).Placeholder(T["Mật khẩu"].Value)
+                    );
+                items.AddSimpleFor(m => m.Language).Label(l => l.Visible(false))
+                    .Editor(e => e.SelectBox().Placeholder(T["Ngôn ngữ"].Value)
+                        .DataSource(cultureItems).DisplayExpr("Text").ValueExpr("Value").Value(Model.Language)
+                        .OnValueChanged("languageChanged"));
+                items.AddSimpleFor(m => m.Remember).Label(l => l.Visible(false))
+                    .Editor(e => e
+                        .CheckBox().Text(T["Ghi nhớ"].Value)
+                    );
+            })
+        )
+            <button class="login__btn btn btn btn_blue" type="submit">@T["Đăng nhập"]</button>
+        </form>
+        @*@await Html.PartialAsync("_LanguagePartial")*@
+        @*<div class="login__or">or</div>
+            <div class="login__btns"><button class="login__btn btn btn btn_border-gray" type="button"><img class="btn__pic" src="img/google.svg" alt="" width="16"><span class="btn__text">Continue with Google</span></button><button class="login__btn btn btn btn_border-gray" type="button"><img class="btn__pic" src="img/facebook.svg" alt="" width="16"><span class="btn__text">Continue with Facebook</span></button></div>*@
+        <ul class="login__links">
+            <li><a class="login__link" href="#">@T["Quên mật khẩu?"]</a></li>
+            @*<li><a class="login__link" href="#">@T["Đăng ký tài khoản"]</a></li>*@
+        </ul>
+    </div>
+</div>
+
+<script>
+    function languageChanged(data) {
+        if (data.value !== null) {
+            //var selectedItem = data.component.option('selectedItem');
+            //console.log(selectedItem.Value);
+            document.getElementById("login-form").submit();
+        }
+    }
+</script>

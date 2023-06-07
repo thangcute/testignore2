@@ -1,0 +1,80 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Humax.ESS.Helpers
+
+@inject IViewLocalizer T
+@{
+    var isDarkMode = Context.Request.IsDarkMode();
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <title>@ViewData["Title"] - Humax.ESS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="~/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/img/favicon-16x16.png">
+    @*<link rel="manifest" href="~/img/site.webmanifest">*@
+    <link rel="mask-icon" href="~/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Humax.ESS">
+
+    @*<link href="~/css/devextreme/dx-diagram.css" rel="stylesheet" />*@
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <link href="~/css/devextreme/dx.common.css" rel="stylesheet" />
+    <link href="~/css/devextreme/dx.light.css" rel="stylesheet" />
+
+    <link href="~/css/fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
+
+    <link rel="stylesheet" media="all" href="~/css/app.css">
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <script>
+        var viewportmeta = document.querySelector('meta[name="viewport"]');
+        if (viewportmeta) {
+            if (screen.width < 375) {
+                var newScale = screen.width / 375;
+                viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
+            } else {
+                viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
+            }
+        }
+    </script>
+
+    @*<script src="~/js/devextreme/dx-diagram.js"></script>*@
+    <script src="~/js/app.js"></script>
+    @*<script src="~/js/devextreme/bootstrap.js"></script>*@
+    <script src="~/js/devextreme/dx.all.js"></script>
+    <script src="~/js/devextreme/aspnet/dx.aspnet.mvc.js"></script>
+    <script src="~/js/devextreme/aspnet/dx.aspnet.data.js"></script>
+</head>
+<body class="@(isDarkMode? "dark" : "")">
+    <div class="out">
+        <div class="page2 js-page2">
+            <partial name="_Header" />
+            <div class="page4__wrapper page4__wrapper_pd80 page4__wrapper_bg">
+                @if (IsSectionDefined("Sidebar"))
+                {
+                    @RenderSection("Sidebar", required: false)
+                }
+                else
+                {
+                    <partial name="_Sidebar2" />
+                }
+                @*<partial name="_RightSidebar" />*@
+                <div class="page2__container">
+                    @*<partial name="_MobileNav" />*@
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/js/common.js"></script>
+    <script src="~/js/charts.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

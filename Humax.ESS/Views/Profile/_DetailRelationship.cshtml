@@ -1,0 +1,265 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Humax.ESS.Models.Profile.Relationship
+@model RelationshipModel
+@inject IViewLocalizer T
+
+@(Html.DevExtreme().Form<RelationshipModel>()
+    .ShowValidationSummary(false)
+    .ID("form")
+    .ColCount(12)
+    .Items(items => {
+        items.AddSimpleFor(m => m.QTQuanHeGiaDinhID)
+                .ColSpan(12)
+                .Label(l => l.Visible(false))
+                .CssClass("hidden-control");
+
+        items.AddSimpleFor(m => m.HoTen)
+                        .ColSpan(12)
+                        .Label(e => e
+                            .Text("Họ tên")
+                        )
+                        .Editor(e => e
+                            .TextBox()
+                            .Placeholder("Họ tên Nhân thân")
+                            .Width("100%")
+                            .Disabled(false)
+                            .ReadOnly(true)
+                        );
+
+        items.AddSimpleFor(m => m.QuanHe)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Quan hệ")
+            )
+            .Editor(e => e
+                .SelectBox()
+                .DataSource(new JS("jsQuanHe"))
+                .SearchEnabled(true)
+                .ValueExpr("Id")
+                .DisplayExpr("Name")
+                //.OnValueChanged("jsQuanHe_changed")
+                .Placeholder("Quan hệ")
+                .Width("100%")
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.GioiTinh)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Giới tính")
+            )
+            .CssClass("dev-radio-control")
+            .Editor(e => e
+                .RadioGroup()
+                .DataSource(new JS("jsGioiTinh"))
+                .ValueExpr("Id")
+                .DisplayExpr("Name")
+                .Layout(Orientation.Horizontal)
+                .Width("100%")
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.NgaySinh)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Ngày sinh")
+            )
+            .Editor(e => e
+                .DateBox()
+                .Width("100%")
+                .DisplayFormat("dd-MM-yyyy")
+                .ReadOnly(true)
+            )
+            .IsRequired(false);
+
+        items.AddSimpleFor(m => m.CMND)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Số CMT/TCC")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Số CMT/TCC")
+                .Width("100%")
+                .Disabled(false)
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.DiaChiThuongTru)
+            .ColSpan(12)
+            .Label(e => e
+                .Text("Địa chỉ")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Địa chỉ thưởng chú")
+                .Width("100%")
+                .Disabled(false)
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.DienThoaiLienHe)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Số ĐT")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Điện thoại liên hệ")
+                .Width("100%")
+                .Disabled(false)
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.NgheNghiepHienNay)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Nghề nghiệp")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Nghề nghiệp hiện nay")
+                .Width("100%")
+                .Disabled(false)
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.MaSoThue)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("MS Thuế")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Mã số thuế")
+                .Width("100%")
+                .Disabled(false)
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.MaSoBHXH)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("MS BH")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Mã số Bảo hiểm")
+                .Width("100%")
+                .Disabled(false)
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.QuanHe_ChuHo)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("QH Chủ hộ")
+            )
+            .Editor(e => e
+                .SelectBox()
+                .Placeholder("Quan Hệ chủ hộ")
+                .DataSource(new JS("jsQuanHe"))
+                .SearchEnabled(true)
+                .ValueExpr("Id")
+                .DisplayExpr("Name")
+                .Width("100%")
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.GiayKhaiSinhSo)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Giấy KS số")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Giấy khai sinh số")
+                .Width("100%")
+                .Disabled(false)
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.NoiDangKyGiayKhaiSinh)
+            .ColSpan(12)
+            .Label(e => e
+                .Text("Nơi đăng ký")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Nơi đăng ký Giấy khai sinh")
+                .Width("100%")
+                .Disabled(false)
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.QuocTich)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Quốc tịch")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Quốc tịch")
+                .Width("100%")
+                .Disabled(false)
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.LoaiGiayToID)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Giấy tờ")
+            )
+            .Editor(e => e
+                .SelectBox()
+                .Placeholder("Loại giấy tờ")
+                .DataSource(new JS("jsLoaiGiayTo"))
+                .SearchEnabled(true)
+                .ValueExpr("Id")
+                .DisplayExpr("Name")
+                .Value(Model.LoaiGiayToID)
+                .Width("100%")
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.SoHoKhau)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Số giấy tờ")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Số giấy tờ")
+                .Width("100%")
+                .Disabled(false)
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.QuyenSo)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Quyển số")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Quyển số")
+                .Width("100%")
+                .Disabled(false)
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.GhiChu)
+            .ColSpan(12)
+            .Label(e => e
+                .Text("Ghi chú")
+            )
+            .Editor(e => e
+                .TextArea()
+                .Height(65)
+                .Placeholder("Ghi chú")
+                .Width("100%")
+                .Disabled(false)
+                .ReadOnly(true)
+            );
+    }).FormData(Model)
+)

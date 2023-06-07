@@ -1,0 +1,191 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Humax.ESS.Models.Overtime
+
+@inject IViewLocalizer T
+@model OvertimeModel
+@{
+    ViewData["Title"] = T["Làm thêm giờ"];
+    string errorMessage = null;
+    if (ViewData["ErrorMessage"] != null)
+        errorMessage = ViewData["ErrorMessage"].ToString();
+}
+
+<link href="~/css/devextreme/dx-site.css" rel="stylesheet" />
+<script src="~/js/devextreme/dx-site.js" type="text/javascript"></script>
+
+<script>
+    function OpenPopup(_id, _title = '', _approve = 0) {
+        var __title = _title != '' ? _title : '@T["Đăng ký thêm giờ"]';
+        var __url = '/Overtime/Detail';
+        var __popup = 'popup';
+        var __data = {
+            id: _id,
+            approve: _approve
+        };
+        var __width = 500;
+        var __offset = 55;
+
+        FormDetail(_id, __title, __url, __popup, __data, __width, __offset);
+    }
+
+    // Hien thi html trang thai xet duyet
+    function cellTempApproveStatus(container, options) {
+        var _data = options.data;
+        $("<div />").html(_data.ApproveStatusDisplay).appendTo(container);
+    }
+
+    // Sua thong tin
+    function jsEdit(e) {
+        var _data = e.row.data;
+        var _Id = _data.Id;
+        var _XetDuyet = _data.XetDuyet;
+        if (typeof _XetDuyet == 'undefined' || _XetDuyet == null)
+            _XetDuyet = 0;
+
+        if (typeof _Id != 'undefined' && _Id > 0) {
+            OpenPopup(_Id, 'Sửa thông tin thêm giờ', _XetDuyet);
+        } else
+            toastr.warning("Không có thông tin chọn");
+    }
+
+    // Xoa thong tin
+    function jsDelete(e) {
+        // success-info-warning-error
+        var _data = e.row.data;
+    }
+</script>
+
+<div class="sorting1">
+    <div class="sorting1__row">
+        <h1 class="sorting1__title title">@T["Quản lý làm thêm giờ"]</h1>
+        
+        <div class="sorting1__options">
+            <div class="sorting1__search js-sorting-search">
+                <button class="group__btn btn btn_blue" onClick="OpenPopup(0, '');">
+                    <i class="icon dx-icon-add"></i> @T["Đăng ký"]
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="sorting1__form">
+        <div class="sorting1__wrap">
+            <div class="sorting1__fieldset">
+                <div class="videos__field mgr-6">
+                    @(Html.DevExtreme().DateBox()
+                        .ID("OvertimeStartDate")
+                        .ShowClearButton(true)
+                        .DisplayFormat("dd-MM-yyyy")
+                        .Type(DateBoxType.Date)
+                        .UseMaskBehavior(true)
+                        .Value(DateTime.Now.AddMonths(-1))
+                    )
+                </div>
+
+                <div class="videos__field mgr-6">
+                    @(Html.DevExtreme().DateBox()
+                        .ID("OvertimeEndDate")
+                        .ShowClearButton(true)
+                        .DisplayFormat("dd-MM-yyyy")
+                        .Type(DateBoxType.Date)
+                        .UseMaskBehavior(true)
+                        .Value(DateTime.Now)
+                    )
+                </div>
+
+                <div class="videos__field">
+                    @(Html.DevExtreme().Button()
+                        .ID("btnSearch")
+                        .Text("Áp dụng")
+                        .ElementAttr(new Dictionary<string, object>() {
+                            { "class", "sorting1__btn group__btn btn dx-button-mode-contained dx-button-success" },
+                            { "style", "padding-left: 3px;padding-right: 3px;height: 36px;" }
+                        })
+                        .Icon("search")
+                        .OnClick(@<text>
+                            function(data) {
+                                console.log(1);
+                                @*var dataGrid = $("#gridContainer").dxDataGrid("instance");
+                                dataGrid.clearFilter();
+                                dataGrid.option("headerFilter.visible", data.value);*@
+                            }
+                        </text>)
+                    )
+                </div>
+            </div>
+        </div>
+        @*<button id="btnSearch" class="sorting1__btn btn btn_blue">Áp dụng</button>*@
+    </div>
+</div>
+
+<div class="content-block">
+
+    @(Html.DevExtreme().DataGrid<OvertimeModel>()
+        .ID("gridContainer")
+        .DataSource(d => d.Mvc().Controller("Overtime").LoadAction("GetOvertimes").Key("Id"))
+        .ShowBorders(true)
+        .ShowRowLines(true)
+        //.FilterRow(f => f.Visible(true))
+        //.FocusedRowEnabled(true)
+        //.FocusedRowIndex(0)
+        .ColumnAutoWidth(true)
+        .ColumnHidingEnabled(true)
+        .Columns(columns =>
+        {
+            columns.Add().Caption("No").Alignment(HorizontalAlignment.Center).CellTemplate(new JS("dataGrid_rowIndex_cellTemplate")).Width(80);
+            columns.Add().Caption(T["Ngày tháng"].Value).CellTemplate(@<text>
+                <div class="dev-grid-day-of-week"><%- data.DayOfWeek %></div>
+                <div class="dev-grid-day-of-month"><%- data.NgayDangKyDisplay %></div>
+            </text>).Width(120);
+            columns.Add().Caption(T["Thông tin Đăng ký"].Value).CellTemplate(@<text>
+                <p class="mgt-6 mgb-6">
+                    <span class="group__btn btn dx-button-mode-contained dx-button-success p-t-3 p-b-3"><%= data.CaLamViec %></span>
+                </p>
+                <% if(data.SoGioLamThemTruocCa != null && data.SoGioLamThemTruocCa > 0) { %>
+                    <p class="mgt-6 mgb-6">Giờ làm thêm trước ca: <b><%= data.SoGioLamThemTruocCa %></b></p>
+                <% } else if(
+                    (data.BDLamThemTruocCa != null && data.BDLamThemTruocCa != '00:00' && data.BDLamThemTruocCa != '') || (data.KTLamThemTruocCa != null && data.KTLamThemTruocCa != '00:00' && data.KTLamThemTruocCa != '')
+                ){ %>
+                    <p class="mgt-6 mgb-6">Đăng ký làm thêm trước ca: <b>Từ giờ <%= data.BDLamThemTruocCa %> - Tới giờ <%= data.KTLamThemTruocCa %></b></p>
+                <% } %>
+
+                <% if(data.SoGioLamThemSauCa != null && data.SoGioLamThemSauCa > 0) { %>
+                    <p class="mgt-6 mgb-6">Giờ làm thêm sau ca: <b><%= data.SoGioLamThemSauCa %></b></p>
+                <% } else if(
+                    (data.BDLamThemSauCa != null && data.BDLamThemSauCa != '00:00' && data.BDLamThemSauCa != '') || (data.KTLamThemSauCa != null && data.KTLamThemSauCa != '00:00' && data.KTLamThemSauCa != '')
+                ) { %>
+                    <p class="mgt-6 mgb-6">Đăng ký làm thêm sau ca: <b>Từ giờ <%= data.BDLamThemSauCa %> - Tới giờ <%= data.KTLamThemSauCa %></b></p>
+                <% } %>
+                <p class="mgt-6 mgb-6">Lý do tăng ca: <b><%= data.LyDoTangCa != null ? data.LyDoTangCa : ""  %></b></p>
+            </text>);
+            columns.Add().Caption(T["Trạng thái"].Value).CellTemplate(new JS("cellTempApproveStatus")).Width(160);
+            columns.Add().Caption(T["#"].Value)
+                .Type(GridCommandColumnType.Buttons)
+                .Width(80)
+                .Buttons(b =>
+                {
+                    b.Add().Icon("edit").OnClick("jsEdit");
+                    b.Add().Icon("trash").OnClick("jsDelete");
+                });
+        })
+        .Paging(p => p.PageSize(10))
+        .Pager(p => p
+            .Visible(true)
+            .ShowPageSizeSelector(true)
+            .AllowedPageSizes(new[] { 5, 10, 20 })
+            .ShowInfo(true)
+            .InfoText(new JS("gridInfoText"))
+            .ShowNavigationButtons(true)
+        )
+    )
+</div>
+@(Html.DevExtreme().Popup()
+    .ID("popup")
+    //.Width(300)
+    //.Height('auto')
+    .ShowTitle(true)
+    .Title("Đăng ký Thêm giờ")
+    .Visible(false)
+    .DragEnabled(false)
+    .CloseOnOutsideClick(true)
+)

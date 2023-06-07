@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer T
+@{
+    Layout = "_Layout2";
+    ViewData["Title"] = T["Báo cáo"];
+}
+
+<div class="sorting1">
+    <div class="sorting1__row">
+        <h1 class="sorting1__title title">@T["Báo cáo"]</h1>
+    </div>
+</div>

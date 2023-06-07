@@ -1,0 +1,329 @@
+﻿@using Humax.ESS.Models.Task
+@model TaskProjectModel
+
+<form class="entry__form" id="ModalForm" action="@Url.Action("Post", "TaskProject")" method="post" autocomplete="off">
+    <input type="hidden" name="DuAnChaID" value="@Model.DuAnChaID" />
+    <div class="entry__fieldset entry__group">
+        <div class="field1 js-field">
+            <div class="entry__text">Tên dự án</div>
+            <div class="field1__wrap">
+                <input class="field1__input js-field-input" type="text" name="TenDuAn" value="@Model.TenDuAn" placeholder="Tên Dự án">
+            </div>
+        </div>
+
+        <div class="field1 js-field">
+            <div class="entry__text">Mô tả dự án</div>
+            <div class="field1 field1_textarea js-field">
+                <div class="field1__wrap">
+                    <textarea class="field1__textarea js-field-input" name="MoTa" placeholder="Mô tả Dự án">@Model.MoTa</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="entry__row">
+            <div class="entry__col">
+                <div class="field1 js-field">
+                    <div class="entry__text">Ngày bắt đầu</div>
+                    <div class="field1__wrap">
+                        <input class="field1__input js-field-input flatpickr_date" type="text" name="V_NgayBatDau" value="@Model.V_NgayBatDau" placeholder="Ngày bắt đầy" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="entry__col">
+                <div class="field1 js-field">
+                    <div class="entry__text">Ngày kết thúc</div>
+                    <div class="field1__wrap">
+                        <input class="field1__input js-field-input flatpickr_date" type="text" name="V_NgayKetThuc" value="@Model.V_NgayKetThuc" placeholder="Ngày kết thúc" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="entry__row">
+            <div class="entry__col">
+                <div class="field1 js-field">
+                    <div class="entry__text">Người quản trị</div>
+                    <div class="field1__wrap">
+                        <select class="field1__select js-field-input select2 ModalSelect2" name="NguoiQuanTriDuAnID" id="NguoiQuanTriDuAnID">
+                            <option value="0">Chọn người quản trị</option>
+                            <option value="1" selected>Nguyễn Văn An</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="entry__col">
+                <div class="field1 js-field">
+                    <div class="entry__text">Cách tính tiến độ</div>
+                    <div class="field1__wrap">
+                        <select class="field1__select js-field-input select2" name="CachTinhTienDo">
+                            <option value="0">Chọn cách tính tiến độ</option>
+                            <option value="1">Cách tính tiến độ 01</option>
+                            <option value="2">Cách tính tiến độ 02</option>
+                            <option value="3">Cách tính tiến độ 03</option>
+                            <option value="4">Cách tính tiến độ 04</option>
+                            <option value="5">Cách tính tiến độ 05</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="field1 js-field">
+            <div class="entry__text">
+                Người thực hiện
+                <i class="icon dx-icon-plus add-group-list" data-type="executor" title="Thêm mới người thực hiện"></i>
+            </div>
+            <div class="field1__wrap" id="group-executor">
+                @{
+                    int executor_count = 0;
+                    if (Model.Executors != null && Model.Executors.Any())
+                    {
+                        foreach (DependentModel executor in Model.Executors)
+                        {
+                            <div class="entry__row class_context_menu" data-type="executor" id="executor_@executor_count" data-count="@executor_count">
+                                <input type="hidden" name="@string.Format("Executors[{0}].Xoa", executor_count)" value="0" id="delete_executor_@executor_count" />
+                                <div class="entry__col">
+                                    <div class="field1 js-field">
+                                        <div class="field1__wrap">
+                                            <select class="field1__select js-field-input select2 ModalSelect2" name="@string.Format("Executors[{0}].NhanVienID", executor_count)">
+                                                <option value="0">Người thực hiện</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="entry__col">
+                                    <div class="field1 js-field">
+                                        <div class="field1__wrap">
+                                            <input class="field1__input js-field-input" type="text" name="@string.Format("Executors[{0}].ChucVu", executor_count)" value="@executor.ChucVu" placeholder="Chức vụ">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            executor_count++;
+                        }
+                        executor_count--;
+                    }
+                    else
+                    {
+                        <div class="entry__row class_context_menu" data-type="executor" id="executor_@executor_count" data-count="@executor_count">
+                            <input type="hidden" name="@string.Format("Executors[{0}].Xoa", executor_count)" value="0" id="delete_executor_@executor_count" />
+                            <div class="entry__col">
+                                <div class="field1 js-field">
+                                    <div class="field1__wrap">
+                                        <select class="field1__select js-field-input select2 ModalSelect2" name="@string.Format("Executors[{0}].NhanVienID", executor_count)">
+                                            <option value="0">Người thực hiện</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="entry__col">
+                                <div class="field1 js-field">
+                                    <div class="field1__wrap">
+                                        <input class="field1__input js-field-input" type="text" name="@string.Format("Executors[{0}].ChucVu", executor_count)" value="" placeholder="Chức vụ">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+
+        <div class="field1 js-field">
+            <div class="entry__text">
+                Người theo dõi
+                <i class="icon dx-icon-plus add-group-list" data-type="follower" title="Thêm mới người theo dõi"></i>
+            </div>
+            <div class="field1__wrap" id="group-follower">
+                @{
+                    int follower_count = 0;
+                    if (Model.Followers != null && Model.Followers.Any())
+                    {
+                        foreach (DependentModel follower in Model.Followers)
+                        {
+                            <div class="entry__row class_context_menu" data-type="follower" id="follower_@follower_count" data-count="@follower_count">
+                                <input type="hidden" name="@string.Format("Followers[{0}].Xoa", follower_count)" value="0" id="delete_follower_@follower_count"/>
+                                <div class="entry__col">
+                                    <div class="field1 js-field">
+                                        <div class="field1__wrap">
+                                            <select class="field1__select js-field-input select2 ModalSelect2" name="@string.Format("Followers[{0}].NhanVienID", follower_count)">
+                                                <option value="0">Người theo dõi</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="entry__col">
+                                    <div class="field1 js-field">
+                                        <div class="field1__wrap">
+                                            <input class="field1__input js-field-input" type="text" name="@string.Format("Followers[{0}].ChucVu", follower_count)" value="@follower.ChucVu" placeholder="Chức vụ">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            follower_count++;
+                        }
+                        follower_count--;
+                    }
+                    else
+                    {
+                        <div class="entry__row class_context_menu" data-type="follower" id="follower_@follower_count" data-count="@follower_count">
+                            <input type="hidden" name="@string.Format("Followers[{0}].Xoa", follower_count)" value="0" id="delete_follower_@follower_count"/>
+                            <div class="entry__col">
+                                <div class="field1 js-field">
+                                    <div class="field1__wrap">
+                                        <select class="field1__select js-field-input select2 ModalSelect2" name="@string.Format("Followers[{0}].NhanVienID", follower_count)">
+                                            <option value="0">Người theo dõi</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="entry__col">
+                                <div class="field1 js-field">
+                                    <div class="field1__wrap">
+                                        <input class="field1__input js-field-input" type="text" name="@string.Format("Followers[{0}].ChucVu", follower_count)" value="" placeholder="Chức vụ">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+    <input type="submit" id="ModalBtnFormSubmit" class="delete-item" />
+</form>
+
+<script>
+    var _d = new Date();
+    var _y = _d.getFullYear();
+    //
+    select2Init('.ModalSelect2', '/Information/Employee');
+    $('select[name="CachTinhTienDo"]').select2();
+    //
+    var _menuGroupItems = [
+        {
+            type: "item",
+            text: "Xóa",
+            action: function () {
+                var _count = $(this).data('count');
+                var _type = $(this).data('type');
+                
+                console.log(_type + ' - ' + _count);
+
+                $(this).addClass("delete-item");
+                $('#delete_' + _type + '_' + _count + '').val(1);
+            }
+        },
+    ];
+    //
+    $(function () {
+        // Date
+        flatpickr($('.flatpickr_date'), {
+            altFormat: "d-m-Y",
+            dateFormat: "d/m/Y",
+            minDate: new Date((_y - 60) + "-01-01"),
+            maxDate: new Date((_y - 20) + "-12-31")
+        });
+
+        flatpickr($('.flatpickr_time'), {
+            enableTime: true,
+            noCalendar: true,
+            dateFormat: "H:i",
+            time_24hr: true,
+            defaultDate: "13:45",
+            minTime: "09:00",
+            maxTime: "22:00"
+        });
+
+        $(".class_context_menu").contextMenu({
+            items: _menuGroupItems
+        });
+
+        $('.add-group-list').click(function () {
+            var _type = $(this).data('type');
+            var _count = $('div[data-type="' + _type + '"]').length;
+            var _model = (_type === 'follower') ? 'Followers' : 'Executors';
+            var _option = (_type === 'follower') ? 'Người theo dõi' : 'Người thực hiện';
+
+            //console.log(_model + ' - ' + _type + ' - ' + _count);
+
+            var _html = `<div class="entry__row class_context_menu" data-type="` + _type + `" id="` + _type + `_` + _count + `" data-count="` + _count + `">
+                            <input type="hidden" name="` + _model + `[` + _count + `].Xoa" value="0" id="delete_` + _type + `_` + _count + `" />
+                            <div class="entry__col">
+                                <div class="field1 js-field">
+                                    <div class="field1__wrap">
+                                        <select class="field1__select js-field-input select2 ` + _type + `_` + _count + `" name="` + _model + `[` + _count + `].NhanVienID">
+                                            <option value="0">` + _option + `</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="entry__col">
+                                <div class="field1 js-field">
+                                    <div class="field1__wrap">
+                                        <input class="field1__input js-field-input" type="text" name="` + _model + `[` + _count + `].ChucVu" value="" placeholder="Chức vụ">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`;
+
+            $(`#group-` + _type).append(_html);
+
+            $(".class_context_menu").contextMenu({
+                items: _menuGroupItems
+            });
+
+            select2Init(`.` + _type + `_` + _count, '/Information/Employee');
+        });
+
+        // 
+        $('form#ModalForm').submit(function (e) {
+            e.preventDefault();
+
+            var _action = $(this).attr('action');
+
+            console.log(_action);
+
+            if (typeof _action !== 'undefined' && _action !== '') {
+                var _data = $(this).serializeArray();
+
+                console.log(_data);
+
+                $.ajax({
+                    dataType: 'json',
+                    type: 'POST',
+                    url: _action,
+                    data: _data,
+                    //processData: false,
+                    //contentType: false,
+                    cache: false,
+                    success: function (res, status, jqXHR) {
+                        //console.log(res);
+                        if (res.success == 1) {
+                            toastr.success(res.message);
+                            modal_close('modalGlobal');
+                        } else if (res.success == 99) {
+                            var _validation = res.validation;
+                            if (typeof _validation != 'undefined' && _validation.length > 0) {
+                                for (var key in _validation) {
+                                    var _field = _validation[key]["Field"];
+                                    var _message = _validation[key]["Message"];
+
+                                    $('span[field="' + _field + '"]').addClass('c-validation').html(_message);
+                                }
+                            }
+                        } else {
+                            toastr.warning("Có lỗi trong quá trình xử lý");
+                        }
+                    },
+                    error: function (jqXHR, status, err) {
+                        toastr.error("Lỗi Server");
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        });
+    });
+</script>

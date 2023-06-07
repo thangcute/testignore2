@@ -1,0 +1,116 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Humax.ESS.Helpers
+@using Microsoft.AspNetCore.Mvc
+
+@inject IViewLocalizer T
+@{
+    var userInfo = Context.Session.GetCurrentUser();
+    MenuItem.CurrentPath = Context.Request.Path;
+
+    if (ViewBag.menuItems == null)
+        ViewBag.menuItems = new List<MenuItem>()
+        {
+            new MenuItem { Text="Trang chủ", Path=Url.Action("Index", "Home"), SvgIcon="icon-home"},
+            new MenuItem { 
+                Text="Dự án",
+                Path=Url.Action("Index", "TaskProject"),
+                SvgIcon="icon-timesheets",
+                SubMenu = new List<MenuItem>()
+                {
+                    new MenuItem{
+                        Text="Bạn thực hiện",
+                        Path=Url.Action("Index", "TaskProject"),
+                        SvgIcon="icon-timesheets"
+                    },
+                    new MenuItem{
+                        Text="Bạn quản trị",
+                        Path=Url.Action("Index", "TaskProject"),
+                        SvgIcon="icon-timesheets"
+                    },
+                    new MenuItem{
+                        Text="Bạn theo dõi",
+                        Path=Url.Action("Index", "TaskProject"),
+                        SvgIcon="icon-timesheets"
+                    },
+                }
+            },
+            new MenuItem { 
+                Text="Công việc",
+                Path="/cong-viec",
+                SvgIcon="icon-pay-slip",
+                Class="stroke",
+                SubMenu = new List<MenuItem>()
+                {
+                    new MenuItem{
+                        Text="Bạn thực hiện",
+                        Path="/cong-viec/1",
+                        SvgIcon="icon-timesheets"
+                    },
+                    new MenuItem{
+                        Text="Bạn đã giao",
+                        Path="/cong-viec/2",
+                        SvgIcon="icon-timesheets"
+                    },
+                    new MenuItem{
+                        Text="Bạn theo dõi",
+                        Path="/cong-viec/3",
+                        SvgIcon="icon-timesheets"
+                    },
+                }
+            },
+            new MenuItem { 
+                Text="Tiến độ",
+                Path=Url.Action("Index", "TaskProgress"),
+                SvgIcon="icon-kpi"
+            },
+            new MenuItem { 
+                Text="Báo cáo",
+                Path=Url.Action("Index", "TaskReport"),
+                SvgIcon="icon-self-assessment"
+            }
+        };
+}
+
+<a class="sidebar2__profile" href="@Url.Action("Index", "Profile")">
+    <div class="ava"><img class="ava__pic" src="@(userInfo.AvatarUrl)" alt="" /></div>
+    <div class="sidebar2__details">
+        <div class="sidebar2__user">@userInfo.FullName</div>
+        <div class="sidebar2__login">@userInfo.JobTitle</div>
+    </div>
+</a>
+
+<div class="sidebar2__nav">
+    @foreach (MenuItem item in ViewBag.menuItems)
+    {
+        <a class="sidebar2__item @(item.IsActive ? "active" : "")" href="@item.Path">
+            @if (!string.IsNullOrEmpty(item.FaIcon))
+            {
+                <i class="icon fas @item.FaIcon"></i>
+            }
+            else if (!string.IsNullOrEmpty(item.SvgIcon))
+            {
+                <svg class="icon menu-item-icon @(item.Class??"")">
+                    <use xlink:href="/img/sprite.svg#@item.SvgIcon"></use>
+                </svg>
+            }
+            else if (!string.IsNullOrEmpty(item.ImageIcon))
+            {
+                <img class="icon" src="@item.ImageIcon" />
+            }
+            @T[item.Text]
+            @if (item.Counter > 0)
+            {
+                <div class="sidebar2__counter">@item.Counter</div>
+            }
+        </a>
+        @if (item.IsActive && item.SubMenu != null && item.SubMenu.Count > 0)
+        {
+            foreach (var _item in item.SubMenu)
+            {
+                <a class="sidebar2__item_sub" href="@_item.Path">
+                    @_item.Text
+                </a>
+            }
+        }
+    }
+</div>

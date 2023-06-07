@@ -1,0 +1,57 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Humax.ESS.Helpers
+
+@inject IViewLocalizer T
+@{
+    var userInfo = Context.Session.GetCurrentUser();
+    var isDarkMode = Context.Request.IsDarkMode();
+}
+
+<div class="header2 js-header2">
+    <button class="header2__burger js-header2-burger">
+        <svg class="icon icon-burger">
+            <use xlink:href="/img/sprite.svg#icon-burger"></use>
+        </svg>
+    </button>
+    <a class="header2__logo" href="/"><img class="header2__pic header2__pic_black" src="~/img/logo.png" alt="" /><img class="header2__pic header2__pic_white" src="~/img/logo-white.png" alt="" /></a>
+    <div class="header2__search">
+        <button class="header2__open">
+            <svg class="icon icon-search">
+                <use xlink:href="/img/sprite.svg#icon-search"></use>
+            </svg>
+        </button><input class="header2__input" type="text" placeholder="@T["Tìm kiếm"]" />
+    </div>
+    <div class="header2__group">
+        <label class="header2__link switch switch_theme">
+            <input class="switch__input js-switch-theme" type="checkbox" checked=@(isDarkMode ? true : false)><span class="switch__in">
+                <span class="switch__box"></span><span class="switch__icon">
+                    <svg class="icon icon-moon">
+                        <use xlink:href="/img/sprite.svg#icon-moon"></use>
+                    </svg>
+                    <svg class="icon icon-sun">
+                        <use xlink:href="/img/sprite.svg#icon-sun"></use>
+                    </svg>
+                </span>
+            </span>
+        </label>
+        @*<button class="header2__link">
+            <svg class="icon icon-friends-request">
+                <use xlink:href="/img/sprite.svg#icon-friends-request"></use>
+            </svg>
+        </button>
+        <button class="header2__link active js-header2-users">
+            <svg class="icon icon-chat">
+                <use xlink:href="/img/sprite.svg#icon-chat"></use>
+            </svg>
+        </button>*@
+        @*<a class="header2__link header2__link_bell active" href="@Url.Action("Index", "Notification")">
+            <svg class="icon icon-bell">
+                <use xlink:href="/img/sprite.svg#icon-bell"></use>
+            </svg>
+        </a>*@
+
+    <partial name="_Notification" />
+    </div>
+    @*<a class="header2__profile" href="@Url.Action("Index", "Profile")"><img class="header2__pic" src="@(userInfo.AvatarUrl)" alt="" /></a>*@
+    <div class="header2__bg js-header2-bg"></div>
+</div>

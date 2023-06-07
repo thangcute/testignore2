@@ -1,0 +1,285 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer T
+@{
+    ViewBag.Module = "Tsk";
+    ViewData["Title"] = T["Đào tạo"];
+
+    string errorMessage = null;
+    if (ViewData["ErrorMessage"] != null)
+        errorMessage = ViewData["ErrorMessage"].ToString();
+}
+
+<link href="~/menu.css" rel="stylesheet" />
+<style>
+    .player__list {
+        display: none;
+    }
+
+    .tab-active {
+        display: block !important;
+    }
+
+    .dropdown-toggle::after {
+        content: '\2192' !important;
+    }
+</style>
+
+@section Scripts{
+    <script src="~/select2.init.js"></script>
+    <script src="~/menu/tether.min.js"></script>
+    <script src="~/menu/jquery.context-menu.min.js"></script>
+    <script>
+        let _debug = function (properties) {
+            console.groupCollapsed("jQuery.ContextMenu.js");
+            console.debug("Hai selezionato '" + properties.text + "' ('" + properties.key + "').");
+            console.debug(this);
+            console.groupEnd();
+        };
+
+        let _menuStatus = [];
+        let _ProjectStatus = @Html.Raw(ViewBag.ProjectStatus);
+
+        //console.log(_ProjectStatus);
+
+        if (_ProjectStatus.length > 0) {
+            for (var key in _ProjectStatus) {
+                var _id = _ProjectStatus[key]["Id"];
+                var _name = _ProjectStatus[key]["Name"];
+
+                _menuStatus.push({
+                    type: "item",
+                    text: _name,
+                    value: _id,
+                    action: function (option) {
+                        console.log(option.value);
+                        console.log($(this).data('id'));
+                        toastr.success('Cập nhật thành công Id: ' + $(this).data('id'));
+                    }
+                });
+            }
+        }
+
+        let _menuPercent = [
+            {
+                type: "item",
+                text: "10%",
+                value: 10,
+                action: function (option) {
+                    console.log($(this).data('id'));
+                    toastr.success('Cập nhật thành công Id: ' + $(this).data('id'));
+                }
+            },
+            {
+                type: "item",
+                text: "20%",
+                value: 20,
+                action: function (option) {
+                    console.log($(this).data('id'));
+                    toastr.success('Cập nhật thành công Id: ' + $(this).data('id'));
+                }
+            },
+            {
+                type: "item",
+                text: "30%",
+                value: 30,
+                action: function (option) {
+                    console.log($(this).data('id'));
+                    toastr.success('Cập nhật thành công Id: ' + $(this).data('id'));
+                }
+            },
+            {
+                type: "item",
+                text: "40%",
+                value: 40,
+                action: function (option) {
+                    console.log($(this).data('id'));
+                    toastr.success('Cập nhật thành công Id: ' + $(this).data('id'));
+                }
+            },
+            {
+                type: "item",
+                text: "50%",
+                value: 50,
+                action: function (option) {
+                    console.log($(this).data('id'));
+                    toastr.success('Cập nhật thành công Id: ' + $(this).data('id'));
+                }
+            },
+            {
+                type: "item",
+                text: "60%",
+                value: 60,
+                action: function (option) {
+                    console.log($(this).data('id'));
+                    toastr.success('Cập nhật thành công Id: ' + $(this).data('id'));
+                }
+            },
+            {
+                type: "item",
+                text: "70%",
+                value: 70,
+                action: function (option) {
+                    console.log($(this).data('id'));
+                    toastr.success('Cập nhật thành công Id: ' + $(this).data('id'));
+                }
+            },
+            {
+                type: "item",
+                text: "80%",
+                value: 80,
+                action: function (option) {
+                    console.log($(this).data('id'));
+                    toastr.success('Cập nhật thành công Id: ' + $(this).data('id'));
+                }
+            },
+            {
+                type: "item",
+                text: "90%",
+                value: 90,
+                action: function (option) {
+                    console.log($(this).data('id'));
+                    toastr.success('Cập nhật thành công Id: ' + $(this).data('id'));
+                }
+            },
+            {
+                type: "item",
+                text: "Hoàn thành",
+                value: 100,
+                action: function (option) {
+                    console.log($(this).data('id'));
+                    toastr.success('Cập nhật thành công Id: ' + $(this).data('id'));
+                }
+            }
+        ];
+
+        //console.log(_menuStatus);
+
+        $(function () {
+            $('a[data-type="tabs"]').click(function () {
+                var _href = $(this).attr('href');
+                $('a[data-type="tabs"]').removeClass('active');
+                $(this).addClass('active');
+
+                $('div[data-type="tabs-content"]').removeClass('tab-active');
+                $(_href).addClass('tab-active');
+            });
+
+            jQuery(function () {
+                let _menuItems = [
+                    {
+                        type: "item",
+                        //icon: "clone",
+                        text: "Xem nhanh",
+                        action: function () { //option, contextMenuIndex, optionIndex
+                            console.log($(this).data('id'));
+                            modal_open('modalGlobal', 'Thông tin công việc', '/TaskWork/View/' + $(this).data('id'), 0);
+                        }
+                    },
+                    {
+                        type: "divider"
+                    },
+                    {
+                        type: "submenu",
+                        text: "Cập nhật trạng thái",
+                        class: "submenu-vertical",
+                        items: _menuStatus
+                    },
+                    {
+                        type: "submenu",
+                        text: "Báo cáo tiến độ",
+                        class: "sub-horizontal",
+                        items: _menuPercent
+                    },
+                    {
+                        type: "item",
+                        text: "Thêm người thực hiện",
+                        action: function () {
+                            console.log($(this).data('id'));
+                            toastr.success('Cập nhật thành công Id: ' + $(this).data('id'));
+                        }
+                    },
+                    {
+                        type: "item",
+                        text: "Thêm dự án con",
+                        action: function () {
+                            //console.log($(this).data('id'));
+                            modal_open('modalGlobal', 'Thêm dự án con', '/TaskProject/Add/' + $(this).data('id'));
+                        }
+                    },
+                    {
+                        type: "item",
+                        text: "Cập nhật thời gian",
+                        action: function () {
+                            console.log($(this).data('id'));
+                            toastr.success('Cập nhật thành công Id: ' + $(this).data('id'));
+                        }
+                    },
+                    {
+                        type: "divider"
+                    },
+                    {
+                        type: "item",
+                        text: "Sửa công việc",
+                        action: function () {
+                            //console.log($(this).data('id'));
+                            modal_open('modalGlobal', 'Sửa thông tin', '/TaskWork/Edit/' + $(this).data('id'));
+                        }
+                    }
+                ];
+
+                $(".products__row:not(.products__row_head)").contextMenu({
+                    items: _menuItems
+                });
+            });
+        });
+    </script>
+}
+
+<div class="sorting1">
+    <div class="sorting1__row">
+        <h1 class="sorting1__title title">@T["Quản lý công việc"]</h1>
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <div class="error-messsage">@errorMessage</div>
+        }
+        <div class="sorting1__options">
+            <div class="sorting1__search js-sorting-search">
+                <button class="group__btn btn btn_blue js-popup-open btn-modal" modal-href="@Url.Action("Add", "TaskProject")" modal-title="Thêm mới dự án" data-effect="mfp-zoom-in">
+                    <i class="icon dx-icon-plus"></i>@T["Thêm dự án"]
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-block">
+    <div class="player__container">
+        <div class="player__control">
+            <div class="player__nav">
+                <a class="player__link active" data-type="tabs" href="#process">Đang thực hiện</a>
+                <a class="player__link" data-type="tabs" href="#admin">Quản trị</a>
+                <a class="player__link" data-type="tabs" href="#follow">Theo dõi</a>
+                <a class="player__link" data-type="tabs" href="#all">Tất cả</a>
+            </div>
+
+            <div class="player__settings">
+            </div>
+
+            <div id="process" data-type="tabs-content" class="player__list tab-active">
+                <partial name="~/Views/Task/Project/Partial/_Process.cshtml" />
+            </div>
+
+            <div id="admin" data-type="tabs-content" class="player__list">
+                <partial name="~/Views/Task/Project/Partial/_Complete.cshtml" />
+            </div>
+
+            <div id="follow" data-type="tabs-content" class="player__list">
+                <partial name="~/Views/Task/Project/Partial/_Outofdate.cshtml" />
+            </div>
+
+            <div id="all" data-type="tabs-content" class="player__list">
+                <partial name="~/Views/Task/Project/Partial/_All.cshtml" />
+            </div>
+        </div>
+    </div>
+</div>

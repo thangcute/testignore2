@@ -1,0 +1,34 @@
+﻿@using Humax.ESS.Models.Employee;
+@using Humax.ESS.Helpers;
+@using Microsoft.AspNetCore.Mvc.Localization;
+
+@model List<EmployeeModel>
+
+@inject IViewLocalizer T
+@{
+    ViewData["Title"] = T["Nhân viên"];
+}
+
+@{
+    if (Model != null && Model.Any())
+    {
+        foreach (var _item in Model)
+        {
+            <div class="friends__item">
+                <div class="friends__bg" style="background-color: darkcyan;"></div>
+                <div class="friends__body">
+                    <div class="friends__ava"><img class="friends__pic" src="@(CommonHelper.Base64Extension(_item.Picture, true))" alt="@_item.Name"></div>
+                    <div class="friends__details">
+                        <div class="friends__user">@_item.Name</div>
+                        <div class="friends__login">@(string.Format("Mobile: {0} - Email: {1}", _item.Mobile, _item.Email))</div>
+                        <div class="friends__text">@(string.Format("{0} | {1} | {2}", _item.Department, _item.JobTitle, _item.JobPosition))</div>@*<a class="friends__status active" href="#">Kết bạn</a>*@
+                    </div>
+                </div>
+            </div>
+        }
+    } 
+    else
+    {
+        <h2 id="noti_data_not_found" style="color: red; text-align: center; width: 100%; font-size: 30px; padding-top: 30px;">Không có dữ liệu tìm kiếm.</h2>
+    }
+}

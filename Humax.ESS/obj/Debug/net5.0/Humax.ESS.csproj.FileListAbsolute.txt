@@ -1,0 +1,957 @@
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\NuGet.config
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\web.config
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\appsettings.Development.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\appsettings.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\launchSettings.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Controllers\AccountController.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Controllers\AccountController.vi.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Models\BusinessTripModel.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Models\LeaveModel.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Account\Login.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\BusinessTrip\Index.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Employees\Index.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Group\Index.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Home\Index.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Kpi\Registration.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Kpi\SelfAssessment.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Leave\Index.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Notification\Index.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Overtime\Index.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\PaySlip\Index.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Profile\Index.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Profile\Relationship.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Profile\RewardChildren.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Profile\TrainingProcess.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Profile\WorkingExperiences.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Proposal\Index.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Report\Index.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Report\OrgChart.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Shared\_Layout.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Shared\_LeftSidebar.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Timesheet\Index.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Training\Index.en.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Humax.ESS.exe
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Humax.ESS.deps.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Humax.ESS.runtimeconfig.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Humax.ESS.runtimeconfig.dev.json
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Humax.ESS.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\ref\Humax.ESS.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Humax.ESS.pdb
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Antiforgery.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authentication.Cookies.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authentication.Core.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authentication.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authentication.OAuth.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authorization.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authorization.Policy.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Components.Authorization.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Components.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Components.Forms.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Components.Server.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Components.Web.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.CookiePolicy.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Cors.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.DataProtection.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.DataProtection.Extensions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Diagnostics.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Diagnostics.HealthChecks.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.HostFiltering.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Hosting.Abstractions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Hosting.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Html.Abstractions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Abstractions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Connections.Common.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Connections.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Extensions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Features.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.HttpOverrides.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.HttpsPolicy.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Identity.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Localization.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Localization.Routing.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Metadata.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Abstractions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.ApiExplorer.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Core.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Cors.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Formatters.Xml.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Localization.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Razor.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.RazorPages.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.TagHelpers.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Razor.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Razor.Runtime.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.ResponseCaching.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.ResponseCompression.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Rewrite.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Routing.Abstractions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Routing.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.HttpSys.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.IIS.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.IISIntegration.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.Kestrel.Core.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.Kestrel.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Session.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.SignalR.Common.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.SignalR.Core.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.SignalR.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.StaticFiles.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.WebSockets.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.WebUtilities.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.CSharp.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Caching.Abstractions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Caching.Memory.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Binder.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.CommandLine.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Ini.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Json.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Xml.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.FileProviders.Composite.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.FileProviders.Embedded.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.FileProviders.Physical.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Hosting.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Http.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Identity.Core.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Identity.Stores.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Localization.Abstractions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Localization.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.Abstractions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.Configuration.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.Console.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.Debug.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.EventLog.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.EventSource.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.TraceSource.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.ObjectPool.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.DataAnnotations.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Primitives.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.WebEncoders.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.JSInterop.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Net.Http.Headers.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.VisualBasic.Core.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.VisualBasic.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Win32.Primitives.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Win32.Registry.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\mscorlib.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\netstandard.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.AppContext.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Buffers.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Collections.Concurrent.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Collections.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Collections.Immutable.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Collections.NonGeneric.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Collections.Specialized.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.ComponentModel.Annotations.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.ComponentModel.DataAnnotations.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.ComponentModel.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.ComponentModel.EventBasedAsync.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.ComponentModel.Primitives.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.ComponentModel.TypeConverter.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Configuration.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Console.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Core.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Data.Common.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Data.DataSetExtensions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Data.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Diagnostics.Contracts.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Diagnostics.Debug.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Diagnostics.EventLog.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Diagnostics.FileVersionInfo.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Diagnostics.Process.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Diagnostics.StackTrace.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Diagnostics.TextWriterTraceListener.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Diagnostics.Tools.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Diagnostics.TraceSource.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Diagnostics.Tracing.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Drawing.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Drawing.Primitives.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Dynamic.Runtime.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Formats.Asn1.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Globalization.Calendars.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Globalization.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Globalization.Extensions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.Compression.Brotli.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.Compression.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.Compression.FileSystem.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.Compression.ZipFile.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.FileSystem.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.FileSystem.DriveInfo.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.FileSystem.Primitives.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.FileSystem.Watcher.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.IsolatedStorage.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.MemoryMappedFiles.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.Pipelines.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.Pipes.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.UnmanagedMemoryStream.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Linq.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Linq.Expressions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Linq.Parallel.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Linq.Queryable.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Memory.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.Http.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.Http.Json.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.HttpListener.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.Mail.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.NameResolution.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.NetworkInformation.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.Ping.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.Primitives.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.Requests.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.Security.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.ServicePoint.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.Sockets.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.WebClient.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.WebHeaderCollection.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.WebProxy.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.WebSockets.Client.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.WebSockets.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Numerics.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Numerics.Vectors.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.ObjectModel.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Reflection.DispatchProxy.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Reflection.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Reflection.Emit.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Reflection.Emit.ILGeneration.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Reflection.Emit.Lightweight.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Reflection.Extensions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Reflection.Metadata.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Reflection.Primitives.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Reflection.TypeExtensions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Resources.Reader.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Resources.ResourceManager.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Resources.Writer.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.CompilerServices.Unsafe.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.CompilerServices.VisualC.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.Extensions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.Handles.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.InteropServices.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.Intrinsics.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.Loader.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.Numerics.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.Serialization.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.Serialization.Formatters.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.Serialization.Json.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.Serialization.Primitives.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.Serialization.Xml.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.AccessControl.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.Claims.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.Cryptography.Algorithms.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.Cryptography.Cng.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.Cryptography.Csp.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.Cryptography.Encoding.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.Cryptography.Primitives.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.Cryptography.X509Certificates.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.Cryptography.Xml.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.Permissions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.Principal.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.Principal.Windows.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.SecureString.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.ServiceModel.Web.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.ServiceProcess.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Text.Encoding.CodePages.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Text.Encoding.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Text.Encoding.Extensions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Text.Encodings.Web.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Text.Json.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Text.RegularExpressions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Threading.Channels.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Threading.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Threading.Overlapped.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Threading.Tasks.Dataflow.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Threading.Tasks.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Threading.Tasks.Extensions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Threading.Tasks.Parallel.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Threading.Thread.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Threading.ThreadPool.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Threading.Timer.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Transactions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Transactions.Local.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.ValueTuple.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Web.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Web.HttpUtility.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Windows.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Windows.Extensions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Xml.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Xml.Linq.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Xml.ReaderWriter.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Xml.Serialization.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Xml.XDocument.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Xml.XmlDocument.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Xml.XmlSerializer.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Xml.XPath.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Xml.XPath.XDocument.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\WindowsBase.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Humax.ESS.Views.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Humax.ESS.Views.pdb
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\DevExtreme.AspNet.Core.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\DevExtreme.AspNet.Data.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.CodeAnalysis.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.CodeAnalysis.Razor.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.GeneratedMSBuildEditorConfig.editorconfig
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.AssemblyInfoInputs.cache
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.AssemblyInfo.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.csproj.CoreCompileInputs.cache
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.MvcApplicationPartsAssemblyInfo.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.MvcApplicationPartsAssemblyInfo.cache
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.RazorAssemblyInfo.cache
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.RazorAssemblyInfo.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\staticwebassets\Humax.ESS.StaticWebAssets.Manifest.cache
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\staticwebassets\Humax.ESS.StaticWebAssets.xml
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\scopedcss\bundle\Humax.ESS.styles.css
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.TagHelpers.input.cache
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.TagHelpers.output.cache
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.RazorCoreGenerate.cache
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\BusinessTrip\Detail.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\BusinessTrip\Index.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\BusinessTrip\_Detail.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Employee\Index.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Employee\NewEmployees.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Employee\Profile.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Employee\_SearchEmployee.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Group\Index.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Kpi\Registration.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Kpi\SelfAssessment.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Leave\Detail.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Leave\Index.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Leave\_Detail.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Notification\Index.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Overtime\Detail.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Overtime\Index.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Overtime\_Detail.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\PaySlip\Index.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Profile\DetailExperiences.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Profile\DetailRelationship.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Profile\DetailTrainingProcess.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Profile\Index.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Profile\Relationship.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Profile\RewardChildren.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Profile\TrainingProcess.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Profile\WorkingExperiences.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Profile\_DetailExperiences.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Profile\_DetailRelationship.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Profile\_DetailTrainingProcess.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Proposal\Index.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Report\Index.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Report\OrgChart.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\CustomEditors\UploadFileStore.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_AccountLayout.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_DevExtremeLayout.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_Header.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_LanguagePartial.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_Layout2.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_MobileNav.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_Modal.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_Notification.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_RightSidebar.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_Sidebar.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_Sidebar2.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_SidebarTsk.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Progress\Index.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Progress\Partial\_Detail.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Project\Index.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Project\Partial\_All.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Project\Partial\_ChangePersons.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Project\Partial\_Complete.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Project\Partial\_Outofdate.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Project\Partial\_Process.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Project\Partial\_ProjectDetail.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Project\Partial\_ProjectDetailBak.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Report\Index.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Report\Partial\_Detail.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Grantt.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Index.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Kanban.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Partial\_All.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Partial\_Cancelled.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Partial\_Complete.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Partial\_Outofdate.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Partial\_Pause.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Partial\_Process.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Partial\_TaskDetail.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Partial\_TaskList.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Partial\_TaskReplica.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Partial\_TaskView.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Timesheet\DetailExplain.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Timesheet\DetailLostFinger.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Timesheet\Index.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Training\Index.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.RazorTargetAssemblyInfo.cache
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.RazorTargetAssemblyInfo.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.Views.pdb
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.csproj.CopyComplete
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\ref\Humax.ESS.dll
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.pdb
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.genruntimeconfig.cache
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.csproj.AssemblyReference.cache
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Training\_Finished.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Training\_Joinning.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Training\_Evaluate.cshtml.g.cs
+D:\DATA\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Training\_FormDynamic.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.pdb
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\NuGet.config
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\web.config
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\appsettings.Development.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\appsettings.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\launchSettings.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Controllers\AccountController.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Controllers\AccountController.vi.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Models\BusinessTripModel.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Models\LeaveModel.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Account\Login.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\BusinessTrip\Index.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Employees\Index.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Group\Index.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Home\Index.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Kpi\Registration.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Kpi\SelfAssessment.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Leave\Index.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Notification\Index.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Overtime\Index.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\PaySlip\Index.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Profile\Index.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Profile\Relationship.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Profile\RewardChildren.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Profile\TrainingProcess.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Profile\WorkingExperiences.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Proposal\Index.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Report\Index.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Report\OrgChart.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Shared\_Layout.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Shared\_LeftSidebar.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Timesheet\Index.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Resources\Views\Training\Index.en.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Humax.ESS.StaticWebAssets.xml
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Humax.ESS.exe
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Humax.ESS.deps.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Humax.ESS.runtimeconfig.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Humax.ESS.runtimeconfig.dev.json
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Humax.ESS.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Humax.ESS.pdb
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Antiforgery.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authentication.Cookies.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authentication.Core.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authentication.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authentication.OAuth.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authorization.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authorization.Policy.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Components.Authorization.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Components.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Components.Forms.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Components.Server.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Components.Web.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.CookiePolicy.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Cors.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.DataProtection.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.DataProtection.Extensions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Diagnostics.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Diagnostics.HealthChecks.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.HostFiltering.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Hosting.Abstractions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Hosting.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Html.Abstractions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Abstractions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Connections.Common.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Connections.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Extensions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Features.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.HttpOverrides.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.HttpsPolicy.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Identity.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Localization.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Localization.Routing.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Metadata.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Abstractions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.ApiExplorer.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Core.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Cors.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Formatters.Xml.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Localization.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Razor.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.RazorPages.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.TagHelpers.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Razor.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Razor.Runtime.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.ResponseCaching.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.ResponseCompression.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Rewrite.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Routing.Abstractions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Routing.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.HttpSys.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.IIS.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.IISIntegration.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.Kestrel.Core.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.Kestrel.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Session.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.SignalR.Common.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.SignalR.Core.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.SignalR.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.StaticFiles.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.WebSockets.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.AspNetCore.WebUtilities.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.CSharp.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Caching.Abstractions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Caching.Memory.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Binder.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.CommandLine.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Ini.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Json.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Xml.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.FileProviders.Composite.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.FileProviders.Embedded.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.FileProviders.Physical.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Hosting.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Http.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Identity.Core.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Identity.Stores.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Localization.Abstractions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Localization.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.Abstractions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.Configuration.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.Console.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.Debug.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.EventLog.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.EventSource.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.TraceSource.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.ObjectPool.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.DataAnnotations.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.Primitives.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Extensions.WebEncoders.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.JSInterop.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Net.Http.Headers.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.VisualBasic.Core.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.VisualBasic.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Win32.Primitives.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\Microsoft.Win32.Registry.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\mscorlib.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\netstandard.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.AppContext.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Buffers.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Collections.Concurrent.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Collections.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Collections.Immutable.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Collections.NonGeneric.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Collections.Specialized.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.ComponentModel.Annotations.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.ComponentModel.DataAnnotations.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.ComponentModel.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.ComponentModel.EventBasedAsync.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.ComponentModel.Primitives.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.ComponentModel.TypeConverter.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Configuration.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Console.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Core.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Data.Common.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Data.DataSetExtensions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Data.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Diagnostics.Contracts.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Diagnostics.Debug.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Diagnostics.EventLog.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Diagnostics.FileVersionInfo.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Diagnostics.Process.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Diagnostics.StackTrace.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Diagnostics.TextWriterTraceListener.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Diagnostics.Tools.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Diagnostics.TraceSource.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Diagnostics.Tracing.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Drawing.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Drawing.Primitives.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Dynamic.Runtime.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Formats.Asn1.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Globalization.Calendars.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Globalization.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Globalization.Extensions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.Compression.Brotli.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.Compression.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.Compression.FileSystem.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.Compression.ZipFile.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.FileSystem.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.FileSystem.DriveInfo.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.FileSystem.Primitives.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.FileSystem.Watcher.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.IsolatedStorage.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.MemoryMappedFiles.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.Pipelines.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.Pipes.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.IO.UnmanagedMemoryStream.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Linq.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Linq.Expressions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Linq.Parallel.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Linq.Queryable.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Memory.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.Http.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.Http.Json.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.HttpListener.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.Mail.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.NameResolution.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.NetworkInformation.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.Ping.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.Primitives.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.Requests.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.Security.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.ServicePoint.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.Sockets.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.WebClient.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.WebHeaderCollection.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.WebProxy.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.WebSockets.Client.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Net.WebSockets.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Numerics.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Numerics.Vectors.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.ObjectModel.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Reflection.DispatchProxy.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Reflection.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Reflection.Emit.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Reflection.Emit.ILGeneration.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Reflection.Emit.Lightweight.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Reflection.Extensions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Reflection.Metadata.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Reflection.Primitives.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Reflection.TypeExtensions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Resources.Reader.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Resources.ResourceManager.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Resources.Writer.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.CompilerServices.Unsafe.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.CompilerServices.VisualC.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.Extensions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.Handles.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.InteropServices.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.Intrinsics.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.Loader.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.Numerics.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.Serialization.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.Serialization.Formatters.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.Serialization.Json.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.Serialization.Primitives.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Runtime.Serialization.Xml.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.AccessControl.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.Claims.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.Cryptography.Algorithms.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.Cryptography.Cng.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.Cryptography.Csp.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.Cryptography.Encoding.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.Cryptography.Primitives.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.Cryptography.X509Certificates.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.Cryptography.Xml.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.Permissions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.Principal.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.Principal.Windows.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Security.SecureString.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.ServiceModel.Web.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.ServiceProcess.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Text.Encoding.CodePages.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Text.Encoding.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Text.Encoding.Extensions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Text.Encodings.Web.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Text.Json.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Text.RegularExpressions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Threading.Channels.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Threading.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Threading.Overlapped.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Threading.Tasks.Dataflow.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Threading.Tasks.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Threading.Tasks.Extensions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Threading.Tasks.Parallel.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Threading.Thread.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Threading.ThreadPool.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Threading.Timer.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Transactions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Transactions.Local.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.ValueTuple.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Web.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Web.HttpUtility.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Windows.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Windows.Extensions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Xml.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Xml.Linq.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Xml.ReaderWriter.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Xml.Serialization.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Xml.XDocument.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Xml.XmlDocument.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Xml.XmlSerializer.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Xml.XPath.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\System.Xml.XPath.XDocument.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\refs\WindowsBase.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Humax.ESS.Views.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Humax.ESS.Views.pdb
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\DevExtreme.AspNet.Core.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\DevExtreme.AspNet.Data.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.CodeAnalysis.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.CodeAnalysis.Razor.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.csproj.AssemblyReference.cache
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.GeneratedMSBuildEditorConfig.editorconfig
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.AssemblyInfoInputs.cache
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.AssemblyInfo.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.csproj.CoreCompileInputs.cache
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.MvcApplicationPartsAssemblyInfo.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.MvcApplicationPartsAssemblyInfo.cache
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.RazorAssemblyInfo.cache
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.RazorAssemblyInfo.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\scopedcss\bundle\Humax.ESS.styles.css
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\staticwebassets\Humax.ESS.StaticWebAssets.Manifest.cache
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\staticwebassets\Humax.ESS.StaticWebAssets.Pack.cache
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\staticwebassets\msbuild.Humax.ESS.Microsoft.AspNetCore.StaticWebAssets.props
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\staticwebassets\msbuild.build.Humax.ESS.props
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.Humax.ESS.props
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.Humax.ESS.props
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.TagHelpers.input.cache
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.TagHelpers.output.cache
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.RazorCoreGenerate.cache
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\BusinessTrip\Detail.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\BusinessTrip\Index.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\BusinessTrip\_Detail.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Employee\Index.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Employee\NewEmployees.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Employee\Profile.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Employee\_SearchEmployee.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Group\Index.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Kpi\Registration.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Kpi\SelfAssessment.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Leave\Detail.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Leave\Index.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Leave\_Detail.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Notification\Index.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Overtime\Detail.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Overtime\Index.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Overtime\_Detail.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\PaySlip\Index.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Profile\DetailExperiences.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Profile\DetailRelationship.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Profile\DetailTrainingProcess.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Profile\Index.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Profile\Relationship.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Profile\RewardChildren.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Profile\TrainingProcess.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Profile\WorkingExperiences.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Profile\_DetailExperiences.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Profile\_DetailRelationship.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Profile\_DetailTrainingProcess.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Proposal\Index.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Report\Index.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Report\OrgChart.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\CustomEditors\UploadFileStore.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_AccountLayout.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_DevExtremeLayout.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_Header.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_LanguagePartial.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_Layout2.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_MobileNav.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_Modal.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_Notification.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_RightSidebar.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_Sidebar.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_Sidebar2.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_SidebarTsk.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Progress\Index.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Progress\Partial\_Detail.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Project\Index.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Project\Partial\_All.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Project\Partial\_ChangePersons.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Project\Partial\_Complete.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Project\Partial\_Outofdate.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Project\Partial\_Process.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Project\Partial\_ProjectDetail.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Project\Partial\_ProjectDetailBak.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Report\Index.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Report\Partial\_Detail.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Grantt.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Index.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Kanban.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Partial\_All.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Partial\_Cancelled.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Partial\_Complete.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Partial\_Outofdate.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Partial\_Pause.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Partial\_Process.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Partial\_TaskDetail.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Partial\_TaskList.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Partial\_TaskReplica.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Task\Work\Partial\_TaskView.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Timesheet\DetailExplain.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Timesheet\DetailLostFinger.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Timesheet\Index.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Training\Index.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Training\_Evaluate.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Training\_Finished.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Training\_FormDynamic.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\Training\_Joinning.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.RazorTargetAssemblyInfo.cache
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.RazorTargetAssemblyInfo.cs
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.Views.pdb
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.csproj.CopyComplete
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\refint\Humax.ESS.dll
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\Humax.ESS.genruntimeconfig.cache
+D:\OOS sortware\OOS HUMAX ESS\Humax.ESS\obj\Debug\net5.0\ref\Humax.ESS.dll

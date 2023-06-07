@@ -1,0 +1,254 @@
+﻿@using Humax.ESS.Models.Trainning;
+@using Microsoft.AspNetCore.Mvc.Localization;
+
+@model List<TrainningOpenningModel>
+
+@inject IViewLocalizer T
+@{
+    ViewData["Title"] = T["Đào tạo"];
+}
+
+<link href="~/css/devextreme/dx-site.css" rel="stylesheet" />
+<script src="~/js/devextreme/dx-site.js" type="text/javascript"></script>
+
+<style>
+    .courses__body {
+        max-width: 100%;
+    }
+
+    .courses__line,
+    .courses__details {
+        margin-bottom: 15px;
+    }
+
+    .courses__wrap .courses__line:last-child {
+        margin-bottom: 0px;
+    }
+
+    .player__item {
+        padding: 0px;
+        border: unset;
+        background: unset;
+    }
+</style>
+
+<script>
+    function OpenEvaluate(_id, _title = '', _approve = 0) {
+        var __title = _title != '' ? _title : '@T["Đánh giá khóa học"]';
+        var __url = '/Training/Evaluate?id=' + _id;
+        var __popup = 'popup';
+        var __data = {
+            id: _id,
+            approve: _approve
+        };
+        var __width = 650;
+        var __offset = 55;
+
+        FormDetail(_id, __title, __url, __popup, __data, __width, __offset);
+    }
+
+    var Training = {
+        Joinning: function () {
+            $.ajax({
+                url: '/Training/Joinning',
+                dataType: 'html',
+                type: 'GET',
+                async: false,
+                data: {
+                },
+                success: function (response, status, jqXHR) {
+                    $('.courses__list[tab="#joinning"]').append(response);
+                },
+                error: function (jqXHR, status, err) {
+                    console.log(err);
+                },
+                complete: function (jqXHR, status) {
+                }
+            });
+        },
+        Finished: function () {
+            $.ajax({
+                url: '/Training/Finished',
+                dataType: 'html',
+                type: 'GET',
+                async: false,
+                data: {
+                },
+                success: function (response, status, jqXHR) {
+                    $('.courses__list[tab="#finished"]').append(response);
+                },
+                error: function (jqXHR, status, err) {
+                    console.log(err);
+                },
+                complete: function (jqXHR, status) {
+                }
+            });
+        }
+    };
+
+    $(function () {
+        $('.courses__link[tab="tab_courses"]').click(function () {
+            $('.courses__link[tab="tab_courses"]').removeClass('active');
+            $(this).addClass('active');
+            //
+            $('.courses__list[type="tab_content"]').addClass('hidden');
+            $('.courses__list[tab="' + $(this).attr('href') + '"]').removeClass('hidden');
+        });
+
+        // get thong tin các khóa học khác
+        Promise.all([Training.Joinning(), Training.Finished()]).then(function (values) {
+            console.log(values);
+        });
+    });
+</script>
+
+<div class="sorting1">
+    <div class="sorting1__row">
+        <h1 class="sorting1__title title">@T["Đào tạo"]</h1>
+        <div class="sorting1__options">
+            @*<div class="sorting1__search js-sorting-search">
+                    <button class="sorting1__open js-sorting-open">
+                        <svg class="icon icon-search">
+                            <use xlink:href="/img/sprite.svg#icon-search"></use>
+                        </svg>
+                    </button>
+                    <div class="sorting1__box"><input class="sorting1__input" type="text" placeholder="Search ..."></div>
+                </div>
+                <div class="dropdown js-dropdown">
+                    <a class="dropdown__head js-dropdown-head" href="#">
+                        <div class="dropdown__text">Sort by:</div>
+                        <div class="dropdown__category">Newest Post</div>
+                    </a>
+                    <div class="dropdown__body js-dropdown-body"><label class="checkbox checkbox_sm checkbox_green"><input class="checkbox__input" type="checkbox"><span class="checkbox__in"><span class="checkbox__tick"></span><span class="checkbox__text">Project Name</span></span></label><label class="checkbox checkbox_sm checkbox_green"><input class="checkbox__input" type="checkbox" checked="checked"><span class="checkbox__in"><span class="checkbox__tick"></span><span class="checkbox__text">Newest Project</span></span></label><label class="checkbox checkbox_sm checkbox_green"><input class="checkbox__input" type="checkbox" checked="checked"><span class="checkbox__in"><span class="checkbox__tick"></span><span class="checkbox__text">Due Date</span></span></label><label class="checkbox checkbox_sm checkbox_green"><input class="checkbox__input" type="checkbox"><span class="checkbox__in"><span class="checkbox__tick"></span><span class="checkbox__text">Project Type</span></span></label></div>
+                </div><a class="sorting1__filters" href="#">
+                    <svg class="icon icon-filters">
+                        <use xlink:href="/img/sprite.svg#icon-filters"></use>
+                    </svg>
+                </a>*@
+        </div>
+    </div>
+</div>
+
+<div class="courses__head">
+    @*<h1 class="courses__title">@T["Đào tạo"]</h1>*@
+    <div class="courses__row">
+        @* <div class="courses__options">
+                <div class="courses__search">
+                    <button class="courses__open">
+                        <svg class="icon icon-search">
+                            <use xlink:href="/img/sprite.svg#icon-search"></use>
+                        </svg>
+                    </button><input class="courses__input" type="text" placeholder="Find Course">
+                </div><button class="courses__btn btn btn_blue">
+                    <svg class="icon icon-plus">
+                        <use xlink:href="/img/sprite.svg#icon-plus"></use>
+                    </svg><span class="btn__text">New</span>
+                </button>
+            </div>*@
+        <ul class="courses__menu">
+            <a class="courses__link active" tab="tab_courses" href="#open">@T["Khóa học đang mở"]</a>
+            <a class="courses__link" tab="tab_courses" href="#joinning">@T["Khóa học đang tham gia"]</a>
+            <a class="courses__link" tab="tab_courses" href="#finished">@T["Khóa học đã hoàn thành"]</a>
+        </ul>
+        @* <div class="sorting">
+                <div class="sorting__options">
+                    <a class="sorting__filters" href="#">
+                        <svg class="icon icon-filters">
+                            <use xlink:href="/img/sprite.svg#icon-filters"></use>
+                        </svg>
+                    </a>
+                    <div class="dropdown js-dropdown">
+                        <a class="dropdown__head js-dropdown-head" href="#">
+                            <div class="dropdown__text">Sort by:</div>
+                            <div class="dropdown__category">Popular Class</div>
+                        </a>
+                        <div class="dropdown__body js-dropdown-body"><label class="checkbox checkbox_sm checkbox_green"><input class="checkbox__input" type="checkbox" /><span class="checkbox__in"><span class="checkbox__tick"></span><span class="checkbox__text">Project Name</span></span></label><label class="checkbox checkbox_sm checkbox_green"><input class="checkbox__input" type="checkbox" checked="checked" /><span class="checkbox__in"><span class="checkbox__tick"></span><span class="checkbox__text">Newest Project</span></span></label><label class="checkbox checkbox_sm checkbox_green"><input class="checkbox__input" type="checkbox" checked="checked" /><span class="checkbox__in"><span class="checkbox__tick"></span><span class="checkbox__text">Due Date</span></span></label><label class="checkbox checkbox_sm checkbox_green"><input class="checkbox__input" type="checkbox" /><span class="checkbox__in"><span class="checkbox__tick"></span><span class="checkbox__text">Project Type</span></span></label></div>
+                    </div>
+                    <div class="sorting__view">
+                        <a class="sorting__box" href="#">
+                            <svg class="icon icon-sorting-1">
+                                <use xlink:href="/img/sprite.svg#icon-sorting-1"></use>
+                            </svg>
+                        </a><a class="sorting__box" href="#">
+                            <svg class="icon icon-sorting-2">
+                                <use xlink:href="/img/sprite.svg#icon-sorting-2"></use>
+                            </svg>
+                        </a><a class="sorting__box active" href="#">
+                            <svg class="icon icon-sorting-4">
+                                <use xlink:href="/img/sprite.svg#icon-sorting-4"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>*@
+    </div>
+</div>
+
+<div class="courses__body">
+    <div class="courses__list" type="tab_content" tab="#open">
+        @{
+            if (Model != null && Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <div class="courses__item">
+                        <div class="courses__preview"><img class="courses__pic" src="img/courses-pic-6.jpg" alt=""></div>
+                        <div class="courses__wrap">
+                            <div class="courses__info">@item.TenKhoaHoc</div>
+                            <div class="courses__details">
+                                <span class="courses__desc">Địa điểm</span>
+                                <span class="courses__category">@item.DiaDiemDaoTao</span>
+                            </div>
+                            <div class="courses__details">
+                                <span class="courses__desc">Số tháng cam kết:</span>
+                                <span class="courses__category">@item.SoThangCamKet</span>
+                            </div>
+                            <div class="courses__line">
+                                <div class="courses__box">
+                                    <svg class="icon icon-clock">
+                                        <use xlink:href="/img/sprite.svg#icon-clock"></use>
+                                    </svg><span>@(string.Format("{0}-{1}", (item.TuNgay.HasValue ? item.TuNgay.Value.ToString("dd/MM/yyyy") : "#"), (item.ToiNgay.HasValue ? item.ToiNgay.Value.ToString("dd/MM/yyyy") : "#")))</span>
+                                </div>
+                                <div class="courses__box">
+                                    @{
+                                        if (item.IsBatBuocThamGia.GetValueOrDefault(false))
+                                        {
+                                            <svg class="icon icon-check-circle">
+                                                <use xlink:href="/img/sprite.svg#icon-check-circle"></use>
+                                            </svg><span>Bắt buộc</span>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                            <div class="courses__line">
+                                <div class="courses__box">
+                                    <button class="player__btn btn btn_blue">Đăng ký tham gia</button>
+                                </div>
+                                <div class="courses__box">
+                                    <button class="player__btn btn btn_brown">Từ chối tham gia</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        }
+    </div>
+
+    <div class="courses__list hidden" type="tab_content" tab="#joinning">
+    </div>
+
+    <div class="courses__list hidden" type="tab_content" tab="#finished">
+    </div>
+</div>
+
+@(Html.DevExtreme().Popup()
+    .ID("popup")
+    //.Width(300)
+    //.Height('auto')
+    .ShowTitle(true)
+    .Title("Đánh giá khóa học")
+    .Visible(false)
+    .DragEnabled(false)
+    .CloseOnOutsideClick(true)
+)

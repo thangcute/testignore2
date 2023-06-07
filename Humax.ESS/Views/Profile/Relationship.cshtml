@@ -1,0 +1,181 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Humax.ESS.Models.Profile.Relationship
+@inject IViewLocalizer T
+@{
+    ViewData["Title"] = T["Quan hệ nhân thân"];
+    string errorMessage = null;
+    if (ViewData["ErrorMessage"] != null)
+        errorMessage = ViewData["ErrorMessage"].ToString();
+}
+
+<style>
+    /*::-webkit-scrollbar {
+        width: 0 !important
+    }*/
+</style>
+<link href="~/css/devextreme/dx-site.css" rel="stylesheet" />
+<script src="~/js/devextreme/dx-site.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    function OpenPopup(_id, _title = '', _approve = 0) {
+        var __title = _title != '' ? _title : '@T["Thêm mới Nhân thân"]';
+        var __url = '/Profile/DetailRelationship';
+        var __popup = 'popup';
+        var __data = {
+            id: _id,
+            approve: _approve
+        };
+        FormDetail(_id, __title, __url, __popup, __data);
+    }
+
+    // Hien thi html trang thai xet duyet
+    function cellTempApproveStatus(container, options) {
+        var _data = options.data;
+        $("<div />").html(_data.ApproveStatusDisplay).appendTo(container);
+    }
+
+    // Xoa thong tin
+    function jsDelete(e) {
+        // success-info-warning-error
+        var _data = e.row.data;
+        var _QTQuanHeGiaDinhID = _data.QTQuanHeGiaDinhID;
+        var _XetDuyet = _data.XetDuyet;
+
+        if (typeof _QTQuanHeGiaDinhID != 'undefined' && _QTQuanHeGiaDinhID > 0) {
+            if (_XetDuyet == null || _XetDuyet == 0) {
+                Confirm("Bạn muốn tiếp tục thực hiện thao tác ?").show().done(function (dialogResult) {
+                    if (dialogResult.status) {
+                        $.ajax({
+                            url: '/Profile/DeleteRelationship',
+                            //contentType: "application/json",
+                            dataType: "json",
+                            type: 'POST',
+                            async: false,
+                            data: {
+                                id: _QTQuanHeGiaDinhID
+                            },
+                            success: function (response, status, jqXHR) {
+                                console.log(response);
+                                if (response.success == 1) {
+                                    toastr.success("Xóa Quan hệ Nhân thân thành công !");
+
+                                    if ($('#gridContainer').length)
+                                        $("#gridContainer").dxDataGrid('instance').refresh();
+                                }
+                                else
+                                    toastr.warning(response.message);
+                            },
+                            error: function (jqXHR, status, err) {
+                                toastr.warning("Lỗi xử lý !");
+                            },
+                            complete: function (jqXHR, status) {
+                            }
+                        });
+                    } else
+                        toastr.warning("Bạn đã hủy thao táo");
+                });
+            } else
+                toastr.warning("Bạn không thể xóa dữ liệu này");
+        } else
+            toastr.warning("Không có thông tin chọn");
+    }
+
+    // Sua thong tin
+    function jsEdit(e) {
+        var _data = e.row.data;
+        var _QTQuanHeGiaDinhID = _data.QTQuanHeGiaDinhID;
+        var _HoTen = _data.HoTen;
+        var _XetDuyet = _data.XetDuyet;
+        if (typeof _XetDuyet == 'undefined' || _XetDuyet == null)
+            _XetDuyet = 0;
+
+        if (typeof _QTQuanHeGiaDinhID != 'undefined' && _QTQuanHeGiaDinhID > 0) {
+            OpenPopup(_QTQuanHeGiaDinhID, _HoTen, _XetDuyet);
+        } else
+            toastr.warning("Không có thông tin chọn");
+    }
+</script>
+
+<div class="sorting1">
+    <div class="sorting1__row">
+        <h1 class="sorting1__title title">@T["Quan hệ nhân thân"]</h1>
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <div class="error-messsage">@errorMessage</div>
+        }
+        <div class="sorting1__options">
+            <div class="sorting1__search js-sorting-search">
+                <button class="group__btn btn btn_blue" onClick="OpenPopup(0, '');">
+                    <i class="icon dx-icon-plus"></i>@T["Đăng ký"]
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-block">
+    @(Html.DevExtreme().DataGrid<RelationshipListModel>()
+        .ID("gridContainer")
+        .DataSource(d => d.Mvc()
+            .Controller("Profile")
+            .LoadAction("GetRelationship")
+            .Key("QTQuanHeGiaDinhID")
+        )
+        .DateSerializationFormat("yyyy-MM-dd HH:mm:ss")
+        .ShowBorders(true)
+        .ShowRowLines(true)
+        .ShowColumnLines(true)
+        .ColumnAutoWidth(true)
+        .ColumnHidingEnabled(true)
+        .RowAlternationEnabled(true)
+        .Columns(columns => {
+        columns.Add().Caption("No").Alignment(HorizontalAlignment.Center).CellTemplate(new JS("dataGrid_rowIndex_cellTemplate")).Width(80);
+        columns.Add().Caption(T["Thông tin Nhân thân"].Value).CellTemplate(@<text>
+                <div>@T["Họ tên"]: <span class="dev-grid-title"><%- data.HoTen %></span></div>
+                <div>@T["Qua hệ"]: <span class="dev-grid-start-time"><%- data.QuanHe %></span> - @T["Ngày sinh"]: <span class="dev-grid-end-time"><%- data.DateOfBirthDisplay %></span></div>
+                <div>@T["Địa chỉ"]: <span><%- data.DiaChiThuongTru %></span></div>
+            </text>);
+            columns.Add().Caption(T["Thông tin Giảm trừ"].Value).CellTemplate(@<text>
+                <div>@T["CMT/TCC"]: <span class="dev-grid-start-time"><%- data.CMND %></span></div>
+                <div>@T["Điện thoại"]: <span class="dev-grid-start-time"><%- data.DienThoaiLienHe %></span></div>
+                <div>@T["Nghề nghiệp"]: <span><%- data.NgheNghiepHienNay %></span></div>
+            </text>);
+            columns.AddFor(m => m.GhiChu).Caption(T["Ghi chú"].Value);
+            columns.Add().Caption(T["Trạng thái"].Value).CellTemplate(new JS("cellTempApproveStatus")).Width(160);
+            columns.Add().Caption(T["#"].Value)
+            .Type(GridCommandColumnType.Buttons)
+            .Width(80)
+            .Buttons(b =>
+            {
+                b.Add().Icon("edit").OnClick("jsEdit");
+                b.Add().Icon("trash").OnClick("jsDelete");
+            });
+        })
+        .Paging(p => p.PageSize(100))
+        .Pager(p => p
+            .Visible(true)
+            .ShowPageSizeSelector(false)
+            .ShowInfo(true)
+            .InfoText(new JS("gridInfoText"))
+            .ShowNavigationButtons(true)
+        )
+    )
+    @(Html.DevExtreme().Popup()
+        .ID("popup")
+        //.Width(300)
+        //.Height('auto')
+        .ShowTitle(true)
+        .Title("Thêm mới Quan hệ Nhân thân")
+        .Visible(false)
+        .DragEnabled(false)
+        .CloseOnOutsideClick(true)
+    )
+</div>
+
+@*.Pager(p => p
+    .ShowPageSizeSelector(true)
+    .AllowedPageSizes(new[] { 5, 10, 20 })
+    .ShowInfo(true)
+    .InfoText(new JS("gridInfoText"))
+    .ShowNavigationButtons(true)
+)*@

@@ -1,0 +1,23 @@
+﻿{
+  "Làm thêm giờ": "Overtime",
+  "Quản lý làm thêm giờ": "Overtime Management",
+  "Đăng ký": "Register",
+  "Ngày đăng ký": "Registration Date",
+  "Thông tin chi tiết": "Details Information",
+  "Từ ngày": "From Date",
+  "Đến ngày": "To Date",
+  "Lý do": "Reason",
+  "Trạng thái": "Status",
+  "Người duyệt": "Approver",
+  "Đăng ký làm thêm giờ": "OT Registration",
+  "Người nộp đơn": "Applicant",
+  "Mã nhân viên": "Employee Code",
+  "Đơn vị": "Department",
+  "Ca làm việc": "Shift",
+  "Làm thêm trước ca": "Pre-shift OT",
+  "Từ giờ": "From time",
+  "Đến giờ": "To time",
+  "Làm thêm sau ca": "After shift OT",
+  "Lý do tăng ca": "OT Reason",
+  "Ghi chú": "Note"
+}

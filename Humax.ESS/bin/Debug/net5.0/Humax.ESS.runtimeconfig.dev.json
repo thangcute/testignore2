@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\daothang\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\daothang\\.nuget\\packages"
+    ]
+  }
+}

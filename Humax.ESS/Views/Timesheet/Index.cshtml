@@ -1,0 +1,309 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Humax.ESS.Models.Timesheet
+@inject IViewLocalizer T
+@{
+    ViewData["Title"] = T["Bảng công tháng"];
+    string errorMessage = null;
+    if (ViewData["ErrorMessage"] != null)
+        errorMessage = ViewData["ErrorMessage"].ToString();
+}
+
+<link href="~/css/devextreme/dx-site.css" rel="stylesheet" />
+<script src="~/js/devextreme/dx-site.js" type="text/javascript"></script>
+
+<script>
+    function calcCellValue(e) {
+        //console.log(e);
+    }
+
+    function cellTempDienGiai(container, options) {
+        var _data = options.data;
+        var _htmlStr = ""
+        $("<div />").html(_htmlStr).appendTo(container);
+    }
+
+    function jsGiaiTrinhThemGio(e) {
+        var _element = e.element;
+        if (typeof _element != 'undefined' && _element != null && typeof _element[0].attributes.ngaychamcong != 'undefined' && _element[0].attributes.ngaychamcong != null) {
+            var _ngaychamcong = _element[0].attributes.ngaychamcong.value;
+
+            if (typeof _ngaychamcong != 'undefined' && _ngaychamcong != '') {
+                var _date = new Date(_ngaychamcong);
+                if (typeof _date != 'undefined' && _date != null) {
+                    var _year = _date.getFullYear(), _month = _date.getMonth() + 1, _day = _date.getDate();
+                    var __NgayChamCong = `${_year}-${_month}-${_day}`;
+
+                    var __id = "popup";
+                    var __title = '@T["Giải trình thêm giờ"]' + ` Ngày: ${(_day > 9 ? _day : '0' + _day)}-${(_month > 9 ? _month : '0' + _month)}-${_year}`;
+                    var __url = '/Timesheet/DetailLostFinger';
+                    var __popup = 'popup';
+                    var __data = {
+                        date: __NgayChamCong
+                    };
+                    var __width = 500;
+                    var __offset = 0;
+                    FormDetail(__id, __title, __url, __popup, __data, __width, __offset);
+                }
+            }
+        } else
+            toastr.warning("Không tìm thấy thông tin ngày công");
+    }
+
+    function jsGiaiTrinhDiMuonVeSom(e) {
+        var _element = e.element;
+        var __isDimuon = false;
+        if (typeof _element != 'undefined' && _element != null && typeof _element[0].attributes.ngaychamcong != 'undefined' && _element[0].attributes.ngaychamcong != null) {
+            var _ngaychamcong = _element[0].attributes.ngaychamcong.value;
+
+            if (typeof _element[0].attributes.dimuon != 'undefined' && _element[0].attributes.dimuon != '') {
+                var _dimuon = _element[0].attributes.dimuon.value;
+                if (typeof _dimuon != 'undefined' && _dimuon != '')
+                    __isDimuon = true;
+            }
+
+            if (typeof _ngaychamcong != 'undefined' && _ngaychamcong != '') {
+                var _date = new Date(_ngaychamcong);
+                if (typeof _date != 'undefined' && _date != null) {
+                    var _year = _date.getFullYear(), _month = _date.getMonth() + 1, _day = _date.getDate();
+                    var __NgayChamCong = `${_year}-${_month}-${_day}`;
+
+                    var __id = "popup";
+                    var __title = (__isDimuon != true ? '@T["Giải trình về sớm"]' : '@T["Giải trình đi muộn"]') + ` Ngày: ${(_day > 9 ? _day : '0' + _day)}-${(_month > 9 ? _month : '0' + _month)}-${_year}`;
+                    var __url = '/Timesheet/DetailExplain';
+                    var __popup = 'popup';
+                    var __data = {
+                        date: __NgayChamCong,
+                        isDimuon: __isDimuon
+                    };
+                    var __width = 500;
+                    var __offset = 0;
+                    FormDetail(__id, __title, __url, __popup, __data, __width, __offset);
+                }
+            }
+        }
+    }
+
+    function contentReady(e) {
+        $(".dx-datagrid-nodata").hide();
+    }
+
+    var MonthTimeSheet = function () {
+        var _MonthTimeSheet = $("#MonthTimeSheet").dxDateBox("instance").option("value");   //$("#MonthTimeSheet").dxDateBox("option", "value")
+        if (typeof _MonthTimeSheet != 'undefined' && _MonthTimeSheet != '') {
+            var _month = _MonthTimeSheet.getMonth() + 1;
+            var _year = _MonthTimeSheet.getFullYear();
+            return _year + '-' + (_month > 9 ? _month : ('0' + _month));
+        }
+        return '';
+    };
+
+    $(function () {
+        $('#btnSearch').click(function () {
+            if ($('#gridTimeSheet').length)
+                $("#gridTimeSheet").dxDataGrid('instance').refresh();
+
+            if ($('#gridSummary').length)
+                $("#gridSummary").dxDataGrid('instance').refresh();
+        });
+    });
+</script>
+
+<div class="sorting1">
+    <div class="sorting1__row">
+        <h1 class="sorting1__title title">@T["Bảng công tháng"]</h1>
+    </div>
+    <div class="sorting1__form">
+        <div class="sorting1__wrap">
+            <div class="sorting1__fieldset">
+                <div class="videos__field">
+                    @(Html.DevExtreme().DateBox()
+                        .ID("MonthTimeSheet")
+                        .ShowClearButton(true)
+                        .DisplayFormat("MM-yyyy")
+                        .Type(DateBoxType.Date)
+                        .UseMaskBehavior(true)
+                        .Value(DateTime.Now)
+                    )
+                </div>
+                <div class="sorting1__field">
+                    <button id="btnSearch" class="sorting1__btn group__btn btn dx-button-mode-contained dx-button-success"><i class="icon dx-icon-find"></i> Áp dụng</button>
+                </div>
+            </div>
+        </div>
+        @*<button id="btnSearch" class="sorting1__btn btn btn_blue">Áp dụng</button>*@
+    </div>
+</div>
+
+<div class="content-block">
+    <div>
+        <div class="page2__col page2__col_w65 ml-0 flt-left">
+            @(Html.DevExtreme().DataGrid<TimesheetModel>()
+                .ID("gridTimeSheet")
+                .DataSource(d => d.Mvc()
+                    .Controller("Timesheet")
+                    .LoadAction("Get")
+                    .LoadParams(new { MonthTimeSheet = new JS("MonthTimeSheet") })
+                    //.Key("TongHopTheoNgayID")
+                )
+                .DateSerializationFormat("yyyy-MM-dd HH:mm:ss")
+                .ShowBorders(true)
+                .ShowRowLines(true)
+                .ShowColumnLines(true)
+                .ColumnAutoWidth(true)
+                .ColumnHidingEnabled(true)
+                .RowAlternationEnabled(true)
+                .Columns(columns => {
+                    columns.Add().Caption(T["Ngày công"].Value).CellTemplate(@<text>
+                        <div class="dev-grid-day-of-week <%- data.Thu %>"><%- data.Thu %></div>
+                        <div class="dev-grid-day-of-month"><%- data.NgayThang %></div>
+                    </text>).Width(120).AllowSorting(false);
+                    columns.Add().Caption(T["Thời gian"].Value).CellTemplate(@<text>
+                        <div>
+                            <% if(data.TG_Den.trim() != "00:00:00" && data.TG_Den.trim() != "" && data.TG_Den != null) { %>
+                                <span class="group__btn btn btn_blue-light p-t-3 p-b-3"><%= data.TG_Den %></span>
+                            <% } %>
+
+                            <% if(data.TG_Ra.trim() != "00:00:00" && data.TG_Ra.trim() != "" && data.TG_Ra != null) { %>
+                                <span class="group__btn btn btn_blue-light p-t-3 p-b-3"><%= data.TG_Ra %></span>
+                            <% } %>
+
+                            <% if(data.TG_Vao.trim() != "00:00:00" && data.TG_Vao.trim() != "" && data.TG_Vao != null) { %>
+                                <span class="group__btn btn btn_blue-light p-t-3 p-b-3"><%= data.TG_Vao %></span>
+                            <% } %>
+
+                            <% if(data.TG_Ve.trim() != "00:00:00" && data.TG_Ve.trim() != "" && data.TG_Ve != null) { %>
+                                <span class="group__btn btn btn_blue-light p-t-3 p-b-3"><%= data.TG_Ve %></span>
+                            <% } %>
+
+                            <% if(data.NghiPhep_CongTac != "" && data.NghiPhep_CongTac != null) { %>
+                                <p class="mgb-6 mgt-6"><span class="group__btn btn dx-button-mode-contained dx-button-danger p-t-3 p-b-3"><%= data.NghiPhep_CongTac %></span></p>
+                            <% } %>
+
+                            <% if(data.DangKy != "" && data.DangKy != null) { %>
+                                <p class="mgb-6 mgt-6"><span class="group__btn btn btn_yellow p-t-3 p-b-3"><%= data.DangKy %></span></p>
+                            <% } %>
+                        </div>
+                    </text>).Width(250).AllowSorting(false);
+                    columns.Add().Caption(T["Ghi chú"].Value).CellTemplate(@<text>
+                        <div>
+                            <p>
+                                <span class="">Ca: <%= data.CaLamViec == null ? "" : data.CaLamViec %></span>
+                                 - <span class="">CLV: <%= data.TG_LamViec == null ? 0 : data.TG_LamViec %></span>
+                                 - <span class="">OT: <%= data.TG_LamThem == null ? 0 : data.TG_LamThem %></span>
+                            </p>
+
+                            <% if(data.DiMuon != null && data.DiMuon > 0) { %>
+                                <p class="mgt-6 mgb-6"><span class="group__btn btn btn_yellow p-t-3 p-b-3">Đi muộn: <%= data.DiMuon %> phút</span></p>
+                            <% } %>
+
+                            <% if(data.VeSom != null && data.VeSom > 0) { %>
+                                <p class="mgt-6 mgb-6"><span class="group__btn btn btn_yellow p-t-3 p-b-3">Về sớm: <%= data.VeSom %> phút</span></p>
+                            <% } %>
+
+                            <% if(data.GiaiTrinhDiMuon != null && data.GiaiTrinhDiMuon != "" && data.DisableGiaiTrinhDiMuon != null && data.DisableGiaiTrinhDiMuon == false) { %>
+                                <p class="mgt-6 mgb-6"><span class="group__btn btn dx-button-mode-contained dx-button-success p-t-3 p-b-3"><%= data.GiaiTrinhDiMuon %></span></p>
+                            <% } %>
+
+                            <% if(data.GiaiTrinhVeSom != null && data.GiaiTrinhVeSom != "" && data.DisableGiaiTrinhVeSom != null && data.DisableGiaiTrinhVeSom == false) { %>
+                                <p class="mgt-6 mgb-6"><span class="group__btn btn btn_yellow p-t-3 p-b-3"><%= data.GiaiTrinhVeSom %></span></p>
+                            <% } %>
+
+                            <% if(data.GiaiTrinhThemGio != null && data.GiaiTrinhThemGio != "" && data.DisableGiaiThemGio != null && data.DisableGiaiThemGio == false) { %>
+                                <p class="mgt-6 mgb-6"><span class="group__btn btn dx-button-mode-contained dx-button-danger p-t-3 p-b-3"><%= data.GiaiTrinhThemGio %></span></p>
+                            <% } %>
+                        </div>
+                    </text>).Width(300).AllowSorting(false); //new JS("cellTempDienGiai") //.CalculateCellValue("calcCellValue")
+                    columns.AddFor(m => m.NgayChamCong).Caption(T["Giải trình"].Value).CellTemplate(@<text>
+                        <div>
+                            <% if(
+                                (
+                                    (data.GiaiTrinhDiMuon == null || data.GiaiTrinhDiMuon == "") && data.DiMuon != null && data.DiMuon > 0
+                                ) || (
+                                    (data.GiaiTrinhVeSom == null || data.GiaiTrinhVeSom == "") && data.VeSom != null && data.VeSom > 0
+                                )
+                            ) { %>
+                            <p>
+                                <% if(data.DiMuon != null && data.DiMuon > 0 && data.DisableGiaiTrinhDiMuon != null && data.DisableGiaiTrinhDiMuon == false) { %>
+                                    @(Html.DevExtreme().Button()
+                                        .Text("Giải trình đi muộn")
+                                        .ElementAttr(new Dictionary<string, object>() {
+                                            { "class", "group__btn btn btn_blue-light p-t-3 p-b-3 btn-giai-trinh" },
+                                            { "NgayChamCong", new JS("data.NgayChamCong") },
+                                            { "Dimuon", true }
+                                        })
+                                        .OnClick("jsGiaiTrinhDiMuonVeSom")
+                                    )
+                                <% } %>
+
+                                <% if(data.VeSom != null && data.VeSom > 0 && data.DisableGiaiTrinhVeSom != null && data.DisableGiaiTrinhVeSom == false) { %>
+                                    @(Html.DevExtreme().Button()
+                                        .Text("Giải trình về sớm")
+                                        .ElementAttr(new Dictionary<string, object>() {
+                                            { "class", "group__btn btn btn_yellow p-t-3 p-b-3 btn-giai-trinh" },
+                                            { "NgayChamCong", new JS("data.NgayChamCong") }
+                                        })
+                                        .OnClick("jsGiaiTrinhDiMuonVeSom")
+                                    )
+                                <% } %>
+                            </p>
+                            <% } %>
+
+                            <% if(
+                                (data.DangKy == "" || data.DangKy == null) &&
+                                (data.NghiPhep_CongTac == "" || data.NghiPhep_CongTac == null) &&
+                                (data.TG_LamViec == 0 || data.TG_LamViec == null) &&
+                                ((data.Thu != "Sat" && data.Thu != "T7") || ((data.Thu == "Sat" || data.Thu == "T7") && data.IsLamThubay)) &&
+                                ((data.Thu != "Sun" && data.Thu != "CN") || ((data.Thu == "Sun" || data.Thu == "CN") && data.IsLamChuNhat)) &&
+                                ((data.TG_Ve == "" || data.TG_Ve == "00:00:00" || data.TG_Ve == null) && (data.TG_Den == "" || data.TG_Den == "00:00:00" || data.TG_Den == null)) &&
+                                (data.DisableGiaiThemGio != null && data.DisableGiaiThemGio == false)
+                            ) { %>
+                                @(Html.DevExtreme().Button()
+                                    .Text("Giải trình thiếu giờ")
+                                    .ElementAttr(new Dictionary<string, object>() {
+                                        { "class", "group__btn btn dx-button-mode-contained dx-button-danger btn-giai-trinh" },
+                                        { "NgayChamCong", new JS("data.NgayChamCong") }
+                                    })
+                                    .OnClick("jsGiaiTrinhThemGio")
+                                )
+                            <% } %>
+                        </div>
+                    </text>);
+                })
+                .OnContentReady("contentReady")
+                .Paging(p => p.PageSize(100))
+            )
+        </div>
+        <div class="page2__col page2__col_w35 mr-0 flt-right">
+            @(Html.DevExtreme().DataGrid<TimeSheetSummaryModel>()
+                .ID("gridSummary")
+                .DataSource(d => d.Mvc()
+                    .Controller("Timesheet")
+                    .LoadAction("GetSummary")
+                    .LoadParams(new { MonthTimeSheet = new JS("MonthTimeSheet") })
+                //.Key("TongHopTheoNgayID")
+                )
+                .ShowBorders(true)
+                .ShowRowLines(true)
+                .ShowColumnLines(true)
+                .ColumnAutoWidth(true)
+                .ColumnHidingEnabled(true)
+                .RowAlternationEnabled(true)
+                .Columns(columns => {
+                    columns.AddFor(m => m.Key).Caption(T["Tổng công"].Value).AllowSorting(false);
+                    columns.AddFor(m => m.Value).Caption(T["Số lượng"].Value).Width(150).AllowSorting(false);
+                })
+                .OnContentReady("contentReady")
+                .Paging(p => p.PageSize(100))
+            )
+        </div>
+    </div>
+</div>
+@(Html.DevExtreme().Popup()
+    .ID("popup")
+    .ShowTitle(true)
+    .Title("Giải trình công")
+    .Visible(false)
+    .DragEnabled(false)
+    .CloseOnOutsideClick(true)
+)
+@*(data.DiMuon > 0 ? ("@T["Số phú đi muộn"]:") : "Không giảm trừ")*@

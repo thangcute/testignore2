@@ -1,0 +1,90 @@
+﻿@using Humax.ESS.Helpers
+
+@{
+    var userInfo = Context.Session.GetCurrentUser();
+}
+<div class="users1 js-users1">
+    <div class="users1__wrapper">
+        <div class="users1__group">
+            <div class="users1__category">Your Pages</div>
+            <div class="users1__list">
+                <a class="users1__item" href="#">
+                    <div class="ava"><img class="ava__pic" src="~/img/ava-3.png" alt="" /></div>
+                    <div class="users1__text">Cynthia Cox</div>
+                    <div class="users1__time">11 min</div>
+                </a><a class="users1__item" href="#">
+                    <div class="ava" style="background-color: #A461D8;">DQ</div>
+                    <div class="users1__text">Danny Quinn</div>
+                    <div class="users1__online"> </div>
+                </a>
+            </div>
+        </div>
+        <div class="users1__group">
+            <div class="users1__category">Friends</div>
+            <div class="users1__list">
+                <a class="users1__item" href="#">
+                    <div class="ava active"><img class="ava__pic" src="~/img/ava-5.png" alt="" /></div>
+                    <div class="users1__text">Morgan</div>
+                    <div class="users1__time">11 min</div>
+                </a><a class="users1__item" href="#">
+                    <div class="ava"><img class="ava__pic" src="~/img/ava-6.png" alt="" /></div>
+                    <div class="users1__text">Stanley Burton</div>
+                    <div class="users1__online"></div>
+                </a><a class="users1__item" href="#">
+                    <div class="ava" style="background-color: #FF9AD5;">AA</div>
+                    <div class="users1__text">Allen Anderson</div>
+                    <div class="users1__online"></div>
+                </a><a class="users1__item" href="#">
+                    <div class="ava"><img class="ava__pic" src="~/img/ava-2.png" alt="" /></div>
+                    <div class="users1__text">Lucas West</div>
+                    <div class="users1__time">11 min</div>
+                </a><a class="users1__item" href="#">
+                    <div class="ava"><img class="ava__pic" src="~/img/ava-8.png" alt="" /></div>
+                    <div class="users1__text">Danny Moore</div>
+                    <div class="users1__time">9 min</div>
+                </a><a class="users1__item" href="#">
+                    <div class="ava"><img class="ava__pic" src="~/img/ava-9.png" alt="" /></div>
+                    <div class="users1__text">Jason Gutierrez</div>
+                    <div class="users1__online"></div>
+                </a><a class="users1__item" href="#">
+                    <div class="ava active"><img class="ava__pic" src="~/img/ava-11.png" alt="" /></div>
+                    <div class="users1__text">Jesus Cooper</div>
+                    <div class="users1__online"></div>
+                </a><a class="users1__item" href="#">
+                    <div class="ava active" style="background-color: #50B5FF;">JH</div>
+                    <div class="users1__text">Joshua Hunt</div>
+                    <div class="users1__time">11 min</div>
+                </a><a class="users1__item" href="#">
+                    <div class="ava"><img class="ava__pic" src="@(userInfo.AvatarUrl)" alt="" /></div>
+                    <div class="users1__text">Jimmy Maxwell</div>
+                    <div class="users1__online"></div>
+                </a>
+            </div>
+        </div>
+        <div class="users1__group">
+            <div class="users1__category">Groups</div>
+            <div class="users1__list">
+                <a class="users1__item" href="#">
+                    <div class="ava" style="background-color: #FF9AD5;">WD</div>
+                    <div class="users1__text">Web Designer</div>
+                    <div class="users1__time">3hr</div>
+                </a><a class="users1__item" href="#">
+                    <div class="ava" style="background-color: #A461D8;">TI</div>
+                    <div class="users1__text">Topcoder Indonesia</div>
+                    <div class="users1__online"></div>
+                </a><a class="users1__item" href="#">
+                    <div class="ava" style="background-color: #FF974A;">C</div>
+                    <div class="users1__text">Creativemarket YK</div>
+                    <div class="users1__online"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <form class="users1__field">
+        <button class="users1__btn">
+            <svg class="icon icon-search">
+                <use xlink:href="/img/sprite.svg#icon-search"></use>
+            </svg>
+        </button><input class="users1__input" type="text" placeholder="Search..." />
+    </form>
+</div>

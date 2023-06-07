@@ -1,0 +1,107 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Humax.ESS.Models.Profile.Experiences
+@model ExperienceModel
+@inject IViewLocalizer T
+
+@(Html.DevExtreme().Form<ExperienceModel>()
+    .ShowValidationSummary(false)
+    .ID("form")
+    .ColCount(12)
+    .Items(items => {
+        items.AddSimpleFor(m => m.KinhNghiemID)
+                .ColSpan(12)
+                .Label(l => l.Visible(false))
+                .CssClass("hidden-control");
+
+        items.AddSimpleFor(m => m.NoiLamViec)
+                        .ColSpan(12)
+                        .Label(e => e
+                            .Text("Nơi làm việc")
+                        )
+                        .Editor(e => e
+                            .TextBox()
+                            .Placeholder("Nơi làm việc")
+                            .Width("100%")
+                            .Disabled(false)
+                            .ReadOnly(true)
+                        );
+
+        items.AddSimpleFor(m => m.TuNgay)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Ngày bắt đầu")
+            )
+            .Editor(e => e
+                .DateBox()
+                .ShowClearButton(true)
+                .Width("100%")
+                .DisplayFormat("dd-MM-yyyy")
+                .ReadOnly(true)
+            )
+            .IsRequired(false);
+
+        items.AddSimpleFor(m => m.ToiNgay)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Ngày kết thúc")
+            )
+            .Editor(e => e
+                .DateBox()
+                .ShowClearButton(true)
+                .Width("100%")
+                .DisplayFormat("dd-MM-yyyy")
+                .ReadOnly(true)
+            )
+            .IsRequired(false);
+
+        items.AddSimpleFor(m => m.ChucVu)
+                        .ColSpan(12)
+                        .Label(e => e
+                            .Text("Vị trí")
+                        )
+                        .Editor(e => e
+                            .TextBox()
+                            .Placeholder("Vị trí làm việc")
+                            .Width("100%")
+                            .Disabled(false)
+                            .ReadOnly(true)
+                        );
+
+        items.AddSimpleFor(m => m.MucLuong)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Mức lương")
+            )
+            .Editor(e => e
+                .NumberBox()
+                .Placeholder("Mức lương")
+                .Max(10000000000)
+                .Format("#,##0.##")//#0.##
+                .ShowSpinButtons(true)
+                .ShowClearButton(true)
+                .Width("100%")
+                .Disabled(false)
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.NganhNgheID)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Ngành nghề")
+            )
+            .Editor(e => e
+                .SelectBox()
+                .ShowClearButton(true)
+                .Placeholder("Ngành nghề")
+                .Width("100%")
+                .Disabled(false)
+                .DataSource(d => d.RemoteController()
+                    .Key("Id")
+                    .LoadUrl("/Category/GetCategoryByType?type=NS_DsNganhNghe")
+                )
+                .DisplayExpr("Name")
+                .ValueExpr("Id")
+                .ReadOnly(true)
+            );
+    }).FormData(Model)
+)

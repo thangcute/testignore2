@@ -1,0 +1,240 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Humax.ESS.Models.Profile.TrainingProcess
+@model TrainingProcessModel
+@inject IViewLocalizer T
+
+@(Html.DevExtreme().Form<TrainingProcessModel>()
+    .ShowValidationSummary(false)
+    .ID("form")
+    .ColCount(12)
+    .Items(items => {
+        items.AddSimpleFor(m => m.QTDaoTaoID)
+                .ColSpan(12)
+                .Label(l => l.Visible(false))
+                .CssClass("hidden-control");
+
+        items.AddSimpleFor(m => m.LopDaoTao)
+            .ColSpan(12)
+            .Label(e => e
+                .Text("Lớp đào tạo")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Lớp đào tạo")
+                .Width("100%")
+                .Disabled(false)
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.NoiDungDaoTao)
+            .ColSpan(12)
+            .Label(e => e
+                .Text("Nội dung")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Nội dung Đào tạo")
+                .Width("100%")
+                .Disabled(false)
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.NoiDaoTao)
+            .ColSpan(12)
+            .Label(e => e
+                .Text("Nơi Đào tạo")
+            )
+            .Editor(e => e
+                .TextBox()
+                .Placeholder("Nơi Đào tạo")
+                .Width("100%")
+                .Disabled(false)
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.TuNgay)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Ngày bắt đầu")
+            )
+            .Editor(e => e
+                .DateBox()
+                .ShowClearButton(true)
+                .Width("100%")
+                .DisplayFormat("dd-MM-yyyy")
+                .ReadOnly(true)
+            )
+            .IsRequired(false);
+
+        items.AddSimpleFor(m => m.ToiNgay)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Ngày kết thúc")
+            )
+            .Editor(e => e
+                .DateBox()
+                .ShowClearButton(true)
+                .Width("100%")
+                .DisplayFormat("dd-MM-yyyy")
+                .ReadOnly(true)
+            )
+            .IsRequired(false);
+
+        items.AddSimpleFor(m => m.KhoaDaoTaoID)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Chương trình")
+            )
+            .Editor(e => e
+                .SelectBox()
+                .ShowClearButton(true)
+                .Placeholder("Chương trình")
+                .Width("100%")
+                .Disabled(false)
+                .DataSource(d => d.RemoteController()
+                    .Key("Id")
+                    .LoadUrl("/Category/GetCategoryByType?type=NS_DT_KhoaDaoTao")
+                )
+                .DisplayExpr("Name")
+                .ValueExpr("Id")
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.HeDaoTaoID)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Hệ Đào tạo")
+            )
+            .Editor(e => e
+                .SelectBox()
+                .ShowClearButton(true)
+                .Placeholder("Hệ Đào tạo")
+                .Width("100%")
+                .Disabled(false)
+                .DataSource(d => d.RemoteController()
+                    .Key("Id")
+                    .LoadUrl("/Category/GetCategoryByType?type=NS_DsHeDaoTao")
+                )
+                .DisplayExpr("Name")
+                .ValueExpr("Id")
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.NganhHocID)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Ngành học")
+            )
+            .Editor(e => e
+                .SelectBox()
+                .ShowClearButton(true)
+                .Placeholder("Ngành học")
+                .Width("100%")
+                .Disabled(false)
+                .DataSource(d => d.RemoteController()
+                    .Key("Id")
+                    .LoadUrl("/Category/GetCategoryByType?type=NS_DsNganhHoc")
+                )
+                .DisplayExpr("Name")
+                .ValueExpr("Id")
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.ChuyenNganhID)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Chuyên ngành")
+            )
+            .Editor(e => e
+                .SelectBox()
+                .ShowClearButton(true)
+                .Placeholder("Chuyên ngành")
+                .Width("100%")
+                .Disabled(false)
+                .DataSource(d => d.RemoteController()
+                    .Key("Id")
+                    .LoadUrl("/Category/GetCategoryByType?type=NS_DsChuyenNganh")
+                )
+                .DisplayExpr("Name")
+                .ValueExpr("Id")
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.VanBangID)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Bằng cấp")
+            )
+            .Editor(e => e
+                .SelectBox()
+                .ShowClearButton(true)
+                .Placeholder("Bằng cấp")
+                .Width("100%")
+                .Disabled(false)
+                .DataSource(d => d.RemoteController()
+                    .Key("Id")
+                    .LoadUrl("/Category/GetCategoryByType?type=NS_DsVanBang")
+                )
+                .DisplayExpr("Name")
+                .ValueExpr("Id")
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.ChungChiID)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Chứng chỉ")
+            )
+            .Editor(e => e
+                .SelectBox()
+                .ShowClearButton(true)
+                .Placeholder("Chứng chỉ")
+                .Width("100%")
+                .Disabled(false)
+                .DataSource(d => d.RemoteController()
+                    .Key("Id")
+                    .LoadUrl("/Category/GetCategoryByType?type=NS_DsChungChi")
+                )
+                .DisplayExpr("Name")
+                .ValueExpr("Id")
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.KetQuaDaoTaoID)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Kết quả")
+            )
+            .Editor(e => e
+                .SelectBox()
+                .ShowClearButton(true)
+                .Placeholder("Kết quả")
+                .Width("100%")
+                .Disabled(false)
+                .DataSource(d => d.RemoteController()
+                    .Key("Id")
+                    .LoadUrl("/Category/GetCategoryByType?type=NS_DT_KetQuaDaoTao")
+                )
+                .DisplayExpr("Name")
+                .ValueExpr("Id")
+                .ReadOnly(true)
+            );
+
+        items.AddSimpleFor(m => m.DiemSo)
+            .ColSpan(6)
+            .Label(e => e
+                .Text("Điểm số")
+            )
+            .Editor(e => e
+                .NumberBox()
+                .Placeholder("Điểm số")
+                .Max(10)
+                .Format("#,##0.##")
+                .ShowSpinButtons(true)
+                .ShowClearButton(true)
+                .Width("100%")
+                .Disabled(false)
+                .ReadOnly(true)
+            );
+    }).FormData(Model)
+)

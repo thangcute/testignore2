@@ -1,0 +1,84 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Humax.ESS.Models.Timesheet
+@model ExplainModel
+@inject IViewLocalizer T
+
+<script>
+    $('#formSubmit').submit(function (e) {
+        e.preventDefault();
+
+        var _action = $('form#formSubmit').attr('action');
+        var _data = $('form#formSubmit').serializeArray();
+
+        $.ajax({
+            dataType: 'json',
+            type: 'POST',
+            url: _action,
+            data: _data,
+            success: function (res, status, jqXHR) {
+                //console.log(res);
+                if (res.success == 1) {
+                    toastr.success("Thực hiện thành công");
+
+                    if ($('#gridTimeSheet').length)
+                        $("#gridTimeSheet").dxDataGrid('instance').refresh();
+
+                    if ($('#gridSummary').length)
+                        $("#gridSummary").dxDataGrid('instance').refresh();
+
+                    ClosePopup();
+                } else if (res.success == 99) {
+                    toastr.warning("Dữ liệu không đúng định dạng");
+                    console.log(res.validation);
+                } else {
+                    toastr.warning("Có lỗi trong quá trình xử lý");
+                }
+            },
+            error: function (jqXHR, status, err) {
+                toastr.error("Lỗi Server");
+            },
+            complete: function () {
+                //$("body").removeClass("loading");
+            }
+        });
+    });
+</script>
+
+<form id="formSubmit" method="post" action="@Url.Action("PostExplain", "Timesheet")">
+    @(Html.DevExtreme().Form<ExplainModel>()
+    .ShowValidationSummary(false)
+    .ID("form")
+    .ColCount(12)
+    .Items(items => {
+        items.AddSimpleFor(m => m.NgayThang)
+                .ColSpan(12)
+                .Label(l => l.Visible(false))
+                .CssClass("hidden-control");
+
+        items.AddSimpleFor(m => m.IsDimuon)
+                        .ColSpan(12)
+                        .Label(l => l.Visible(false))
+                        .CssClass("hidden-control");
+
+        items.AddSimpleFor(m => m.LyDo)
+            .ColSpan(12)
+            //.Label(e => e.Text("Ghi chú"))
+            .Label(e => e.Visible(false))
+            .Editor(e => e
+                .TextArea()
+                .Height(100)
+                .Placeholder("Lý do diễn giải")
+                .Width("100%")
+                .Disabled(false)
+            );
+    }).FormData(Model)
+    )
+
+    <button class="group__btn btn btn_blue flr mgt-10 mgr-0" type="submit">
+        <i class="icon dx-icon-check"></i>@T["Lưu"]
+    </button>
+
+    <button class="group__btn btn btn_yellow flr mgt-10 mgr-6" type="button" onclick="ClosePopup();">
+        <i class="icon dx-icon-close"></i>@T["Đóng"]
+    </button>
+</form>

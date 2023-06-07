@@ -1,0 +1,240 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Humax.ESS.Helpers
+
+@inject IViewLocalizer T
+@{
+    ViewData["Title"] = T["Hồ sơ"];
+    var userInfo = Context.Session.GetCurrentUser();
+}
+
+    <div class="profile profile_user">
+        <div class="profile__bg" style="background-image: url('img/bg-profile.jpg');">
+            <a class="profile__edit" href="#">
+                @T["Chỉnh sửa hồ sơ"]<svg class="icon icon-edit">
+                    <use xlink:href="/img/sprite.svg#icon-edit"></use>
+                </svg>
+            </a>
+        </div>
+        <div class="profile__user">
+            <div class="profile__ava"><img class="profile__pic" src="@(userInfo.AvatarUrl)" alt="">
+                <div class="view_ava">xem</div>
+                <div class="edit_ava">thêm</div>
+            </div>
+            <div class="profile__details"><span class="profile__title title">@userInfo.FullName</span><span class="profile__login">@userInfo.JobTitle</span></div>
+            <div class="profile__text">“Pushing pixels and experiences in digital products for Sebostudio”</div>
+        </div>
+        <div class="profile__options">
+            <div class="profile__option">
+                <a class="profile__link active" href="#">
+                    <div class="profile__category">Post</div>
+                    <div class="profile__number">10,3K</div>
+                </a>
+            </div>
+            <div class="profile__option">
+                <a class="profile__link" href="#">
+                    <div class="profile__category">Followers</div>
+                    <div class="profile__number">2,564</div>
+                </a>
+            </div>
+            <div class="profile__option">
+                <a class="profile__link" href="#">
+                    <div class="profile__category">Following</div>
+                    <div class="profile__number">3,154</div>
+                </a>
+            </div>
+            <div class="profile__option">
+                <a class="profile__link" href="#">
+                    <div class="profile__category">Likes</div>
+                    <div class="profile__number">12,2k</div>
+                </a>
+            </div>
+            <div class="profile__option">
+                <a class="profile__link" href="#">
+                    <div class="profile__category">Photos</div>
+                    <div class="profile__number">35</div>
+                </a>
+            </div>
+            <div class="profile__option">
+                <a class="profile__link" href="#">
+                    <div class="profile__category">Videos</div>
+                    <div class="profile__number">24</div>
+                </a>
+            </div>
+            <div class="profile__option">
+                <a class="profile__link" href="#">
+                    <div class="profile__category">Saved</div>
+                    <div class="profile__number">18</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="page2__row">
+        <div class="page2__col page2__col_w35">
+            <div class="card1">
+                <div class="card1__wrap">
+                    <div class="card1__title">Complete Your Profile</div>
+                    <div class="card1__status">
+                        <div class="card1__line">
+                            <div class="card1__progress" style="width: 75%;"></div>
+                        </div>
+                        <div class="card1__percent">75%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card1">
+                <div class="card1__head">
+                    <div class="card1__category">About Me</div>
+                    <div class="options2 js-options">
+                        <button class="options2__btn js-options-btn">
+                            <svg class="icon icon-dots">
+                                <use xlink:href="/img/sprite.svg#icon-dots"></use>
+                            </svg>
+                        </button>
+                        <div class="options2__dropdown js-options-dropdown">
+                            <a class="options2__item" href="#">
+                                <div class="options2__icon">
+                                    <svg class="icon icon-saved">
+                                        <use xlink:href="/img/sprite.svg#icon-saved"></use>
+                                    </svg>
+                                </div>
+                                <div class="options2__details">
+                                    <div class="options2__info">Save Link</div>
+                                    <div class="options2__text">Add this to your saved items</div>
+                                </div>
+                            </a><a class="options2__item" href="#">
+                                <div class="options2__icon">
+                                    <svg class="icon icon-close-circle">
+                                        <use xlink:href="/img/sprite.svg#icon-close-circle"></use>
+                                    </svg>
+                                </div>
+                                <div class="options2__details">
+                                    <div class="options2__info">Hide Post</div>
+                                    <div class="options2__text">See fewer post like this</div>
+                                </div>
+                            </a><a class="options2__item" href="#">
+                                <div class="options2__icon">
+                                    <svg class="icon icon-close-square">
+                                        <use xlink:href="/img/sprite.svg#icon-close-square"></use>
+                                    </svg>
+                                </div>
+                                <div class="options2__details">
+                                    <div class="options2__info">Hide all from “Pan Feng Shui”</div>
+                                    <div class="options2__text">Stop seeing post from this person</div>
+                                </div>
+                            </a><a class="options2__item" href="#">
+                                <div class="options2__icon">
+                                    <svg class="icon icon-profile">
+                                        <use xlink:href="/img/sprite.svg#icon-profile"></use>
+                                    </svg>
+                                </div>
+                                <div class="options2__details">
+                                    <div class="options2__info">Unfollow “Pan Feng Shui”</div>
+                                    <div class="options2__text">Disconnected with this person</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card1__body">
+                    <div class="card1__note">“Pushing pixels and experiences in digital products for Sebostudio”</div>
+                    <div class="card1__list">
+                        <a class="card1__item" href="#">
+                            <svg class="icon icon-place">
+                                <use xlink:href="/img/sprite.svg#icon-place"></use>
+                            </svg>Yogyakarta, ID
+                        </a><a class="card1__item" href="#">
+                            <svg class="icon icon-world">
+                                <use xlink:href="/img/sprite.svg#icon-world"></use>
+                            </svg>dribbble.com/fawait
+                        </a><a class="card1__item" href="#">
+                            <svg class="icon icon-date">
+                                <use xlink:href="/img/sprite.svg#icon-date"></use>
+                            </svg>Joined June 2012
+                        </a><a class="card1__item" href="#">
+                            <svg class="icon icon-case">
+                                <use xlink:href="/img/sprite.svg#icon-case"></use>
+                            </svg>Working at Sebo Studio
+                        </a><a class="card1__item" href="#">
+                            <svg class="icon icon-relationship">
+                                <use xlink:href="/img/sprite.svg#icon-relationship"></use>
+                            </svg>In relationship with Gal Gadot
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card1">
+                <div class="card1__head">
+                    <div class="card1__category">Photos and Videos</div><a class="card1__more" href="#">SEE ALL</a>
+                </div>
+                <div class="card1__body">
+                    <div class="card1__gallery">
+                        <div class="card1__photo"><img class="card1__pic" src="~/img/card-photo-1.jpg" alt=""></div>
+                        <div class="card1__photo"><img class="card1__pic" src="~/img/card-photo-2.jpg" alt=""></div>
+                        <div class="card1__photo"><img class="card1__pic" src="~/img/card-photo-3.jpg" alt=""></div>
+                        <div class="card1__photo"><img class="card1__pic" src="~/img/card-photo-4.jpg" alt=""></div>
+                        <div class="card1__photo"><img class="card1__pic" src="~/img/card-photo-5.jpg" alt=""></div>
+                        <div class="card1__photo"><img class="card1__pic" src="~/img/card-photo-6.jpg" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page2__col page2__col_w65">
+            <div class="post js-post">
+                <div class="post__item post__item_new js-post-item">
+                    <div class="post__top">
+                        Post Something<button class="post__close js-post-close">
+                            <svg class="icon icon-close">
+                                <use xlink:href="/img/sprite.svg#icon-close"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="post__write js-post-write">
+                        <div class="ava"><img class="ava__pic" src="@(userInfo.AvatarUrl)" alt=""></div>
+                        <div class="post__field">
+                            <input class="post__input" type="text" placeholder="What’s on your mind?">
+                            <div class="post__actions">
+                                <button class="post__action">
+                                    <svg class="icon icon-image">
+                                        <use xlink:href="/img/sprite.svg#icon-image"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="post__progress"><img class="post__pic" src="~/img/progress.svg" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="post__options">
+                        <div class="post__actions">
+                            <button class="post__action">
+                                <svg class="icon icon-image">
+                                    <use xlink:href="/img/sprite.svg#icon-image"></use>
+                                </svg>
+                            </button><button class="post__action">
+                                <svg class="icon icon-emoticon">
+                                    <use xlink:href="/img/sprite.svg#icon-emoticon"></use>
+                                </svg>
+                            </button><button class="post__action">
+                                <svg class="icon icon-gif">
+                                    <use xlink:href="/img/sprite.svg#icon-gif"></use>
+                                </svg>
+                            </button><button class="post__action">
+                                <svg class="icon icon-chart">
+                                    <use xlink:href="/img/sprite.svg#icon-chart"></use>
+                                </svg>
+                            </button>
+                        </div><button class="post__btn btn btn_blue">Share Post</button>
+                    </div>
+                </div>
+                <div class="post__item">
+                    <div>
+                        <h3 style="margin: 10px; color: blue">Thông tin cá nhân</h3>
+                    </div>
+                    <input value="@userInfo.FullName" type="text" placeholder="Name" style="margin-bottom: 5px;border: 1px solid #ddd;width: 100%; font-size: 20px; padding: 10px; "/>
+                <input value="@userInfo.JobTitle" type="text" placeholder="Name" style="border: 1px solid #ddd;width: 100%; font-size: 20px; padding: 10px; " />
+                   
+                
+                </div>
+                
+            </div>
+        </div>
+    </div>
+

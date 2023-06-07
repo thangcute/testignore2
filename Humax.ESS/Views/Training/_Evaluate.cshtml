@@ -1,0 +1,71 @@
+﻿@using Humax.ESS.Models.Trainning;
+@using Microsoft.AspNetCore.Mvc.Localization;
+
+@model List<TrainingEvaluateModel>
+
+@inject IViewLocalizer T
+
+@{
+    if (Model != null && Model.Any())
+    {
+        <div class="player__container" style="padding: 0px;">
+            <div class="player__control">
+                <div class="player__nav">
+                    @{
+                        bool _tab_active = true;
+                        foreach (var item in Model)
+                        {
+                            if (_tab_active)
+                            {
+                                <a class="player__link active" tab="tab_evaluate" href="#@item.Id">@item.TenNoiDung</a>
+
+                                _tab_active = false;
+                            }
+                            else
+                            {
+                                <a class="player__link" tab="tab_evaluate" href="#@item.Id">@item.TenNoiDung</a>
+                            }
+                        }
+                    }
+                </div>
+            </div>
+            <div class="player__list">
+                @{
+                    _tab_active = true;
+                    foreach (var item in Model)
+                    {
+                        if (_tab_active)
+                        {
+                            _tab_active = false;
+                            <div class="player__item js-player-item" type="tab_content" tab="#@item.Id">
+                                <form>
+                                    <partial name="_FormDynamic" model=@item.TieuChiDanhGia />
+                                </form>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="player__item js-player-item hidden" type="tab_content" tab="#@item.Id">
+                                <form>
+                                    <partial name="_FormDynamic" model=@item.TieuChiDanhGia />
+                                </form>
+                            </div>
+                        }
+                    }
+                }
+            </div>
+        </div>
+    }
+}
+
+<script>
+    $(function () {
+        $('.player__link[tab="tab_evaluate"]').click(function () {
+            $('.player__link[tab="tab_evaluate"]').removeClass('active');
+            $(this).addClass('active');
+            //
+            $('.player__item[type="tab_content"]').addClass('hidden');
+            $('.player__item[tab="' + $(this).attr('href') + '"]').removeClass('hidden');
+        });
+    });
+</script>

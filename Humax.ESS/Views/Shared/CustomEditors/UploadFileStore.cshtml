@@ -1,0 +1,45 @@
+﻿<style>
+    #fileuploader-container {
+        border: 1px solid #d3d3d3;
+        border-radius:5px;
+    }
+</style>
+<script>
+    function getFileUploaderInstance() {
+        return $("#file-uploader").dxFileUploader("instance");
+    }
+
+    function fileUploader_valueChanged(e) {
+        var files = e.value;
+        if (files.length > 0) {
+            $("#selected-files .selected-item").remove();
+
+            $.each(files, function (i, file) {
+                var $selectedItem = $("<div />").addClass("selected-item");
+                $selectedItem.append(
+                    $("<span />").html("Name: " + file.name + "<br/>"),
+                    $("<span />").html("Size " + file.size + " bytes" + "<br/>"),
+                    $("<span />").html("Type " + file.type + "<br/>"),
+                    $("<span />").html("Last Modified Date: " + file.lastModifiedDate)
+                );
+                $selectedItem.appendTo($("#selected-files"));
+            });
+            $("#selected-files").show();
+        }
+        else
+            $("#selected-files").hide();
+    }
+</script>
+<div id="fileuploader-container">
+    @(Html.DevExtreme().FileUploader()
+    .ID("file-uploader")
+    .Name("myFile")
+    .Multiple(true)
+    .Accept("*")
+    .UploadMode(FileUploadMode.Instantly)
+    .UploadUrl(Url.Action("Upload", "FileUploader"))
+    .OnValueChanged("function(e){ fileUploader_valueChanged(e); }")
+    .SelectButtonText("Chọn file")
+    .LabelText("hoặc Kéo file thả vào đây")
+)
+</div>

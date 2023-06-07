@@ -1,0 +1,232 @@
+﻿<form class="entry__form">
+    <input type="hidden" name="CongViecChaID" value="0" />
+    <div class="entry__fieldset">
+        <div class="field1 js-field">
+            <div class="field1__label">Tên công việc</div>
+            <div class="field1__wrap">
+                <input class="field1__input js-field-input" type="text" name="TenCongViec" placeholder="Tên công việc">
+            </div>
+        </div>
+
+        <div class="field1 js-field">
+            <div class="field1__label">Mô tả công việc</div>
+            <div class="field1 field1_textarea js-field">
+                <div class="field1__wrap">
+                    <textarea class="field1__textarea js-field-input" name="MoTaCongViec" placeholder="Mô tả công việc"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="entry__row">
+            <div class="entry__col">
+                <div class="field1 field1_select js-field">
+                    <div class="field1__label">Dự án</div>
+                    <div class="field1__wrap">
+                        <select class="field1__select js-field-input" name="DuAnID">
+                            <option>USA</option>
+                            <option>Canada</option>
+                            <option>France</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="entry__col">
+                <div class="field1 field1_select js-field">
+                    <div class="field1__label">Loại công việc</div>
+                    <div class="field1__wrap">
+                        <select class="field1__select js-field-input" name="LoaiCongViecID">
+                            <option>USA</option>
+                            <option>Canada</option>
+                            <option>France</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="entry__row">
+            <div class="entry__col">
+                <div class="field1 js-field">
+                    <div class="field1__label">Ngày bắt đầy</div>
+                    <div class="field1__wrap">
+                        <input class="field1__input js-field-input" type="text" name="NgayBatDau" placeholder="Ngày bắt đầy">
+                    </div>
+                </div>
+            </div>
+            <div class="entry__col">
+                <div class="field1 js-field">
+                    <div class="field1__label">Ngày kết thúc</div>
+                    <div class="field1__wrap">
+                        <input class="field1__input js-field-input" type="text" name="NgayBatDau" placeholder="Ngày kết thúc">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="entry__row entry__row_mobile">
+            <div class="entry__col">
+                <div class="field1 field1_select js-field">
+                    <div class="field1__label">Mức độ ưu tiên</div>
+                    <div class="field1__wrap">
+                        <select class="field1__select js-field-input" name="MucDoUuTien">
+                            <option>USA</option>
+                            <option>Canada</option>
+                            <option>France</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="entry__col">
+                <div class="field1 field1_select js-field">
+                    <div class="field1__label">Trạng thái công việc</div>
+                    <div class="field1__wrap">
+                        <select class="field1__select js-field-input" name="TrangThaiID">
+                            <option>USA</option>
+                            <option>Canada</option>
+                            <option>France</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="field1 field1_email js-field">
+            <div class="field1__label">Người thực hiện</div>
+            <div class="field1__wrap">
+                <input class="field1__input js-field-input" type="text" name="TenCongViec" placeholder="Người thực hiện">
+            </div>
+        </div>
+
+        <div class="field1 field1_email js-field">
+            <div class="field1__label">Người theo dõi</div>
+            <div class="field1__wrap">
+                <input class="field1__input js-field-input" type="text" name="TenCongViec" placeholder="Người theo dõi">
+            </div>
+        </div>
+
+        <div class="field1 field1_email js-field" style="height:200px;">
+            <div class="field1__wrap">
+                <!-- Tabs navs -->
+                <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
+                    <li class="nav-item active" role="presentation">
+                        <a class="nav-link active"
+                           id="tab-permission"
+                           data-toggle="tab"
+                           href="#tabs-permission"
+                           role="tab"
+                           aria-selected="false">Cài đặt quyền</a>
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link"
+                           id="tab-reminder"
+                           data-toggle="tab"
+                           href="#tabs-reminder"
+                           role="tab"
+                           aria-selected="true">Nhắc việc</a>
+                    </li>
+                </ul>
+                <!-- Tabs navs -->
+                <!-- Tabs content -->
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="tabs-permission" role="tabpanel">
+                        <div class="details__list list-permission">
+                            <label class="checkbox checkbox_green">
+                                <input class="checkbox__input" type="checkbox" />
+                                <span class="checkbox__in">
+                                    <span class="checkbox__tick"></span>
+                                    <span class="checkbox__flex">
+                                        <span class="checkbox__info">Không cho phép người thực hiện việc này xem được công việc con cùng công việc cha</span>
+                                    </span>
+                                </span>
+                            </label>
+
+                            <label class="checkbox checkbox_green">
+                                <input class="checkbox__input" type="checkbox" />
+                                <span class="checkbox__in">
+                                    <span class="checkbox__tick"></span>
+                                    <span class="checkbox__flex">
+                                        <span class="checkbox__info">Không cho phép người thực hiện công việc cha xem được công việc này</span>
+                                    </span>
+                                </span>
+                            </label>
+
+                            <label class="checkbox checkbox_green">
+                                <input class="checkbox__input" type="checkbox" />
+                                <span class="checkbox__in">
+                                    <span class="checkbox__tick"></span>
+                                    <span class="checkbox__flex">
+                                        <span class="checkbox__info">Không cho phép người theo dõi công việc cha xem được công việc này</span>
+                                    </span>
+                                </span>
+                            </label>
+
+                            <label class="checkbox checkbox_green">
+                                <input class="checkbox__input" type="checkbox" />
+                                <span class="checkbox__in">
+                                    <span class="checkbox__tick"></span>
+                                    <span class="checkbox__flex">
+                                        <span class="checkbox__info">Không cho phép người theo dõi xem được công việc con thuộc cùng công việc cha</span>
+                                    </span>
+                                </span>
+                            </label>
+
+                            <label class="checkbox checkbox_green">
+                                <span class="checkbox__in">
+                                    <span class="checkbox__flex">
+                                        <span class="checkbox__info">
+                                            Trạng thái mặc định của công việc sau khi người thực hiện báo hoàn thanh:
+                                            <select>
+                                                <option>Hoàn thành</option>
+                                            </select>
+                                        </span>
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tabs-reminder" role="tabpanel">
+                        <div class="" style="margin-top: 10px;">
+                            <div class="entry__row entry__row_mobile">
+                                <div class="entry__col">
+                                    <div class="field1 js-field">
+                                        <div class="field1__label">Thời gian nhắc</div>
+                                        <div class="field1__wrap">
+                                            <input class="field1__input js-field-input" type="text" name="NgayBatDaud" placeholder="Thời gian nhắc">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="entry__col">
+                                    <div class="field1 field1_select js-field">
+                                        <div class="field1__label">Đối tượng nhắc</div>
+                                        <div class="field1__wrap">
+                                            <select class="field1__select js-field-input" name="TrangThaiIDa">
+                                                <option value="0">Chọn đối tượng</option>
+                                                <option value="1">Người thực hiện</option>
+                                                <option value="2">Người theo dõi</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="field1 field1_email js-field">
+                                <div class="field1__label">Người nhắc nhở</div>
+                                <div class="field1__wrap">
+                                    <input class="field1__input js-field-input" type="text" name="TenCongViecc" placeholder="Người nhắc nhở">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tabs content -->
+            </div>
+        </div>
+    </div>
+
+    <!--<label class="checkbox"><input class="checkbox__input" type="checkbox" name="terms" checked=""><span class="checkbox__in"><span class="checkbox__tick"></span><span class="checkbox__text">I agree to Square’s <a class="checkbox__link" href="#">Cookie</a> and <a class="checkbox__link" href="#">Privacy Policy</a>.</span></span></label>-->
+    <!--<div class="entry__btns">
+        <button class="entry__btn btn btn btn_big btn_gray" type="button">Đóng</button>
+        <button class="entry__btn btn btn btn_big btn_blue" type="submit">Tạo công việc</button>
+    </div>-->
+</form>

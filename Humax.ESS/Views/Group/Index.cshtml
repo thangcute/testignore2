@@ -1,0 +1,358 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Humax.ESS.Helpers
+
+@inject IViewLocalizer T
+@{
+    ViewData["Title"] = T["Nhóm"];
+    var userInfo = Context.Session.GetCurrentUser();
+}
+
+@section Sidebar
+{
+    <div class="sidebar2__nav">
+        <a class="sidebar2__item active" href="@Url.Action("Index", "Home")">
+            <svg class="icon icon-dashboard">
+                <use xlink:href="/img/sprite.svg#icon-dashboard"></use>
+            </svg>@T["Trang chủ"]
+        </a>
+        <a class="sidebar2__item" href="@Url.Action("Index", "Home")">
+            <svg class="icon icon-friends">
+                <use xlink:href="/img/sprite.svg#icon-friends"></use>
+            </svg>Friends
+        </a>
+    </div>
+    <div class="sidebar2__box">
+        <div class="sidebar2__category">pages you like</div>
+        <div class="sidebar2__menu">
+            <a class="sidebar2__link" href="@Url.Action("Index", "Group")">
+                <div class="sidebar2__letters" style="background-color: #82C43C;">FF</div>
+                <div class="sidebar2__text">Football FC</div>
+                <div class="sidebar2__counter">120</div>
+            </a><a class="sidebar2__link" href="@Url.Action("Index", "Group")">
+                <div class="sidebar2__letters" style="background-color: #A461D8;">BC</div>
+                <div class="sidebar2__text">Badminton Club</div>
+            </a><a class="sidebar2__link" href="@Url.Action("Index", "Group")">
+                <div class="sidebar2__letters" style="background-color: #50B5FF;">UI</div>
+                <div class="sidebar2__text">UI/UX Community</div>
+            </a><a class="sidebar2__link" href="@Url.Action("Index", "Group")">
+                <div class="sidebar2__letters" style="background-color: #FF9AD5;">WD</div>
+                <div class="sidebar2__text">Web Designer</div>
+            </a>
+        </div>
+    </div>
+}
+
+<div class="page2__row">
+    <div class="page2__col page2__col_w35">
+        <div class="profile profile_group profile_show">
+            <div class="profile__bg" style="background-image: url('img/bg-group.jpg');"><a class="profile__edit" href="#">@T["Chỉnh sửa nhóm"]</a></div>
+        </div>
+        <div class="group">
+            <div class="group__logo">UI</div>
+            <div class="group__details">
+                <div class="group__title">UI/UX Community</div>
+                <div class="group__login">@@ui_community</div>
+                <div class="group__quality">
+                    <div class="group__box">
+                        <div class="group__counter">10,3K</div>
+                        <div class="group__info">Post</div>
+                    </div>
+                    <div class="group__box">
+                        <div class="group__counter">2,564</div>
+                        <div class="group__info">Members</div>
+                    </div>
+                    <div class="group__box">
+                        <div class="group__counter">234</div>
+                        <div class="group__info">Media</div>
+                    </div>
+                    <div class="group__box">
+                        <div class="group__counter">21</div>
+                        <div class="group__info">Events</div>
+                    </div>
+                </div>
+                <div class="group__btns"><button class="group__btn btn btn_blue">Join Group</button><button class="group__btn btn btn_gray">Send Message</button></div>
+            </div>
+        </div>
+        <div class="card1">
+            <div class="card1__wrap">
+                <div class="card1__title">Group Created by</div>
+                <div class="card1__group">
+                    <div class="ava" style="background-color: #FFC542;">AF</div>
+                    <div class="card1__box">
+                        <div class="card1__info">Ahmad Nur Fawaid</div>
+                        <div class="card1__date">12 April at 09.28 PM</div>
+                    </div><button class="card1__btn btn btn_gray">
+                        <svg class="icon icon-plus">
+                            <use xlink:href="/img/sprite.svg#icon-plus"></use>
+                        </svg><span class="btn__text">Add</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="card1">
+            <div class="card1__head">
+                <div class="card1__category">About Group</div>
+                <div class="options2 js-options">
+                    <button class="options2__btn js-options-btn">
+                        <svg class="icon icon-dots">
+                            <use xlink:href="/img/sprite.svg#icon-dots"></use>
+                        </svg>
+                    </button>
+                    <div class="options2__dropdown js-options-dropdown">
+                        <a class="options2__item" href="#">
+                            <div class="options2__icon">
+                                <svg class="icon icon-saved">
+                                    <use xlink:href="/img/sprite.svg#icon-saved"></use>
+                                </svg>
+                            </div>
+                            <div class="options2__details">
+                                <div class="options2__info">Save Link</div>
+                                <div class="options2__text">Add this to your saved items</div>
+                            </div>
+                        </a><a class="options2__item" href="#">
+                            <div class="options2__icon">
+                                <svg class="icon icon-close-circle">
+                                    <use xlink:href="/img/sprite.svg#icon-close-circle"></use>
+                                </svg>
+                            </div>
+                            <div class="options2__details">
+                                <div class="options2__info">Hide Post</div>
+                                <div class="options2__text">See fewer post like this</div>
+                            </div>
+                        </a><a class="options2__item" href="#">
+                            <div class="options2__icon">
+                                <svg class="icon icon-close-square">
+                                    <use xlink:href="/img/sprite.svg#icon-close-square"></use>
+                                </svg>
+                            </div>
+                            <div class="options2__details">
+                                <div class="options2__info">Hide all from “Pan Feng Shui”</div>
+                                <div class="options2__text">Stop seeing post from this person</div>
+                            </div>
+                        </a><a class="options2__item" href="#">
+                            <div class="options2__icon">
+                                <svg class="icon icon-profile">
+                                    <use xlink:href="/img/sprite.svg#icon-profile"></use>
+                                </svg>
+                            </div>
+                            <div class="options2__details">
+                                <div class="options2__info">Unfollow “Pan Feng Shui”</div>
+                                <div class="options2__text">Disconnected with this person</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card1__body">
+                <div class="card1__content">
+                    <p>UI/UX Designers group <br>This group is meant for designers - a place to learn and share - to ask questions, network, and improve.</p>
+                    <p>Hashtag your posts to help others easily navigate. Avoid using more than a single hashtag per post.</p>
+                    <p>Suggested tags include: #job #blog #dribbble #learn #discuss #contest #portfolio </p>
+                </div>
+                <div class="card1__type">
+                    <div class="card1__stage">Group Type</div>
+                    <div class="card1__value">Professional</div>
+                </div>
+            </div>
+        </div>
+        <div class="card1">
+            <div class="card1__head">
+                <div class="card1__category">Suggested Group</div><a class="card1__more" href="#">SEE ALL</a>
+            </div>
+            <div class="card1__body">
+                <a class="card1__user card1__user_team" href="#">
+                    <div class="ava"><img class="ava__pic" src="~/img/logo-team-1.png" alt=""></div>
+                    <div class="card1__desc">
+                        <div class="card1__man">Sebo Studio</div>
+                        <div class="card1__time">Design Studio</div>
+                    </div>
+                </a><a class="card1__like" href="#">
+                    <div class="card1__photo"><img class="card1__pic" src="~/img/card-photo.jpg" alt=""></div>
+                    <div class="card1__text">
+                        <svg class="icon icon-like-thumb">
+                            <use xlink:href="/img/sprite.svg#icon-like-thumb"></use>
+                        </svg>Like Page
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="page2__col page2__col_w65">
+        <div class="profile profile_group profile_hide">
+            <div class="profile__bg" style="background-image: url('img/bg-group.jpg');"><a class="profile__edit" href="#">Edit Profile</a></div>
+        </div>
+        <div class="page2__flex">
+            <div class="page2__cell">
+                <div class="card1">
+                    <div class="card1__wrap">
+                        <div class="card1__top">
+                            <div class="card1__title">Member’s<span class="card1__counter">2,564 </span></div><a class="card1__more" href="#">SEE ALL</a>
+                        </div>
+                        <div class="card1__members">
+                            <div class="ava"><img class="ava__pic" src="@(userInfo.AvatarUrl)" alt=""></div>
+                            <div class="ava"><img class="ava__pic" src="~/img/ava-2.png" alt=""></div>
+                            <div class="ava"><img class="ava__pic" src="~/img/ava-3.png" alt=""></div>
+                            <div class="ava" style="background-color: #FF974A">DK</div>
+                            <div class="ava"><img class="ava__pic" src="~/img/ava-4.png" alt=""></div>
+                            <div class="ava"><img class="ava__pic" src="~/img/ava-5.png" alt=""></div>
+                            <div class="ava"><img class="ava__pic" src="~/img/ava-6.png" alt=""></div>
+                            <div class="ava" style="background-color: #82C43C">KK</div>
+                            <div class="ava"><img class="ava__pic" src="~/img/ava-7.png" alt=""></div>
+                            <div class="ava"><img class="ava__pic" src="~/img/ava-8.png" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page2__cell">
+                <div class="card1">
+                    <div class="card1__wrap">
+                        <div class="card1__top">
+                            <div class="card1__title">Nearest Events</div>
+                            <div class="options2 js-options">
+                                <button class="options2__btn js-options-btn">
+                                    <svg class="icon icon-dots">
+                                        <use xlink:href="/img/sprite.svg#icon-dots"></use>
+                                    </svg>
+                                </button>
+                                <div class="options2__dropdown js-options-dropdown">
+                                    <a class="options2__item" href="#">
+                                        <div class="options2__icon">
+                                            <svg class="icon icon-saved">
+                                                <use xlink:href="/img/sprite.svg#icon-saved"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="options2__details">
+                                            <div class="options2__info">Save Link</div>
+                                            <div class="options2__text">Add this to your saved items</div>
+                                        </div>
+                                    </a><a class="options2__item" href="#">
+                                        <div class="options2__icon">
+                                            <svg class="icon icon-close-circle">
+                                                <use xlink:href="/img/sprite.svg#icon-close-circle"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="options2__details">
+                                            <div class="options2__info">Hide Post</div>
+                                            <div class="options2__text">See fewer post like this</div>
+                                        </div>
+                                    </a><a class="options2__item" href="#">
+                                        <div class="options2__icon">
+                                            <svg class="icon icon-close-square">
+                                                <use xlink:href="/img/sprite.svg#icon-close-square"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="options2__details">
+                                            <div class="options2__info">Hide all from “Pan Feng Shui”</div>
+                                            <div class="options2__text">Stop seeing post from this person</div>
+                                        </div>
+                                    </a><a class="options2__item" href="#">
+                                        <div class="options2__icon">
+                                            <svg class="icon icon-profile">
+                                                <use xlink:href="/img/sprite.svg#icon-profile"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="options2__details">
+                                            <div class="options2__info">Unfollow “Pan Feng Shui”</div>
+                                            <div class="options2__text">Disconnected with this person</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card1__list">
+                            <a class="card1__event" href="#">
+                                <svg class="icon icon-event">
+                                    <use xlink:href="/img/sprite.svg#icon-event"></use>
+                                </svg>
+                                <div class="card1__desc">
+                                    <div class="card1__info">10 Events Invites</div>
+                                    <div class="card1__text"><span class="card1__time">Thu 10.00</span><span class="card1__place">Tokopedia Tower</span></div>
+                                </div>
+                            </a><a class="card1__event" href="#">
+                                <svg class="icon icon-event">
+                                    <use xlink:href="/img/sprite.svg#icon-event"></use>
+                                </svg>
+                                <div class="card1__desc">
+                                    <div class="card1__info">iOs Developer Conference</div>
+                                    <div class="card1__text"><span class="card1__time">Thu 10.00</span><span class="card1__place">Google Inc</span></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popular">
+            <div class="popular__body">
+                <div class="popular__title">Popular Post</div>
+                <div class="popular__list">
+                    <a class="popular__item" href="#">
+                        <div class="popular__preview"><img class="popular__pic" src="~/img/popular-pic-1.jpg" alt=""></div>
+                        <div class="popular__details">
+                            <div class="popular__head">
+                                <div class="ava"><img class="ava__pic" src="@(userInfo.AvatarUrl)" alt=""></div>
+                                <div class="popular__user">Avian Rizky</div>
+                                <div class="popular__time">12 April at 09.28 PM</div>
+                            </div>
+                            <div class="popular__text">One of the perks of working in an international company is sharing knowledge with your colleagues.</div>
+                        </div>
+                    </a><a class="popular__item" href="#">
+                        <div class="popular__preview"><img class="popular__pic" src="~/img/popular-pic-2.jpg" alt=""></div>
+                        <div class="popular__details">
+                            <div class="popular__head">
+                                <div class="ava"><img class="ava__pic" src="~/img/ava-3.png" alt=""></div>
+                                <div class="popular__user">Patya Pindo</div>
+                                <div class="popular__time">12 April at 09.28 PM</div>
+                            </div>
+                            <div class="popular__text">One of the perks of working in an international company is sharing knowledge with your colleagues.</div>
+                        </div>
+                    </a><a class="popular__item" href="#">
+                        <div class="popular__preview"><img class="popular__pic" src="~/img/popular-pic-3.jpg" alt=""></div>
+                        <div class="popular__details">
+                            <div class="popular__head">
+                                <div class="ava"><img class="ava__pic" src="~/img/ava-2.png" alt=""></div>
+                                <div class="popular__user">Mas Indrio</div>
+                                <div class="popular__time">12 April at 09.28 PM</div>
+                            </div>
+                            <div class="popular__text">One of the perks of working in an international company is sharing knowledge with your colleagues.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="popular__foot"><a class="popular__all" href="#">SEE ANOTHER POST</a></div>
+        </div>
+        <div class="card1">
+            <div class="card1__wrap">
+                <div class="card1__top">
+                    <div class="card1__title">Media </div><a class="card1__more" href="#">SEE ALL</a>
+                </div>
+                <div class="card1__media">
+                    <div class="card1__cell card1__cell_w17">
+                        <div class="card1__preview"><img class="card1__pic" src="~/img/media-1.jpg" alt=""></div>
+                        <div class="card1__preview"><img class="card1__pic" src="~/img/media-10.jpg" alt=""></div>
+                    </div>
+                    <div class="card1__cell card1__cell_w33">
+                        <div class="card1__preview"><img class="card1__pic" src="~/img/media-3.jpg" alt=""></div>
+                        <div class="card1__flex">
+                            <div class="card1__preview"><img class="card1__pic" src="~/img/media-4.jpg" alt=""></div>
+                            <div class="card1__preview"><img class="card1__pic" src="~/img/media-5.jpg" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="card1__cell card1__cell_w33">
+                        <div class="card1__flex">
+                            <div class="card1__preview"><img class="card1__pic" src="~/img/media-6.jpg" alt=""></div>
+                            <div class="card1__preview"><img class="card1__pic" src="~/img/media-7.jpg" alt=""></div>
+                        </div>
+                        <div class="card1__preview"><img class="card1__pic" src="~/img/media-8.jpg" alt=""></div>
+                    </div>
+                    <div class="card1__cell card1__cell_w17">
+                        <div class="card1__preview"><img class="card1__pic" src="~/img/media-2.jpg" alt=""></div>
+                        <div class="card1__preview"><img class="card1__pic" src="~/img/media-11.jpg" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

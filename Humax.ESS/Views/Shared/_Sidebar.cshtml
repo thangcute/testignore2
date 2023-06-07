@@ -1,0 +1,56 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Humax.ESS.Helpers
+@using Microsoft.AspNetCore.Mvc
+
+@inject IViewLocalizer T
+@{
+    var userInfo = Context.Session.GetCurrentUser();
+    MenuItem.CurrentPath = Context.Request.Path;
+
+    if (ViewBag.menuItems == null)
+        ViewBag.menuItems = new List<MenuItem>()
+        {
+            new MenuItem { Text="Trang chủ", Path=Url.Action("Index", "Home"), SvgIcon="icon-home"},
+            new MenuItem { Text="Bảng công tháng", Path=Url.Action("Index", "Timesheet"), SvgIcon="icon-timesheets"},
+            new MenuItem { Text="Bảng lương tháng", Path=Url.Action("Index", "PaySlip"), SvgIcon="icon-pay-slip", Class="stroke"},
+            new MenuItem { Text="Đăng ký chỉ tiêu", Path=Url.Action("Registration", "Kpi"), SvgIcon="icon-kpi"},
+            new MenuItem { Text="Tự đánh giá", Path=Url.Action("SelfAssessment", "Kpi"), SvgIcon="icon-self-assessment"},
+            new MenuItem { Text="Đào tạo", Path=Url.Action("Index", "Training"), SvgIcon="icon-training"},
+            new MenuItem { Text="Nhân viên", Path=Url.Action("Index", "Employee"), SvgIcon="icon-employees"},
+        };
+}
+
+<a class="sidebar2__profile" href="@Url.Action("Index", "Profile")">
+    <div class="ava"><img class="ava__pic" src="@(userInfo.AvatarUrl)" alt="" /></div>
+    <div class="sidebar2__details">
+        <div class="sidebar2__user">@userInfo.FullName</div>
+        <div class="sidebar2__login">@userInfo.JobTitle</div>
+    </div>
+</a>
+
+<div class="sidebar2__nav">
+    @foreach (var item in ViewBag.menuItems)
+    {
+        <a class="sidebar2__item @(item.IsActive ? "active" : "")" href="@item.Path">
+            @if (!string.IsNullOrEmpty(item.FaIcon))
+            {
+                <i class="icon fas @item.FaIcon"></i>
+            }
+            else if (!string.IsNullOrEmpty(item.SvgIcon))
+            {
+                <svg class="icon menu-item-icon @(item.Class??"")">
+                    <use xlink:href="/img/sprite.svg#@item.SvgIcon"></use>
+                </svg>
+            }
+            else if (!string.IsNullOrEmpty(item.ImageIcon))
+            {
+                <img class="icon" src="@item.ImageIcon" />
+            }
+            @T[item.Text]
+            @if (item.Counter > 0)
+            {
+                <div class="sidebar2__counter">@item.Counter</div>
+            }
+        </a>
+    }
+</div>

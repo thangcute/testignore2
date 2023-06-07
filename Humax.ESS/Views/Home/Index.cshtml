@@ -1,0 +1,1181 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Humax.ESS.Helpers
+
+@model HomeModel
+@inject IViewLocalizer T
+@{
+    ViewData["Title"] = T["Trang chủ"];
+    var userInfo = Context.Session.GetCurrentUser();
+}
+
+<style>
+    .post__medias,
+    .post__content {
+        border-radius: 0px !important;
+    }
+
+    .post__content textarea {
+        width: 100%;
+        padding: 10px;
+        resize: none;
+        border-radius: 10px;
+        height: 100px;
+        border-color: #F2F2F2;
+    }
+
+    .post__content textarea:hover,
+    .post__content textarea:active,
+    .post__content textarea:focus {
+        border-color: cadetblue;
+    }
+
+    .item__media {
+    }
+
+    .comments__item {
+        padding: 11px 20px 11px;
+    }
+
+    .knowledge__bottom .users {
+        margin: 0 0 0 auto;
+        display: -webkit-box;
+    }
+
+    .gallery__options {
+        padding: 0px 20px;
+        right: unset;
+        background: unset;
+    }
+
+    .gallery__links {
+        margin-bottom: 0px;
+        vertical-align: middle;
+    }
+
+    .comments__item:hover > .gallery__options {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .knowledge__bottom .users__item_counter {
+        color: #000;
+    }
+
+    .icon-like {
+        fill: red;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+
+    }
+
+    .reaction {
+        width: 255px;
+        display: flex;
+    }
+
+    .notification-drop .item ul li.reaction_item {
+        float: left;
+        float: left;
+        height: 42px;
+        border-bottom: 0px !important;
+        padding: 9px 6px;
+    }
+
+    .notification-drop .item ul li.reaction_item > img {
+        height: 24px !important;
+        width: 24px !important;
+    }
+    
+    
+    .hover-shadow{
+        width: 100%
+    }
+    
+    /*//modal image*/
+    .image1{
+        margin-bottom: 10px
+    }
+    
+    .modalimage{
+        height: 600px
+    }
+    
+
+  
+    .modal {
+        display: none;
+        position: fixed;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: black;
+        z-index: 1000
+    }
+
+    
+    .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 0;
+        width: 90%;
+        max-width: 1200px;
+        }
+
+    
+    .close {
+        color: white;
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: #999;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    .mySlides {
+        display: none;
+    }
+
+    .cursor {
+        cursor: pointer
+    }
+
+    
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+        
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+
+ 
+    .post__counter{
+        font-size: 15px
+    }
+
+</style>
+
+
+<script src="~/js/social.js"></script>
+
+<script>
+</script>
+
+<div class="page2__row page2__row_post">
+    <div class="page2__col page2__col_w65">
+        <div class="top-widgets">
+            <a href="@(Url.Action("Index", "Leave"))" class="top-widget leave">
+                <h4>@T["Nghỉ phép"]</h4>
+                <div class="btn">@T["Đăng ký"]</div>
+                <img class="icon" src="~/img/leave.svg" />
+                <img class="bg" src="~/img/top-widget-bg.svg" />
+            </a>
+            <a href="@(Url.Action("Index", "Overtime"))" class="top-widget ot">
+                <h4>@T["Thêm giờ"]</h4>
+                <div class="btn">@T["Đăng ký"]</div>
+                <img class="icon" src="~/img/ot.svg" />
+                <img class="bg" src="~/img/top-widget-bg-white.svg" />
+            </a>
+            <a href="@(Url.Action("Index", "BusinessTrip"))" class="top-widget business-trip">
+                <h4>@T["Công tác"]</h4>
+                <div class="btn">@T["Đăng ký"]</div>
+                <img class="icon" src="~/img/business-trip.svg" />
+                <img class="bg" src="~/img/top-widget-bg.svg" />
+            </a>
+        </div>
+        <div class="post js-post">
+            <input class="post__file hidden" type="file" id="post_file_image" multiple accept="image/png, image/jpeg" onchange="addMedia(this)" />
+            <div class="post__item post__item_new js-post-item">
+                <div class="post__top">
+                    @T["Đăng bài"]<button class="post__close js-post-close">
+                        <svg class="icon icon-close">
+                            <use xlink:href="/img/sprite.svg#icon-close"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div id="formPost">
+                    <div class="post__write js-post-write">
+                        <div class="ava"><img class="ava__pic" src="@(userInfo.AvatarUrl)" alt="" /></div>
+                        <div class="post__field">
+                            <input class="post__input" type="text" name="post_title" placeholder="@T["Bạn muốn chia sẻ điều gì?"]" />
+                            <div class="post__actions">
+                                <button class="post__action">
+                                    <svg class="icon icon-image">
+                                        <use xlink:href="/img/sprite.svg#icon-image"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            @*<div class="post__progress"><img class="post__pic" src="~/img/progress.svg" alt="" /></div>*@
+                        </div>
+                    </div>
+                    @*huongpm - vi tri them noi dung bai viet*@
+                    <div class="post__options post__content">
+                        <div class="gallery__list" style="margin: 0px; width: 100%;">
+                            <textarea class="post__input" name="post_content" rows="3" placeholder="@T["Nội dung chia sẻ"]"></textarea>
+                        </div>
+                    </div>
+                    @*huongpm - vi tri them anh vao bai viet*@
+                    <div class="post__options post__medias hidden">
+                        <div class="gallery__list"></div>
+                    </div>
+                    @*huongpm*@
+                    <div class="post__options">
+                        <div class="post__actions">
+                            <button class="post__action" action-type="image">
+                                <svg class="icon icon-image">
+                                    <use xlink:href="/img/sprite.svg#icon-image"></use>
+                                </svg>
+                            </button>
+                            <ul class="post__action notification-drop" style="margin-top: 10px;">
+                                <li class="item account-info" id="account-info" title="Thông báo" style="padding-top: 0px;">
+                                    <svg class="icon icon-emoticon">
+                                        <use xlink:href="/img/sprite.svg#icon-emoticon"></use>
+                                    </svg>
+                                    <ul class="reaction">
+                                        <li class="reaction_item" title="Like">
+                                            
+                                            <img src="~/Reaction/like.png" />
+                                        </li>
+                                        <li class="reaction_item" title="Love">
+                                            <img src="~/Reaction/love.png" />
+                                        </li>
+                                        <li class="reaction_item" title="Care">
+                                            <img src="~/Reaction/care.png" />
+                                        </li>
+                                        <li class="reaction_item" title="Haha">
+                                            <img src="~/Reaction/haha.png" />
+                                        </li>
+                                        <li class="reaction_item" title="Wow">
+                                            <img src="~/Reaction/wow.png" />
+                                        </li>
+                                        <li class="reaction_item" title="Sad">
+                                            <img src="~/Reaction/sad.png" />
+                                        </li>
+                                        <li class="reaction_item" title="Angry">
+                                            <img src="~/Reaction/angry.png" />
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            @*<button class="post__action">
+                                <svg class="icon icon-gif">
+                                    <use xlink:href="/img/sprite.svg#icon-gif"></use>
+                                </svg>
+                            </button>
+                            <button class="post__action">
+                                <svg class="icon icon-chart">
+                                    <use xlink:href="/img/sprite.svg#icon-chart"></use>
+                                </svg>
+                            </button>*@
+                        </div>
+                        <button class="post__btn btn btn_blue post_submit">@T["Chia sẻ bài viết"]</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="videos__item videos__item_big" style="margin: 20px 0">
+                <a class="videos__preview" href="#">
+                    <img class="videos__pic" src="img/videos-pic-1.jpg" alt="">
+                    <div class="videos__time">01:05</div>
+                </a>
+                <div class="videos__body">
+                    <div class="videos__head">
+                        <div class="videos__company">
+                            <img class="videos__pic" src="img/marvel.jpg" alt=""><a class="videos__add" href="#">
+                                <svg class="icon icon-plus">
+                                    <use xlink:href="/img/sprite.svg#icon-plus"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="videos__details">
+                            <div class="videos__category">#Marvel #Endgame #DontSpoilEndGame</div><a class="videos__info" href="#">Marvel Studios' Avengers: Endgame | Policy Trailer</a>
+                        </div>
+                    </div>
+                    <div class="videos__text">Every hero, every story, every moment has led us here. Marvel Studios’ Avengers: Endgame is NOW PLAYING in theaters.</div>
+                </div>
+                <div class="videos__control">
+                    <a class="videos__link" href="#">
+                        <svg class="icon icon-comment">
+                            <use xlink:href="/img/sprite.svg#icon-comment"></use>
+                        </svg><span class="videos__counter">25</span> Comments
+                    </a><a class="videos__link" href="#">
+                        <div class="like notification-drop">
+
+                        <svg class="icon icon-emoticon" onclick="">
+                            <use xlink:href="/img/sprite.svg#icon-like"></use>
+                            <span class="videos__counter">120k</span> Likes
+                        </svg>
+                        
+                        
+                        
+                    </div>
+                        
+                    </a><a class="videos__link" href="#">
+                        <svg class="icon icon-share">
+                            <use xlink:href="/img/sprite.svg#icon-share"></use>
+                        </svg><span class="videos__counter">231</span> Share
+                    </a><a class="videos__link" href="#">
+                        <svg class="icon icon-saved">
+                            <use xlink:href="/img/sprite.svg#icon-saved"></use>
+                        </svg><span class="videos__counter">12</span> Saved
+                    </a>
+                    
+                </div>
+                
+                
+                
+            </div>
+
+            <div class="post__item" >
+                @*<input id="post1" value="1" hidden/>*@
+                <div class="post__body">
+                    <div class="post__user">
+                        <div class="ava"><img class="ava__pic" src="~/img/ava-12.png" /></div>
+                        <div class="post__desc">
+                            <div class="post__man">Phạm Trâm Anh</div>
+                            <div class="post__time">12 April at 09.28 PM</div>
+                            <div class="options2 js-options">
+                                <button class="options2__btn js-options-btn">
+                                    <svg class="icon icon-dots">
+                                        <use xlink:href="/img/sprite.svg#icon-dots"></use>
+                                    </svg>
+                                </button>
+                                <div class="options2__dropdown js-options-dropdown">
+                                    <a class="options2__item" href="#">
+                                        <div class="options2__icon">
+                                            <svg class="icon icon-saved">
+                                                <use xlink:href="/img/sprite.svg#icon-saved"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="options2__details">
+                                            <div class="options2__info">Save Link</div>
+                                            <div class="options2__text">Add this to your saved items</div>
+                                        </div>
+                                    </a><a class="options2__item" href="#">
+                                        <div class="options2__icon">
+                                            <svg class="icon icon-close-circle">
+                                                <use xlink:href="/img/sprite.svg#icon-close-circle"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="options2__details">
+                                            <div class="options2__info">Hide Post</div>
+                                            <div class="options2__text">See fewer post like this</div>
+                                        </div>
+                                    </a><a class="options2__item" href="#">
+                                        <div class="options2__icon">
+                                            <svg class="icon icon-close-square">
+                                                <use xlink:href="/img/sprite.svg#icon-close-square"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="options2__details">
+                                            <div class="options2__info">Hide all from “Phạm Trâm Anh”</div>
+                                            <div class="options2__text">Stop seeing post from this person</div>
+                                        </div>
+                                    </a><a class="options2__item" href="#">
+                                        <div class="options2__icon">
+                                            <svg class="icon icon-profile">
+                                                <use xlink:href="/img/sprite.svg#icon-profile"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="options2__details">
+                                            <div class="options2__info">Unfollow “Phạm Trâm Anh”</div>
+                                            <div class="options2__text">Disconnected with this person</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="post__text">One of the perks of working in an international company is sharing knowledge with your colleagues.</div>
+                    @*<div class="post__gallery">
+                        <div class="post__col post__col ">
+                            <div class="post__preview post__preview_big"><img class="post__pic" src="~/img/post-pic-1.jpg" alt="" onclick="openModal();currentSlide(1) class="hover-shadow cursor"" /></div>
+                        </div>
+                        <div class="post__col row">
+                            <div class="post__preview post__preview_sm "><img class="post__pic" src="~/img/post-pic-2.jpg" alt="" onclick="openModal();currentSlide(2) class="hover-shadow cursor""/></div>
+                            <div class="post__preview post__preview_sm "><img class="post__pic" src="~/img/post-pic-3.jpg" alt="" onclick="openModal();currentSlide(3) class=" hover-shadow cursor"" /></div>
+                        </div>
+                    </div>*@
+                    <div class="post__gallery">
+                        <div class="post__col post__col">
+                            
+                            <img src="~/img/post-pic-1.jpg" style="width:100%; border-radius: 30px" onclick="openModal();currentSlide(1)" class="hover-shadow cursor ">
+                        </div>
+                        <div class="column post__col post__col">
+                            <img src="~/img/post-pic-2.jpg" style="width:100%; border-radius: 30px" onclick="openModal();currentSlide(2)" class="hover-shadow cursor image1 ">
+                            <img src="~/img/post-pic-3.jpg" style="width:100%; border-radius: 30px" onclick="openModal();currentSlide(3)" class="hover-shadow cursor ">
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="post__control">
+                        <a class="post__link" href="">
+                            <svg class="icon icon-comment">
+                                <use xlink:href="/img/sprite.svg#icon-comment"></use>
+                            </svg><span class="post__counter">25</span> Comments
+                        </a>
+                        <div class="post__link"  >
+                            
+                            <ul class="post__action notification-drop" style="margin-top: 10px;" >
+                                
+                                <li class="item account-info" id="account-info" title="Thông báo" style="padding-top: 0px;" >
+                                    
+                                    <svg class="icon icon-like" >
+                                        
+                                        <img id="imagepostlike" src="~/Reaction/unlike.png" style="width: 25px; height: 25px" />
+                                        <span class="post__counter">120k Likes</span>
+                                    </svg>
+                                    <ul class="reaction" >
+                                        
+                                        
+                                        <li class="reaction_item button" title="Like" onclick="Reaction(100, 1)">
+                                            
+                                            <img src="~/Reaction/like.png" id="Like"/>
+                                            
+                                        </li>
+                                        
+                                        <li class="reaction_item" title="Love" onclick="Reaction(100, 2)">
+                                            <img src="~/Reaction/love.png" />
+                                            
+                                            
+                                        </li>
+                                        <li class="reaction_item button" title="Care" onclick="Reaction(100, 3)">
+                                            <img src="~/Reaction/care.png" />
+                                            
+                                        </li>
+                                        <li class="reaction_item button" title="Haha" onclick="Reaction(100, 4)">
+                                           <img src="~/Reaction/haha.png" />
+                                           
+                                        </li>
+                                        <li class="reaction_item button" title="Wow" onclick="Reaction(100, 5)">
+                                            <img src="~/Reaction/wow.png" />
+                                            
+                                        </li>
+                                        <li class="reaction_item button" title="Sad" onclick="Reaction(100, 6)">
+                                            <img src="~/Reaction/sad.png" />
+                                            
+                                        </li>
+                                        <li class="reaction_item button" title="Angry" onclick="Reaction(100, 7)">
+                                            <img src="~/Reaction/angry.png" />
+                                            
+                                        </li>
+                                       
+                                        
+                                    </ul>
+                                    
+                                </li>
+                            </ul>
+                            
+                        </div>
+                        <a class="post__link" href="#">
+                            <svg class="icon icon-share">
+                                <use xlink:href="/img/sprite.svg#icon-share"></use>
+                            </svg><span class="post__counter">231</span> Share
+                        </a>
+                        <a class="post__link" href="#">
+                            <svg class="icon icon-saved">
+                                <use xlink:href="/img/sprite.svg#icon-saved"></use>
+                            </svg><span class="post__counter">12</span> Saved
+                        </a>
+                    </div>
+                    @*comment huongpm*@
+                    <div class="comments">
+                        <div class="comments__list comments__list_mb20">
+                            <div class="comments__item">
+                                <div class="ava"><img class="ava__pic" src="img/ava-11.png"></div>
+                                <div class="comments__details">
+                                    <div class="comments__head">
+                                        <div class="comments__author">Joel Hopkins</div>
+                                        <div class="comments__date">Dec 14, 2020</div>
+                                        <div class="options js-options">
+                                            <button class="options__btn js-options-btn">
+                                                <svg class="icon icon-dots">
+                                                    <use xlink:href="img/sprite.svg#icon-dots"></use>
+                                                </svg>
+                                            </button>
+                                            <div class="options__dropdown js-options-dropdown">
+                                                <div class="options__stage">
+                                                    List Actions<button class="options__close js-options-close">
+                                                        <svg class="icon icon-close">
+                                                            <use xlink:href="img/sprite.svg#icon-close"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <div class="options__group"><a class="options__link" href="#">Add New Teams… </a><a class="options__link" href="#">Edit Current Teams…</a><a class="options__link" href="#">Add New Member…</a><a class="options__link" href="#">Remove Current Member…</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comments__text">Creating Remarkable Poster Prints Through 4 Color Poster Printing</div>
+                                    <div class="knowledge__bottom">
+                                        <div class="users users_sm">
+                                            <div class="users__item"><img class="users__pic" src="img/ava-1.png" alt=""></div>
+                                            <div class="users__item" style="background-color: #82C43C">EL</div>
+                                            <div class="users__item" style="background-color: #FFC542">P</div>
+                                            <div class="users__item"><img class="users__pic" src="img/ava-2.png" alt=""></div>
+                                            <div class="users__item users__item_counter">+10</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gallery__options">
+                                    <ul class="gallery__links">
+                                        <li>
+                                            <svg class="icon icon-like">
+                                                <use xlink:href="/img/sprite.svg#icon-like"></use>
+                                            </svg>
+                                        </li>
+                                        @*<li><a class="gallery__link" href="#">Like</a></li>*@
+                                        <!--<li><a class="gallery__link" href="#">Comment</a></li>-->
+                                        @*<li><a class="gallery__link" href="#">Share</a></li>*@
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="comments__item">
+                                <div class="ava"><img class="ava__pic" src="img/ava-10.png"></div>
+                                <div class="comments__details">
+                                    <div class="comments__head">
+                                        <div class="comments__author">Cecilia Stone</div>
+                                        <div class="comments__date">Dec 14, 2020</div>
+                                        <div class="options js-options">
+                                            <button class="options__btn js-options-btn">
+                                                <svg class="icon icon-dots">
+                                                    <use xlink:href="img/sprite.svg#icon-dots"></use>
+                                                </svg>
+                                            </button>
+                                            <div class="options__dropdown js-options-dropdown">
+                                                <div class="options__stage">
+                                                    List Actions<button class="options__close js-options-close">
+                                                        <svg class="icon icon-close">
+                                                            <use xlink:href="img/sprite.svg#icon-close"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <div class="options__group"><a class="options__link" href="#">Add New Teams… </a><a class="options__link" href="#">Edit Current Teams…</a><a class="options__link" href="#">Add New Member…</a><a class="options__link" href="#">Remove Current Member…</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comments__text">This is my references</div>
+                                    <div class="comments__photo"><img class="comments__pic" src="img/comment-pic.png" alt=""></div>
+                                    <div class="knowledge__bottom">
+                                        <div class="users users_sm">
+                                            <div class="users__item"><img class="users__pic" src="img/ava-1.png" alt=""></div>
+                                            <div class="users__item" style="background-color: #82C43C">EL</div>
+                                            <div class="users__item" style="background-color: #FFC542">P</div>
+                                            <div class="users__item"><img class="users__pic" src="img/ava-2.png" alt=""></div>
+                                            <div class="users__item users__item_counter">+10</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gallery__options">
+                                    <ul class="gallery__links">
+                                        <li>
+                                            <svg class="icon icon-like">
+                                                <use xlink:href="/img/sprite.svg#icon-like"></use>
+                                            </svg>
+                                        </li>
+                                        @*<li><a class="gallery__link" href="#">Like</a></li>*@
+                                        <!--<li><a class="gallery__link" href="#">Comment</a></li>-->
+                                        @*<li><a class="gallery__link" href="#">Share</a></li>*@
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*comment huongpm*@
+                </div>
+                <div class="post__foot" >
+                    <div class="ava"><img class="ava__pic" src="@(userInfo.AvatarUrl)" alt="" /></div>
+                    <form class="post__field" id="myform" >
+                        <input class="post__input" type="text" placeholder="Write your comment…" id="comment" onclick="com(100)" />
+                        <input type="button" id="button_sign_in" class="button_sign_in" value="Sign in" hidden />
+                        <div class="post__actions">
+                            <button class="post__action">
+                                <svg class="icon icon-attachment-thin">
+                                    <use xlink:href="/img/sprite.svg#icon-attachment-thin"></use>
+                                </svg>
+                            </button><button class="post__action">
+                                <svg class="icon icon-emoticon">
+                                    <use xlink:href="/img/sprite.svg#icon-emoticon"></use>
+                                </svg>
+                            </button><button class="post__action">
+                                <svg class="icon icon-image">
+                                    <use xlink:href="/img/sprite.svg#icon-image"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            @*//model image*@
+            <div id="myModal" class="modal">
+                <span class="close cursor" style="color: white" onclick="closeModal()">&times;</span>
+                <div class="modal-content">
+
+                    <div class="mySlides">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="~/img/post-pic-1.jpg" class="modalimage" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="~/img/post-pic-2.jpg" class="modalimage" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="~/img/post-pic-3.jpg" class="modalimage" style="width:100%">
+                    </div>
+
+                   
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                    <div class="caption-container">
+                        <p id="caption"></p>
+                    </div>
+
+
+                    
+                </div>
+            </div>
+
+            <div class="post__item">
+                <div class="post__body">
+                    <div class="post__user active">
+                        <div class="ava active"><img class="ava__pic" src="~/img/ava-13.png" /></div>
+                        <div class="post__desc">
+                            <div class="post__man">Hoàng Văn Phúc</div>
+                            <div class="post__time">12 April at 09.28 PM</div>
+                            <div class="options2 js-options">
+                                <button class="options2__btn js-options-btn">
+                                    <svg class="icon icon-dots">
+                                        <use xlink:href="/img/sprite.svg#icon-dots"></use>
+                                    </svg>
+                                </button>
+                                <div class="options2__dropdown js-options-dropdown">
+                                    <a class="options2__item" href="#">
+                                        <div class="options2__icon">
+                                            <svg class="icon icon-saved">
+                                                <use xlink:href="/img/sprite.svg#icon-saved"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="options2__details">
+                                            <div class="options2__info">Save Link</div>
+                                            <div class="options2__text">Add this to your saved items</div>
+                                        </div>
+                                    </a><a class="options2__item" href="#">
+                                        <div class="options2__icon">
+                                            <svg class="icon icon-close-circle">
+                                                <use xlink:href="/img/sprite.svg#icon-close-circle"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="options2__details">
+                                            <div class="options2__info">Hide Post</div>
+                                            <div class="options2__text">See fewer post like this</div>
+                                        </div>
+                                    </a><a class="options2__item" href="#">
+                                        <div class="options2__icon">
+                                            <svg class="icon icon-close-square">
+                                                <use xlink:href="/img/sprite.svg#icon-close-square"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="options2__details">
+                                            <div class="options2__info">Hide all from “Phạm Trâm Anh”</div>
+                                            <div class="options2__text">Stop seeing post from this person</div>
+                                        </div>
+                                    </a><a class="options2__item" href="#">
+                                        <div class="options2__icon">
+                                            <svg class="icon icon-profile">
+                                                <use xlink:href="/img/sprite.svg#icon-profile"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="options2__details">
+                                            <div class="options2__info">Unfollow “Phạm Trâm Anh”</div>
+                                            <div class="options2__text">Disconnected with this person</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post__text">A Great Way To Generate All The Motivation You Need To Get Fit</div>
+                    <div class="post__control">
+                        <a class="post__link" href="#">
+                            <svg class="icon icon-comment">
+                                <use xlink:href="/img/sprite.svg#icon-comment"></use>
+                            </svg><span class="post__counter">7</span> Comments
+                        </a><a class="post__link" href="#">
+                            <svg class="icon icon-like">
+                                <use xlink:href="/img/sprite.svg#icon-like"></use>
+                            </svg><span class="post__counter">12</span> Likes
+                        </a><a class="post__link" href="#">
+                            <svg class="icon icon-share">
+                                <use xlink:href="/img/sprite.svg#icon-share"></use>
+                            </svg><span class="post__counter">0</span> Share
+                        </a><a class="post__link" href="#">
+                            <svg class="icon icon-saved">
+                                <use xlink:href="/img/sprite.svg#icon-saved"></use>
+                            </svg><span class="post__counter">0</span> Saved
+                        </a>
+                    </div>
+                    @*comment huongpm*@
+                    <div class="comments">
+                        <div class="comments__list comments__list_mb20">
+                            <div class="comments__item">
+                                <div class="ava"><img class="ava__pic" src="img/ava-11.png"></div>
+                                <div class="comments__details">
+                                    <div class="comments__head">
+                                        <div class="comments__author">Joel Hopkins</div>
+                                        <div class="comments__date">Dec 14, 2020</div>
+                                        <div class="options js-options">
+                                            <button class="options__btn js-options-btn">
+                                                <svg class="icon icon-dots">
+                                                    <use xlink:href="img/sprite.svg#icon-dots"></use>
+                                                </svg>
+                                            </button>
+                                            <div class="options__dropdown js-options-dropdown">
+                                                <div class="options__stage">
+                                                    List Actions<button class="options__close js-options-close">
+                                                        <svg class="icon icon-close">
+                                                            <use xlink:href="img/sprite.svg#icon-close"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <div class="options__group"><a class="options__link" href="#">Add New Teams… </a><a class="options__link" href="#">Edit Current Teams…</a><a class="options__link" href="#">Add New Member…</a><a class="options__link" href="#">Remove Current Member…</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comments__text">Creating Remarkable Poster Prints Through 4 Color Poster Printing</div>
+                                    <div class="knowledge__bottom">
+                                        <div class="users users_sm">
+                                            <div class="users__item"><img class="users__pic" src="img/ava-1.png" alt=""></div>
+                                            <div class="users__item" style="background-color: #82C43C">EL</div>
+                                            <div class="users__item" style="background-color: #FFC542">P</div>
+                                            <div class="users__item"><img class="users__pic" src="img/ava-2.png" alt=""></div>
+                                            <div class="users__item users__item_counter">+10</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gallery__options">
+                                    <ul class="gallery__links">
+                                        <li>
+                                            <svg class="icon icon-like">
+                                                <use xlink:href="/img/sprite.svg#icon-like"></use>
+                                            </svg>
+                                        </li>
+                                        @*<li><a class="gallery__link" href="#">Like</a></li>*@
+                                        <!--<li><a class="gallery__link" href="#">Comment</a></li>-->
+                                        @*<li><a class="gallery__link" href="#">Share</a></li>*@
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="comments__item">
+                                <div class="ava"><img class="ava__pic" src="img/ava-10.png"></div>
+                                <div class="comments__details">
+                                    <div class="comments__head">
+                                        <div class="comments__author">Cecilia Stone</div>
+                                        <div class="comments__date">Dec 14, 2020</div>
+                                        <div class="options js-options">
+                                            <button class="options__btn js-options-btn">
+                                                <svg class="icon icon-dots">
+                                                    <use xlink:href="img/sprite.svg#icon-dots"></use>
+                                                </svg>
+                                            </button>
+                                            <div class="options__dropdown js-options-dropdown">
+                                                <div class="options__stage">
+                                                    List Actions<button class="options__close js-options-close">
+                                                        <svg class="icon icon-close">
+                                                            <use xlink:href="img/sprite.svg#icon-close"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <div class="options__group"><a class="options__link" href="#">Add New Teams… </a><a class="options__link" href="#">Edit Current Teams…</a><a class="options__link" href="#">Add New Member…</a><a class="options__link" href="#">Remove Current Member…</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comments__text">This is my references</div>
+                                    <div class="comments__photo"><img class="comments__pic" src="img/comment-pic.png" alt=""></div>
+                                    <div class="knowledge__bottom">
+                                        <div class="users users_sm">
+                                            <div class="users__item"><img class="users__pic" src="img/ava-1.png" alt=""></div>
+                                            <div class="users__item" style="background-color: #82C43C">EL</div>
+                                            <div class="users__item" style="background-color: #FFC542">P</div>
+                                            <div class="users__item"><img class="users__pic" src="img/ava-2.png" alt=""></div>
+                                            <div class="users__item users__item_counter">+10</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gallery__options">
+                                    <ul class="gallery__links">
+                                        <li>
+                                            <svg class="icon icon-like">
+                                                <use xlink:href="/img/sprite.svg#icon-like"></use>
+                                            </svg>
+                                        </li>
+                                        @*<li><a class="gallery__link" href="#">Like</a></li>*@
+                                        <!--<li><a class="gallery__link" href="#">Comment</a></li>-->
+                                        @*<li><a class="gallery__link" href="#">Share</a></li>*@
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*comment huongpm*@
+                </div>
+                <div class="post__foot">
+                    <div class="ava"><img class="ava__pic" src="@(userInfo.AvatarUrl)" alt="" /></div>
+                    <div class="post__field">
+                        <input class="post__input" type="text" placeholder="Write your comment…" />
+                        <div class="post__actions">
+                            <button class="post__action">
+                                <svg class="icon icon-attachment-thin">
+                                    <use xlink:href="/img/sprite.svg#icon-attachment-thin"></use>
+                                </svg>
+                            </button><button class="post__action">
+                                <svg class="icon icon-emoticon">
+                                    <use xlink:href="/img/sprite.svg#icon-emoticon"></use>
+                                </svg>
+                            </button><button class="post__action">
+                                <svg class="icon icon-image">
+                                    <use xlink:href="/img/sprite.svg#icon-image"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page2__col page2__col_w35">
+        <div class="card1">
+            <div class="card1__head">
+                <div class="card1__category">@T["Thông tin nhân sự"]</div>
+            </div>
+            <div class="card1__body">
+                <a class="card1__item" href="@Url.Action("Index", "Profile")">
+                    <img class="icon" src="/img/disc.svg" />
+                    @T["Hồ sơ cá nhân"]
+                </a>
+                <a class="card1__item" href="@Url.Action("TrainingProcess", "Profile")">
+                    <img class="icon" src="/img/disc.svg" />
+                    @T["Quá trình đào tạo"]
+                </a>
+                <a class="card1__item" href="@Url.Action("WorkingExperiences", "Profile")">
+                    <img class="icon" src="/img/disc.svg" />
+                    @T["Kinh nghiệm làm việc"]
+                </a>
+                <a class="card1__item" href="@Url.Action("Relationship", "Profile")">
+                    <img class="icon" src="/img/disc.svg" />
+                    @T["Quan hệ nhân thân"]
+                </a>
+                <a class="card1__item" href="@Url.Action("RewardChildren", "Profile")">
+                    <img class="icon" src="/img/disc.svg" />
+                    @T["Khen thưởng con"]
+                </a>
+            </div>
+        </div>
+
+        <div class="card1">
+            <div class="card1__head">
+                <div class="card1__category">@T["Mở rộng"]</div>
+            </div>
+            <div class="card1__body">
+                <a class="card1__item" href="@Url.Action("Index", "Report")">
+                    <img class="icon" src="/img/report.svg" />
+                    @T["Báo cáo"]
+                </a>
+                <a class="card1__item" href="@Url.Action("OrgChart", "Report")">
+                    <img class="icon" src="/img/org.svg" />
+                    @T["Sơ đồ tổ chức"]
+                </a>
+                <a class="card1__item" href="@Url.Action("Index", "Proposal")">
+                    <img class="icon" src="/img/propose.svg" />
+                    @T["Đề xuất"]
+                </a>
+            </div>
+        </div>
+
+        <!-- huongpm - 20220911 - menu quan ly cong viec -->
+
+        <div class="card1">
+            <div class="card1__head">
+                <div class="card1__category">@T["Quản lý công việc"]</div>
+            </div>
+            <div class="card1__body">
+                <a class="card1__item" href="@Url.Action("Index", "TaskProject")">
+                    <img class="icon" src="/img/report.svg" />
+                    @T["Dự án"]
+                </a>
+                <a class="card1__item" href="@Url.Action("Index", "TaskWork")">
+                    <img class="icon" src="/img/org.svg" />
+                    @T["Công việc"]
+                </a>
+                <a class="card1__item" href="@Url.Action("Index", "TaskProgress")">
+                    <img class="icon" src="/img/propose.svg" />
+                    @T["Tiến độ"]
+                </a>
+                <a class="card1__item" href="@Url.Action("Index", "Proposal")">
+                    <img class="icon" src="/img/propose.svg" />
+                    @T["Báo cáo"]
+                </a>
+            </div>
+        </div>
+
+        <!-- ket thuc -->
+
+        @*<div class="card1">
+            <div class="card1__head">
+                <div class="card1__category">Suggested Pages</div><a class="card1__more" href="#">SEE ALL</a>
+            </div>
+            <div class="card1__body">
+                <a class="card1__user card1__user_team" href="#">
+                    <div class="ava"><img class="ava__pic" src="~/img/logo-team-1.png" alt=""></div>
+                    <div class="card1__desc">
+                        <div class="card1__man">Sebo Studio</div>
+                        <div class="card1__time">Design Studio</div>
+                    </div>
+                </a><a class="card1__like" href="#">
+                    <div class="card1__photo"><img class="card1__pic" src="~/img/card-photo.jpg" alt=""></div>
+                    <div class="card1__text">
+                        <svg class="icon icon-like-thumb">
+                            <use xlink:href="/img/sprite.svg#icon-like-thumb"></use>
+                        </svg>Like Page
+                    </div>
+                </a>
+            </div>
+        </div>*@
+
+        @if (Model.NewEmployees?.Count >= 0)
+        {
+            <div class="card1">
+                <div class="card1__head">
+                    <div class="card1__category">@T["Nhân sự mới"]</div>
+                </div>
+                @(Html.DevExtreme().List()
+                    .Height("100%")
+                    .DataSource(Model.NewEmployees)
+                    .ItemTemplate(@<text>
+                        <a class="card1__user" href="@Url.Action("Profile", "Employee")<%- EmployeeId %>/">
+                            <div class="ava"><img class="ava__pic" src="data:image/jpg;base64, <%- Picture %>" alt=""></div>
+                            <div class="card1__desc">
+                                <div class="card1__man"><%- FullName %></div>
+                                <div class="card1__time"><%- JobTitle %></div>
+                            </div>
+                        </a>
+                    </text>)
+                    )
+                <a class="card1__all" href="@Url.Action("NewEmployees", "Employee")">@T["Xem tất cả"]</a>
+            </div>
+        }
+    </div>
+</div>
+
+<script>
+
+    // comment
+    $(document).bind('keypress', function (e) {
+        if (e.keyCode == 13) {
+            e.preventDefault();
+            $('#button_sign_in').trigger('click');
+        }
+    });
+    function com(PostId){
+        $('#button_sign_in').click(function () {
+            var _datacoment = new FormData();
+            _datacoment.append("PostId", PostId);
+            _datacoment.append("Content", $("#comment").val());
+            //var data = {
+            //    PostId: PostId,
+            //    Content: $("#comment").val(),
+            //};
+            $.ajax({
+                url: '/Post/Comment',
+                type: 'POST',
+                dataType: 'json',
+                cache: false,
+                processData: false,
+                contentType: false,
+                data: _datacoment,
+                complete: function () {
+                    data = {};
+                    $("#comment").val("");
+                }
+            });
+        });
+    }
+    //hàm thả cảm xúc
+    function Reaction(PostId, idlike){
+        //var formdata = new FormData();
+        //formdata.append('PostId', PostId);
+        //formdata.append('Type', idlike);
+        var _datamoji = new FormData();
+        _datamoji.append("PostId", PostId);
+        _datamoji.append("Type", idlike);
+        $.ajax({
+            url: '/Post/Likes',
+            type: 'POST',
+            dataType: 'json',
+            cache: false,
+            processData: false,
+            contentType: false,
+            data: _datamoji,
+            success: function (res) {
+                if (res.success == 1) {
+                    var linkimg = $("#imagepostlike").attr("src");
+                    var linklike="";
+                    switch (idlike) {
+                        case 1:{
+                            linklike = "/Reaction/like.png";
+                            break;
+                        }
+                        case 2: {
+                            linklike = "/Reaction/Love.png";
+                            break;
+                        }
+                        case 3: {
+                            linklike = "/Reaction/Care.png";
+                            break;
+                        } 
+                        case 4: {
+                            linklike = "/Reaction/Haha.png";
+                            break;
+                        } 
+                        case 5: {
+                            linklike = "/Reaction/Wow.png";
+                            break;
+                        } 
+                        case 6: {
+                            linklike = "/Reaction/Sad.png";
+                            break;
+                        }
+                        case 7:{
+                            linklike = "/Reaction/Angry.png";
+                            break;
+                        } 
+                    }
+                    if (linkimg === linklike) {
+                        $("#imagepostlike").prop("src", "/Reaction/unlike.png")
+                    } else {
+                        $("#imagepostlike").prop("src", linklike)
+                    };
+                    
+                    
+                } else {
+                    toastr.warning(res.message);
+                }
+
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                toastr.error("Lỗi Server, Reaction thất bại");
+            },
+            complete: function () {
+                data = {};
+            }
+        });
+        
+        
+    };
+    $(function () {
+
+        $('button[action-type="image"]').click(function () {
+            console.log('dang anh');
+            $('#post_file_image').click();
+        });
+
+        // Post new
+        /*
+         * var formData = new FormData();
+            formData.append('section', 'general');
+            formData.append('action', 'previewImg');
+            // Attach file
+            formData.append('image', $('input[type=file]')[0].files[0]);
+
+            var filesLength=document.getElementById('file_input').files.length;
+            for(var i=0;i<filesLength;i++){
+	            formData.append("file[]", document.getElementById('file_input').files[i]);
+            }
+         */
+        $('form#formPost').submit(function (event) {
+            event.preventDefault();
+            var formData = new FormData($(this)[0]);
+
+
+        });
+
+        $()
+    });
+    //modal image
+    function openModal() {
+        document.getElementById('myModal').style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById('myModal').style.display = "none";
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+</script>
+
+

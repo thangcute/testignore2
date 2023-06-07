@@ -1,0 +1,253 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Humax.ESS.Models
+@model LeavePostModel
+@inject IViewLocalizer T
+
+<script>
+    $(function () {
+        $('#formSubmit').submit(function (e) {
+            e.preventDefault();
+
+            var _action = $('form#formSubmit').attr('action');
+            var _data = $('form#formSubmit').serializeArray();
+
+            $.ajax({
+                dataType: 'json',
+                type: 'POST',
+                url: _action,
+                data: _data,
+                success: function (res, status, jqXHR) {
+                    //console.log(res);
+                    if (res.success == 1) {
+                        toastr.success("Thực hiện thành công");
+
+                        if ($('#gridContainer').length)
+                            $("#gridContainer").dxDataGrid('instance').refresh();
+
+                        ClosePopup();
+                    } else if (res.success == 99) {
+                        toastr.warning("Dữ liệu không đúng định dạng");
+                        var _validation = res.validation;
+                        if (typeof _validation != 'undefined' && _validation.length > 0) {
+                            var _html = "";
+                            for (var key in _validation) {
+                                var _message = _validation[key]["Message"]
+                                _html += `<li>${_message}</li>`;
+                            }
+
+                            if (_html != '' && _html.length > 0)
+                                $("#validationMsg").html(_html);
+                        }
+                    } else {
+                        toastr.warning("Có lỗi trong quá trình xử lý");
+                    }
+                },
+                error: function (jqXHR, status, err) {
+                    toastr.error("Lỗi Server");
+                },
+                complete: function () {
+                    //$("body").removeClass("loading");
+                }
+            });
+        });
+    });
+
+    function NumberHoliday() {
+        //var _date = new Date(_ngaychamcong);
+        var _start = $("#NgayBatDau").dxDateBox("instance").option("value").toISOString();
+        var _end = $("#NgayKetThuc").dxDateBox("instance").option("value").toISOString();
+        var _khId = $("#KyHieuChamCongID").dxSelectBox("instance").option("value");
+        console.log(`${_start} - ${_end} - ${_khId}`);
+        // && typeof _khId != 'undefined' && _khId > 0
+        if (typeof _start != 'undefined' && _start != '' && typeof _end != 'undefined' && _end != '') {
+            var _data = {
+                KyHieuChamCongID: _khId,
+                StartDateTime: _start,
+                EndDateTime: _end
+            };
+            $.ajax({
+                dataType: 'json',
+                type: 'POST',
+                url: "/Leave/CheckHoliday",
+                data: JSON.stringify(_data),
+                contentType: 'application/json; charset=utf-8',
+                success: function (res, status, jqXHR) {
+                    //console.log(res);
+                    if (res.success == 1) {
+                        $("#SoNgayNghi").dxNumberBox("instance").option("value", res.data);
+                    } else if (res.success == 99) {
+                        toastr.warning("Dữ liệu không đúng định dạng");
+                    } else {
+                        toastr.warning("Có lỗi tính ngày nghỉ !");
+                    }
+                },
+                error: function (jqXHR, status, err) {
+                    toastr.error("Lỗi Server");
+                },
+                complete: function () {
+                    //$("body").removeClass("loading");
+                }
+            });
+        }
+    }
+</script>
+
+<form id="formSubmit" method="post" action="@Url.Action("Post", "Leave")">
+    <div class="note note-warning">
+        <span>
+            <i class="icon dx-icon-warning"></i> Cảnh báo:
+        </span>
+
+        <span>
+            Phép đã nghỉ: @ViewBag.SoPhepDaNghi.ToString("n2") - Số ngày phép còn lại: @ViewBag.SoPhepConLai.ToString("n2")
+        </span>
+    </div>
+
+    <div class="validation-summary-valid text-danger" data-valmsg-summary="true">
+        <ul id="validationMsg">
+            <li style="display:none"></li>
+        </ul>
+    </div>
+
+    @(Html.DevExtreme().Form<LeavePostModel>()
+        .ShowValidationSummary(false)
+        .ID("form")
+        .ColCount(12)
+        .Items(items => {
+            items.AddSimpleFor(m => m.Id)
+                .ColSpan(12)
+                .Label(l => l.Visible(false))
+                .CssClass("hidden-control")
+                .Editor(e => e
+                    .TextBox()
+                    .ElementAttr(new Dictionary<string, object>() {
+                        { "id", "QTNghiPhepID" }
+                    })
+                );
+
+            items.AddGroup().Caption("Lý do").ColSpan(12).ColCount(12)
+                .Items(groupItems =>
+                {
+                    groupItems.AddSimpleFor(m => m.KyHieuChamCongID)
+                        .ColSpan(12)
+                        .Label(e => e
+                            .Text("Lý do nghỉ phép")
+                        )
+                        .Editor(e => e
+                            .SelectBox()
+                            .ElementAttr(new Dictionary<string, object>() {
+                                { "id", "KyHieuChamCongID" }
+                            })
+                            .ShowClearButton(true)
+                            //.NoDataText("")
+                            .Placeholder("Lý do nghỉ phép")
+                            .Width("100%")
+                            .Disabled(false)
+                            .DataSource(d => d.RemoteController()
+                                .Key("Id")
+                                .LoadUrl("/Leave/GetLyDoNghiViec")
+                            )
+                            .DisplayExpr("Name")
+                            .ValueExpr("Id")
+                        )
+                        .IsRequired(true);
+                });
+
+            items.AddGroup().Caption("Thời gian").ColSpan(12).ColCount(12)
+                .Items(groupItems =>
+                {
+                    groupItems.AddSimpleFor(m => m.NgayBatDau)
+                        .ColSpan(12)
+                        .Label(e => e
+                            .Text("Ngày bắt đầu")
+                        )
+                        .Editor(e => e
+                            .DateBox()
+                            .ElementAttr(new Dictionary<string, object>() {
+                                { "id", "NgayBatDau" }
+                            })
+                            .ShowClearButton(true)
+                            .Type(DateBoxType.DateTime)
+                            .Width("100%")
+                            .DisplayFormat("dd-MM-yyyy HH:mm")
+                            .OnChange("NumberHoliday")
+                            .UseMaskBehavior(true)
+                        )
+                        .IsRequired(true);
+
+                    groupItems.AddSimpleFor(m => m.NgayKetThuc)
+                        .ColSpan(12)
+                        .Label(e => e
+                            .Text("Ngày kết thúc")
+                        )
+                        .Editor(e => e
+                            .DateBox()
+                            .ElementAttr(new Dictionary<string, object>() {
+                                { "id", "NgayKetThuc" }
+                            })
+                            .ShowClearButton(true)
+                            .Type(DateBoxType.DateTime)
+                            .Width("100%")
+                            .DisplayFormat("dd-MM-yyyy HH:mm")
+                            .OnChange("NumberHoliday")
+                            .UseMaskBehavior(true)
+                            )
+                            .IsRequired(true);
+
+                    groupItems.AddSimpleFor(m => m.SoNgayNghi)
+                    .ColSpan(12)
+                    .Label(e => e
+                        .Text("Số ngày nghỉ")
+                    )
+                    .Editor(e => e
+                        .NumberBox()
+                        .ElementAttr(new Dictionary<string, object>() {
+                            { "id", "SoNgayNghi" }
+                        })
+                        .Placeholder("Số ngày nghỉ")
+                        .Max(1000)
+                        .Format("#,##0.##")
+                        .ReadOnly(true)
+                        .Width("100%")
+                        .Disabled(false)
+                    );
+                });
+
+            items.AddGroup().Caption("Ghi chú").ColSpan(12).ColCount(12)
+                .Items(groupItems =>
+                {
+                    groupItems.AddSimpleFor(m => m.DiaDiem)
+                        .ColSpan(12)
+                        .Label(e => e
+                            .Text("Địa điểm nghỉ")
+                        )
+                        .Editor(e => e
+                            .TextBox()
+                            .Placeholder("Địa điểm nghỉ")
+                            .Width("100%")
+                        );
+
+                    groupItems.AddSimpleFor(m => m.DienGiai)
+                        .ColSpan(12)
+                        .Label(e => e
+                            .Text("Diễn giả")
+                        )
+                        .Editor(e => e
+                            .TextArea()
+                            .Placeholder("Diễn giả")
+                            .Height(65)
+                            .Width("100%")
+                        )
+                        .IsRequired(true);
+                });
+        }).FormData(Model)
+    )
+
+    <button class="group__btn btn btn_blue flr mgt-10 mgr-0" type="submit">
+        <i class="icon dx-icon-check"></i>@T["Lưu"]
+    </button>
+
+    <button class="group__btn btn btn_yellow flr mgt-10 mgr-6" type="button" onclick="ClosePopup();">
+        <i class="icon dx-icon-close"></i>@T["Đóng"]
+    </button>
+</form>

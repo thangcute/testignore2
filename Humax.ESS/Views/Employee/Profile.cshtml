@@ -1,0 +1,390 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Humax.ESS.Helpers
+@model UserInfoModel
+
+@inject IViewLocalizer T
+@{
+    ViewData["Title"] = T["Hồ sơ"];
+    var userInfo = Context.Session.GetCurrentUser();
+}
+
+@if (Model == null)
+{
+    <div class="error-messsage">@ViewData["ErrorMessage"]</div>
+}
+else
+{
+<div class="profile profile_user">
+    <div class="profile__bg" style="background-image: url('/img/bg-profile.jpg');">
+    </div>
+    <div class="profile__user">
+        <div class="profile__ava"><img class="profile__pic" src="@Model.AvatarUrl" alt="">
+            <div class="view_ava">xem</div>
+            <div class="edit_ava">thêm</div>
+        </div>
+        <div class="profile__details"><span class="profile__title title">@Model.FullName</span><span class="profile__login">@Model.JobTitle</span></div>
+        <div class="profile__text">“Pushing pixels and experiences in digital products for Sebostudio”</div>
+    </div>
+    <div class="profile__options">
+        <div class="profile__option">
+            <a class="profile__link active" href="#">
+                <div class="profile__category">Post</div>
+                <div class="profile__number">10,3K</div>
+            </a>
+        </div>
+        <div class="profile__option">
+            <a class="profile__link" href="#">
+                <div class="profile__category">Followers</div>
+                <div class="profile__number">2,564</div>
+            </a>
+        </div>
+        <div class="profile__option">
+            <a class="profile__link" href="#">
+                <div class="profile__category">Following</div>
+                <div class="profile__number">3,154</div>
+            </a>
+        </div>
+        <div class="profile__option">
+            <a class="profile__link" href="#">
+                <div class="profile__category">Likes</div>
+                <div class="profile__number">12,2k</div>
+            </a>
+        </div>
+        <div class="profile__option">
+            <a class="profile__link" href="#">
+                <div class="profile__category">Photos</div>
+                <div class="profile__number">35</div>
+            </a>
+        </div>
+        <div class="profile__option">
+            <a class="profile__link" href="#">
+                <div class="profile__category">Videos</div>
+                <div class="profile__number">24</div>
+            </a>
+        </div>
+        <div class="profile__option">
+            <a class="profile__link" href="#">
+                <div class="profile__category">Saved</div>
+                <div class="profile__number">18</div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="page2__row">
+    <div class="page2__col page2__col_w35">
+        <div class="card1">
+            <div class="card1__head">
+                <div class="card1__category">Giới thiệu</div>
+                <div class="options2 js-options">
+                    <button class="options2__btn js-options-btn">
+                        <svg class="icon icon-dots">
+                            <use xlink:href="/img/sprite.svg#icon-dots"></use>
+                        </svg>
+                    </button>
+                    <div class="options2__dropdown js-options-dropdown">
+                        <a class="options2__item" href="#">
+                            <div class="options2__icon">
+                                <svg class="icon icon-saved">
+                                    <use xlink:href="/img/sprite.svg#icon-saved"></use>
+                                </svg>
+                            </div>
+                            <div class="options2__details">
+                                <div class="options2__info">Save Link</div>
+                                <div class="options2__text">Add this to your saved items</div>
+                            </div>
+                        </a><a class="options2__item" href="#">
+                            <div class="options2__icon">
+                                <svg class="icon icon-close-circle">
+                                    <use xlink:href="/img/sprite.svg#icon-close-circle"></use>
+                                </svg>
+                            </div>
+                            <div class="options2__details">
+                                <div class="options2__info">Hide Post</div>
+                                <div class="options2__text">See fewer post like this</div>
+                            </div>
+                        </a><a class="options2__item" href="#">
+                            <div class="options2__icon">
+                                <svg class="icon icon-close-square">
+                                    <use xlink:href="/img/sprite.svg#icon-close-square"></use>
+                                </svg>
+                            </div>
+                            <div class="options2__details">
+                                <div class="options2__info">Hide all from “Pan Feng Shui”</div>
+                                <div class="options2__text">Stop seeing post from this person</div>
+                            </div>
+                        </a><a class="options2__item" href="#">
+                            <div class="options2__icon">
+                                <svg class="icon icon-profile">
+                                    <use xlink:href="/img/sprite.svg#icon-profile"></use>
+                                </svg>
+                            </div>
+                            <div class="options2__details">
+                                <div class="options2__info">Unfollow “Pan Feng Shui”</div>
+                                <div class="options2__text">Disconnected with this person</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card1__body">
+                <div class="card1__note">“Pushing pixels and experiences in digital products for Sebostudio”</div>
+                <div class="card1__list">
+                    <a class="card1__item" href="#">
+                        <svg class="icon icon-place">
+                            <use xlink:href="/img/sprite.svg#icon-place"></use>
+                        </svg>Yogyakarta, ID
+                    </a><a class="card1__item" href="#">
+                        <svg class="icon icon-world">
+                            <use xlink:href="/img/sprite.svg#icon-world"></use>
+                        </svg>dribbble.com/fawait
+                    </a><a class="card1__item" href="#">
+                        <svg class="icon icon-date">
+                            <use xlink:href="/img/sprite.svg#icon-date"></use>
+                        </svg>Joined June 2012
+                    </a><a class="card1__item" href="#">
+                        <svg class="icon icon-case">
+                            <use xlink:href="/img/sprite.svg#icon-case"></use>
+                        </svg>Working at Sebo Studio
+                    </a><a class="card1__item" href="#">
+                        <svg class="icon icon-relationship">
+                            <use xlink:href="/img/sprite.svg#icon-relationship"></use>
+                        </svg>In relationship with Gal Gadot
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="card1">
+            <div class="card1__head">
+                <div class="card1__category">Photos and Videos</div><a class="card1__more" href="#">SEE ALL</a>
+            </div>
+            <div class="card1__body">
+                <div class="card1__gallery">
+                    <div class="card1__photo"><img class="card1__pic" src="~/img/card-photo-1.jpg" alt=""></div>
+                    <div class="card1__photo"><img class="card1__pic" src="~/img/card-photo-2.jpg" alt=""></div>
+                    <div class="card1__photo"><img class="card1__pic" src="~/img/card-photo-3.jpg" alt=""></div>
+                    <div class="card1__photo"><img class="card1__pic" src="~/img/card-photo-4.jpg" alt=""></div>
+                    <div class="card1__photo"><img class="card1__pic" src="~/img/card-photo-5.jpg" alt=""></div>
+                    <div class="card1__photo"><img class="card1__pic" src="~/img/card-photo-6.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page2__col page2__col_w65">
+        <div class="post js-post">
+            <div class="post__item">
+                <div class="post__body">
+                    <div class="post__user">
+                        <div class="ava"><img class="ava__pic" src="@Model.AvatarUrl"></div>
+                        <div class="post__desc">
+                            <div class="post__man">@Model.FullName</div>
+                            <div class="post__time">12 April at 09.28 PM</div>
+                            <div class="options2 js-options">
+                                <button class="options2__btn js-options-btn">
+                                    <svg class="icon icon-dots">
+                                        <use xlink:href="/img/sprite.svg#icon-dots"></use>
+                                    </svg>
+                                </button>
+                                <div class="options2__dropdown js-options-dropdown">
+                                    <a class="options2__item" href="#">
+                                        <div class="options2__icon">
+                                            <svg class="icon icon-saved">
+                                                <use xlink:href="/img/sprite.svg#icon-saved"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="options2__details">
+                                            <div class="options2__info">Save Link</div>
+                                            <div class="options2__text">Add this to your saved items</div>
+                                        </div>
+                                    </a><a class="options2__item" href="#">
+                                        <div class="options2__icon">
+                                            <svg class="icon icon-close-circle">
+                                                <use xlink:href="/img/sprite.svg#icon-close-circle"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="options2__details">
+                                            <div class="options2__info">Hide Post</div>
+                                            <div class="options2__text">See fewer post like this</div>
+                                        </div>
+                                    </a><a class="options2__item" href="#">
+                                        <div class="options2__icon">
+                                            <svg class="icon icon-close-square">
+                                                <use xlink:href="/img/sprite.svg#icon-close-square"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="options2__details">
+                                            <div class="options2__info">Hide all from “Pan Feng Shui”</div>
+                                            <div class="options2__text">Stop seeing post from this person</div>
+                                        </div>
+                                    </a><a class="options2__item" href="#">
+                                        <div class="options2__icon">
+                                            <svg class="icon icon-profile">
+                                                <use xlink:href="/img/sprite.svg#icon-profile"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="options2__details">
+                                            <div class="options2__info">Unfollow “Pan Feng Shui”</div>
+                                            <div class="options2__text">Disconnected with this person</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post__text">One of the perks of working in an international company is sharing knowledge with your colleagues.</div>
+                    <div class="post__gallery">
+                        <div class="post__col post__col">
+                            <div class="post__preview post__preview_big"><img class="post__pic" src="~/img/post-pic-1.jpg" alt=""></div>
+                        </div>
+                        <div class="post__col">
+                            <div class="post__preview post__preview_sm"><img class="post__pic" src="~/img/post-pic-2.jpg" alt=""></div>
+                            <div class="post__preview post__preview_sm"><img class="post__pic" src="~/img/post-pic-3.jpg" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="post__control">
+                        <a class="post__link" href="#">
+                            <svg class="icon icon-comment">
+                                <use xlink:href="/img/sprite.svg#icon-comment"></use>
+                            </svg><span class="post__counter">25</span> Comments
+                        </a><a class="post__link" href="#">
+                            <svg class="icon icon-like">
+                                <use xlink:href="/img/sprite.svg#icon-like"></use>
+                            </svg><span class="post__counter">120k</span> Likes
+                        </a><a class="post__link" href="#">
+                            <svg class="icon icon-share">
+                                <use xlink:href="/img/sprite.svg#icon-share"></use>
+                            </svg><span class="post__counter">231</span> Share
+                        </a><a class="post__link" href="#">
+                            <svg class="icon icon-saved">
+                                <use xlink:href="/img/sprite.svg#icon-saved"></use>
+                            </svg><span class="post__counter">12</span> Saved
+                        </a>
+                    </div>
+                </div>
+                <div class="post__foot">
+                    <div class="ava"><img class="ava__pic" src="@userInfo.AvatarUrl" alt=""></div>
+                    <div class="post__field">
+                        <input class="post__input" type="text" placeholder="Write your comment…">
+                        <div class="post__actions">
+                            <button class="post__action">
+                                <svg class="icon icon-attachment-thin">
+                                    <use xlink:href="/img/sprite.svg#icon-attachment-thin"></use>
+                                </svg>
+                            </button><button class="post__action">
+                                <svg class="icon icon-emoticon">
+                                    <use xlink:href="/img/sprite.svg#icon-emoticon"></use>
+                                </svg>
+                            </button><button class="post__action">
+                                <svg class="icon icon-image">
+                                    <use xlink:href="/img/sprite.svg#icon-image"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="post__item">
+                <div class="post__body">
+                    <div class="post__user">
+                        <div class="ava"><img class="ava__pic" src="@Model.AvatarUrl"></div>
+                        <div class="post__desc">
+                            <div class="post__man">@Model.FullName</div>
+                            <div class="post__time">12 April at 09.28 PM</div>
+                            <div class="options2 js-options">
+                                <button class="options2__btn js-options-btn">
+                                    <svg class="icon icon-dots">
+                                        <use xlink:href="/img/sprite.svg#icon-dots"></use>
+                                    </svg>
+                                </button>
+                                <div class="options2__dropdown js-options-dropdown">
+                                    <a class="options2__item" href="#">
+                                        <div class="options2__icon">
+                                            <svg class="icon icon-saved">
+                                                <use xlink:href="/img/sprite.svg#icon-saved"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="options2__details">
+                                            <div class="options2__info">Save Link</div>
+                                            <div class="options2__text">Add this to your saved items</div>
+                                        </div>
+                                    </a><a class="options2__item" href="#">
+                                        <div class="options2__icon">
+                                            <svg class="icon icon-close-circle">
+                                                <use xlink:href="/img/sprite.svg#icon-close-circle"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="options2__details">
+                                            <div class="options2__info">Hide Post</div>
+                                            <div class="options2__text">See fewer post like this</div>
+                                        </div>
+                                    </a><a class="options2__item" href="#">
+                                        <div class="options2__icon">
+                                            <svg class="icon icon-close-square">
+                                                <use xlink:href="/img/sprite.svg#icon-close-square"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="options2__details">
+                                            <div class="options2__info">Hide all from “Pan Feng Shui”</div>
+                                            <div class="options2__text">Stop seeing post from this person</div>
+                                        </div>
+                                    </a><a class="options2__item" href="#">
+                                        <div class="options2__icon">
+                                            <svg class="icon icon-profile">
+                                                <use xlink:href="/img/sprite.svg#icon-profile"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="options2__details">
+                                            <div class="options2__info">Unfollow “Pan Feng Shui”</div>
+                                            <div class="options2__text">Disconnected with this person</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post__text">A Great Way To Generate All The Motivation You Need To Get Fit</div>
+                    <div class="post__control">
+                        <a class="post__link" href="#">
+                            <svg class="icon icon-comment">
+                                <use xlink:href="/img/sprite.svg#icon-comment"></use>
+                            </svg><span class="post__counter">7</span> Comments
+                        </a><a class="post__link" href="#">
+                            <svg class="icon icon-like">
+                                <use xlink:href="/img/sprite.svg#icon-like"></use>
+                            </svg><span class="post__counter">12</span> Likes
+                        </a><a class="post__link" href="#">
+                            <svg class="icon icon-share">
+                                <use xlink:href="/img/sprite.svg#icon-share"></use>
+                            </svg><span class="post__counter">0</span> Share
+                        </a><a class="post__link" href="#">
+                            <svg class="icon icon-saved">
+                                <use xlink:href="/img/sprite.svg#icon-saved"></use>
+                            </svg><span class="post__counter">0</span> Saved
+                        </a>
+                    </div>
+                </div>
+                <div class="post__foot">
+                    <div class="ava"><img class="ava__pic" src="@userInfo.AvatarUrl" alt=""></div>
+                    <div class="post__field">
+                        <input class="post__input" type="text" placeholder="Write your comment…">
+                        <div class="post__actions">
+                            <button class="post__action">
+                                <svg class="icon icon-attachment-thin">
+                                    <use xlink:href="/img/sprite.svg#icon-attachment-thin"></use>
+                                </svg>
+                            </button><button class="post__action">
+                                <svg class="icon icon-emoticon">
+                                    <use xlink:href="/img/sprite.svg#icon-emoticon"></use>
+                                </svg>
+                            </button><button class="post__action">
+                                <svg class="icon icon-image">
+                                    <use xlink:href="/img/sprite.svg#icon-image"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}

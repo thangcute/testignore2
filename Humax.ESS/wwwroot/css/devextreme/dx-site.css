@@ -1,0 +1,340 @@
+﻿/**
+
+*/
+.hidden-control{
+    display:none !important;
+    width: 0px !important;
+    height: 0px !important;
+}
+
+.file-hidden-control {
+    width: 0px !important;
+    height: 0px !important;
+}
+/**
+
+*/
+
+.note.note-warning {
+    background-color: #fcf8e3;
+    border-color: #f5d89e;
+    color: #8a6d3b;
+    width: 100%;
+}
+
+.note {
+    margin: 10px 0 0px 0;
+    padding: 20px 30px 20px 15px;
+    border-left: 5px solid #eee;
+    border-radius: 0px;
+}
+
+.note.note-warning span {
+    font-weight: 600
+}
+
+.note.note-warning span:nth-child(2n) {
+    color: red;
+}
+
+#validationMsg {
+    list-style: decimal-leading-zero;
+    margin-left: 23px;
+    color: crimson;
+}
+
+#validationMsg li:first-child{
+    margin-top: 10px;
+}
+
+#validationMsg li {
+    margin-bottom: 3px;
+}
+
+#validationMsg li:last-child {
+    margin-top: 0px;
+}
+
+#form .dx-form-group-caption {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#form .dx-form-group-with-caption > .dx-form-group-content {
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+#form .dx-layout-manager .dx-field-item:not(.dx-first-row) {
+    /*padding-top: 6px;*/
+}
+
+.dx-datagrid-headers .dx-datagrid-table tr.dx-header-row td {
+    height: 48px !important;
+    vertical-align: middle;
+}
+
+.dx-pager .dx-pages .dx-info {
+    float: left;
+    margin-top: 8px;
+}
+
+.dx-pager .dx-pages .dx-page-indexes{
+    float: right;
+}
+/**
+    WorkingExperiences
+*/
+.dx-datagrid-rowsview .dx-row.dx-row-lines td {
+    vertical-align: middle;
+}
+
+.dx-pager .dx-page-sizes {
+    margin-left: 6px;
+}
+
+.dev-grid-label {
+}
+
+.dev-grid-title {
+    font-weight: bold;
+    color: green;
+}
+
+.dev-grid-start-time {
+    font-style: italic;
+    color: blue;
+}
+
+.dev-grid-end-time {
+    font-style: italic;
+    color: brown;
+}
+
+/**
+    TrainingProcess
+*/
+
+/**
+    diagram
+*/
+#diagram {
+    height: 725px;
+}
+
+#diagram .template .template-name {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#diagram .template .template-title {
+    font-style: italic;
+}
+
+#diagram .template .template-button {
+    cursor: pointer;
+    font-size: 8pt;
+    fill: navy;
+}
+
+#diagram .template .template-button:hover {
+    text-decoration: underline;
+}
+
+.dx-popup-content p {
+    margin: 0 0 10px;
+}
+
+/**
+    Form
+*/
+
+*[event="none"] input[type="text"] {
+    pointer-events: none !important;
+    border: 0.5px dashed #ddd !important;
+    background: white !important;
+}
+
+.btn-giai-trinh{
+
+}
+
+    .btn-giai-trinh .dx-button-content {
+        padding: 3px 8px;
+    }
+
+#gridTimeSheet .group__btn {
+    padding: 1px 6px 0 !important;
+}
+
+#gridTimeSheet .btn {
+    height: 28px;
+}
+
+#gridTimeSheet .group__btn:not(:last-child) {
+    margin-right: unset !important;
+}
+
+.flr {
+    float: right !important;
+}
+
+.mgt-10{
+    margin-top:10px !important;
+}
+
+.mgt-6 {
+    margin-top: 6px !important;
+}
+
+.mgb-6 {
+    margin-bottom: 6px !important;
+}
+
+.mgr-0 {
+    margin-right: 0px !important;
+}
+
+.mgr-6 {
+    margin-right: 6px !important;
+}
+
+.dialog-custom-content {
+    text-align: center;
+    padding-top: 30px;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.dialog-custom-content .icon {
+    font-size: 18px;
+}
+
+.dx-popup-content {
+    padding-top: 0px !important;
+}
+
+.dev-radio-control {
+    margin-top: 6px !important;
+}
+
+.dev-radio-control label:first-child{
+    margin-top: 3px !important;
+}
+
+.dx-fileuploader-wrapper{
+    padding: 0px !important;
+}
+
+.dx-fileuploader-input-wrapper {
+    padding: 0px !important;
+    border: 0px !important;
+}
+
+.dev-grid-day-of-month {
+    text-align: center;
+}
+
+.dev-grid-day-of-week {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+.T2, .T3, .T4, .T5, .T6{
+
+}
+
+.dev-grid-bgr-t7 {
+    background-color: orange !important;
+}
+.dev-grid-bgr-cn {
+    background-color: tomato !important;
+}
+
+.dev-time-sheet-ca {
+    color: blue;
+}
+
+.dev-time-sheet-tglv {
+    color: darkgreen;
+    font-weight: bold;
+}
+
+.dev-time-sheet-dm {
+    font-style: italic;
+}
+
+.dev-time-sheet-vs {
+    font-style: italic;
+}
+
+.dev-time-sheet-vr {
+    font-style: italic;
+}
+
+.dev-gt-tg,
+.dev-gt-vs,
+.dev-gt-dm,
+.dev-gt-dk,
+.dev-ct-np {
+    margin-bottom: 3px;
+}
+
+.dev-gt-tg span {
+    background-color: coral;
+    color: cornsilk;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 2px 6px;
+}
+
+.dev-gt-vs span {
+    background-color: darkgoldenrod;
+    color: cornsilk;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 2px 6px;
+}
+
+.dev-gt-dm span {
+    background-color: blueviolet;
+    color: cornsilk;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 2px 6px;
+}
+
+.dev-gt-dk span {
+    background-color: tan;
+    color: teal;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 2px 6px;
+}
+
+.dev-ct-np span {
+    background-color: yellowgreen;
+    border-radius: 10px;
+    color: unset;
+    font-weight: bold;
+    padding: 2px 6px;
+}
+
+.btn-gt-dm {
+    
+}
+
+.btn-gt-vs {
+}
+
+.btn-gt-tg {
+    height: 24px !important;
+    background-color: burlywood !important;
+}
+.p-t-3{
+    padding-top:3px !important;
+}
+
+.p-b-3 {
+    padding-bottom: 3px !important;
+}

@@ -1,0 +1,44 @@
+﻿<style>
+    .list-permission .checkbox {
+        font-weight: 100 !important;
+        margin-bottom: 15px;
+    }
+    /*:not(:last-child)*/
+
+    .list-permission .checkbox__flex {
+        margin-top: 0px !important;
+    }
+
+    .modal-title {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .modal-header .close {
+        margin-top: -25px;
+    }
+
+    .modal-dialog{
+        width: 650px;
+    }
+</style>
+
+<div class="modal fade" id="modalGlobal" role="dialog" aria-labelledby="modalGlobalTitle" aria-hidden="true">@*tabindex="-1"*@ 
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalGlobalTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modalGlobalBody">
+
+            </div>
+            <div id="modalGlobalFooter" class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                <button type="button" id="ModalBtnSubmit" class="btn btn-primary">Lưu thông tin</button>
+            </div>
+        </div>
+    </div>
+</div>

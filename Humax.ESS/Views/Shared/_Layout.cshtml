@@ -1,0 +1,298 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Humax.ESS.Helpers
+
+@inject IViewLocalizer T
+@{
+    var isDarkMode = Context.Request.IsDarkMode();
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <title>@ViewData["Title"] - Humax.ESS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="~/img/favicon.ico" type="image/x-icon">
+    @*<link rel="apple-touch-icon" sizes="180x180" href="~/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/img/favicon-16x16.png">*@
+    @*<link rel="manifest" href="~/img/site.webmanifest">*@
+    <link rel="mask-icon" href="~/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Humax.ESS">
+
+    @*<link href="~/css/devextreme/dx-diagram.css" rel="stylesheet" />*@
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <link href="~/css/devextreme/dx.common.css" rel="stylesheet" />
+    <link href="~/css/devextreme/dx.light.css" rel="stylesheet" />
+    <link href="~/css/devextreme/dx-diagram.min.21.1.5.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/css/devextreme/dx.light.21.1.5.css" />
+
+    <link rel="stylesheet" type="text/css" href="~/css/fontawesome/css/all.css"> <!--load all styles -->
+    <link rel="stylesheet" type="text/css" href="~/css/toastr.min.css" media="all">
+    <link rel="stylesheet" type="text/css" href="~/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="~/flatpickr/flatpickr.css">
+    <link rel="stylesheet" type="text/css" href="~/flatpickr/custom-flatpickr.css">
+
+    <link rel="stylesheet" media="all" href="~/css/app.css">
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/menu/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/modal.css" rel="stylesheet" />
+    <style>
+        .sorting1__title {
+            margin-top: 0px !important;
+            margin-bottom: 0px !important;
+        }
+
+        .btn {
+            border-radius: 10px;
+        }
+
+        .player__settings {
+            top: 35px !important;
+        }
+
+        .player__container {
+            border-radius: 0px !important;
+        }
+
+        .player__counter {
+            min-width: 18px !important;
+            margin-left: 5px !important;
+            background: red !important;
+        }
+
+        .products__row {
+            height: 45px !important;
+        }
+
+        .products__row_head {
+            border-radius: 0px !important;
+            margin-top: 10px !important;
+            background: none !important;
+            border-bottom: 1px solid #CCCC !important;
+            margin-bottom: 3px !important;
+        }
+
+        .products__row > .products__cell:not(:nth-child(1), :nth-child(2)) {
+            min-width: 135px !important;
+            text-align: center !important;
+        }
+
+        .pagination {
+            margin: 0px !important;
+        }
+
+        .products__foot {
+            padding: 10px 15px !important;
+        }
+
+        .sidebar2__item_sub {
+            padding-left: 20px;
+            margin-left: 65px;
+            border-left: 2px solid darkgoldenrod;
+            height: 36px;
+            line-height: 36px;
+            color: #000;
+        }
+
+            .sidebar2__item_sub:hover,
+            .sidebar2__item_sub .active {
+                color: #0062FF;
+            }
+
+        .flatpickr-calendar.animate.open {
+            z-index: 9999;
+        }
+
+        .calendar__click {
+            position: absolute;
+            right: 5px;
+            top: 6px;
+            width: 35px;
+        }
+
+        .select2-container {
+            z-index: 9999;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            height: 48px;
+            line-height: 32px;
+            border-radius: 10px;
+            border: 1px solid #E2E2EA;
+        }
+
+        span.select2.select2-container.select2-container--default.select2-container--open .select2-selection--single,
+        .select2-container--default.select2-container--open .select2-selection--multiple {
+            border: 0px;
+            border-radius: 10px;
+        }
+
+        .select2-container--default .select2-search--dropdown .select2-search__field {
+            border: 1px solid #E2E2EA;
+            border-radius: 10px;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__placeholder {
+            color: #888ea8;
+        }
+
+        .select2-container--default .select2-search--dropdown .select2-search__field,
+        .select2-results__option[aria-selected] {
+            font-weight: 100;
+        }
+
+        .entry__group .field1:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        .entry__group .entry__text {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .context-menu.dropdown-menu.open {
+            z-index: 9999;
+        }
+
+        .add-group-list {
+            background-color: blue;
+            color: #fff;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            padding: 2px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .delete-item {
+            display: none;
+        }
+
+        .checkbox__input:checked + .checkbox__in .checkbox__info {
+            text-decoration: none;
+        }
+
+        /*
+          20230128
+        */
+        .dx-button-has-text .dx-button-content {
+            padding: 2px 18px 8px;
+        }
+
+        .header2__group {
+            margin-right: 0px;
+        }
+
+        .notification-drop .item.account-info ul {
+            left: -115px;
+            right: 5px;
+        }
+
+        #account-info img {
+            width: 38px;
+            height: 38px;
+        }
+
+        .dx-overlay-content,
+        .dx-popup-content {
+            overflow: hidden auto !important;
+            scrollbar-width: thin !important;
+        }
+
+        .dx-overlay-modal > .dx-overlay-content:first-child {
+            max-height: calc(100% - 80px) !important;
+        }
+    </style>
+
+    @await RenderSectionAsync("Styles", required: false)
+
+    <script>
+        var viewportmeta = document.querySelector('meta[name="viewport"]');
+        if (viewportmeta) {
+            if (screen.width < 375) {
+                var newScale = screen.width / 375;
+                viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
+            } else {
+                viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
+            }
+        }
+    </script>
+
+    @*<script src="~/jquery.min.js"></script>*@
+    <script src="~/js/app.js"></script>
+    <script src="~/js/oos_ghr.js"></script>
+    @*<script src="~/js/devextreme/bootstrap.js"></script>*@
+    <script src="~/menu/bootstrap.min.js"></script>
+
+    <script src="~/js/devextreme/dx-diagram.min.21.1.5.js" type="text/javascript"></script>
+    <script src="~/js/devextreme/dx-gantt.min.21.1.5.js"></script>
+    <script src="~/js/devextreme/dx.all.21.1.5.js"></script>
+    <script src="~/js/devextreme/aspnet/dx.aspnet.mvc.js"></script>
+    @*<script src="~/js/devextreme/aspnet/dx.aspnet.data.js"></script>*@
+    <script src="~/js/devextreme/dx.aspnet.data.min.2.8.6.js" type="text/javascript"></script>
+</head>
+<body class="@(isDarkMode? "dark" : "")">
+    @Html.AntiForgeryToken()
+    <div class="out">
+        <div class="page2 js-page2">
+            <partial name="_Header" />
+            <div class="page2__wrapper">
+                <div class="sidebar2 js-sidebar2">
+                    <div class="sidebar2__top">
+                        <button class="sidebar2__close js-sidebar2-close">
+                            <svg class="icon icon-close">
+                                <use xlink:href="/img/sprite.svg#icon-close"></use>
+                            </svg>
+                        </button><a class="sidebar2__logo" href="@Url.Action("Index", "Home")"><img class="sidebar2__pic sidebar2__pic_black" src="~/img/logo.png" alt="" /><img class="sidebar2__pic sidebar2__pic_white" src="~/img/logo-white.png" alt="" /></a>
+                    </div>
+                    <div class="sidebar2__wrapper">
+                        @if (IsSectionDefined("Sidebar"))
+                        {
+                            @RenderSection("Sidebar", required: false)
+                        }
+                        else
+                        {
+                            <partial name="@string.Format("_Sidebar{0}"
+                                            ,(ViewBag.Module != null && !string.IsNullOrEmpty(ViewBag.Module)) ? ViewBag.Module : ""
+                                          )" />
+                        }
+                        <div class="sidebar2__box">
+                            <img src="/img/sidebar-bg.svg" style="width:100%; padding: 20px 0;" />
+                        </div>
+                    </div>
+                </div>
+
+                @*<partial name="_RightSidebar" />*@
+                <div class="page2__container">
+                    @*<partial name="_MobileNav" />*@
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <partial name="_Modal" />
+
+    <script>
+                            //$('#popup-details').trigger('classChange');
+                            //$('#popup-details').on('classChange', function () {
+                            //    console.log(1);
+                            //});
+    </script>
+
+    <script src="~/js/common.js"></script>
+    <!--<script src="~/js/charts.js"></script>-->
+    <script src="~/js/toastr.min.js"></script>
+    <script src="~/select2/select2.min.js"></script>
+    <script src="~/flatpickr/flatpickr.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/modal.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

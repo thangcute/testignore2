@@ -1,0 +1,158 @@
+﻿@using Humax.ESS.Models.Employee;
+@using Humax.ESS.Helpers;
+@using Microsoft.AspNetCore.Mvc.Localization;
+
+@model List<EmployeeModel>
+
+@inject IViewLocalizer T
+@{
+    ViewData["Title"] = T["Nhân viên"];
+}
+
+<link href="~/css/devextreme/dx-site.css" rel="stylesheet" />
+<script src="~/js/devextreme/dx-site.js" type="text/javascript"></script>
+
+<style>
+    .card1__all {
+        border-radius: 15px;
+        background: none;
+        margin-top: 20px;
+    }
+</style>
+
+<script>
+    let _page = 1;
+
+    function show_more() {
+        if ($('#noti_data_not_found').length > 0) {
+            console.log('data not found');
+        } else {
+            _page = _page + 1;
+            var _inputSearch = $('#EmployeeSearch').dxTextBox("instance").option("value");
+
+            $.ajax({
+                url: '/Employee/Search?inputSearch=' + _inputSearch + '&page=' + _page,
+                dataType: 'html',
+                type: 'GET',
+                async: false,
+                data: {
+                },
+                success: function (response, status, jqXHR) {
+                    $("#friends__list").append(response);
+                },
+                error: function (jqXHR, status, err) {
+                    console.log(err);
+                },
+                complete: function (jqXHR, status) {
+                }
+            });
+        }
+    }
+</script>
+
+<div class="friends">
+    <div class="sorting1">
+        <div class="sorting1__row">
+            <h1 class="sorting1__title title">@T["Nhân viên"]</h1>
+            <div class="sorting1__options">
+                @*<div class="sorting1__search js-sorting-search">
+                        <button class="sorting1__open js-sorting-open">
+                            <svg class="icon icon-search">
+                                <use xlink:href="/img/sprite.svg#icon-search"></use>
+                            </svg>
+                        </button>
+                        <div class="sorting1__box"><input class="sorting1__input" type="text" placeholder="Search ..."></div>
+                    </div>*@
+                @*<div class="dropdown js-dropdown">
+                        <a class="dropdown__head js-dropdown-head" href="#">
+                            <div class="dropdown__text">Sort by:</div>
+                            <div class="dropdown__category">Newest Post</div>
+                        </a>
+                        <div class="dropdown__body js-dropdown-body"><label class="checkbox checkbox_sm checkbox_green"><input class="checkbox__input" type="checkbox"><span class="checkbox__in"><span class="checkbox__tick"></span><span class="checkbox__text">Project Name</span></span></label><label class="checkbox checkbox_sm checkbox_green"><input class="checkbox__input" type="checkbox" checked="checked"><span class="checkbox__in"><span class="checkbox__tick"></span><span class="checkbox__text">Newest Project</span></span></label><label class="checkbox checkbox_sm checkbox_green"><input class="checkbox__input" type="checkbox" checked="checked"><span class="checkbox__in"><span class="checkbox__tick"></span><span class="checkbox__text">Due Date</span></span></label><label class="checkbox checkbox_sm checkbox_green"><input class="checkbox__input" type="checkbox"><span class="checkbox__in"><span class="checkbox__tick"></span><span class="checkbox__text">Project Type</span></span></label></div>
+                    </div><a class="sorting1__filters" href="#">
+                        <svg class="icon icon-filters">
+                            <use xlink:href="/img/sprite.svg#icon-filters"></use>
+                        </svg>
+                    </a>*@
+            </div>
+        </div>
+    </div>
+
+    <div class="sorting1 ">
+        <div class="sorting1__form">
+            <div class="sorting1__wrap">
+                <div class="sorting1__fieldset">
+                    <div class="videos__field mgr-6">
+                        @(Html.DevExtreme().TextBox()
+                        .ID("EmployeeSearch")
+                        .ShowClearButton(true)
+                    )
+                    </div>
+
+                    <div class="videos__field">
+                        @(Html.DevExtreme().Button()
+                        .ID("btnSearch")
+                        .Text("Áp dụng")
+                        .ElementAttr(new Dictionary<string, object>() {
+                            { "class", "sorting1__btn group__btn btn dx-button-mode-contained dx-button-success" },
+                            { "style", "padding-left: 3px;padding-right: 3px;height: 36px;" }
+                        })
+                        .Icon("search")
+                        .OnClick(@<text>
+                            function(data) {
+                                _page = 1;
+                                var _inputSearch = $('#EmployeeSearch').dxTextBox("instance").option("value");
+
+                                $.ajax({
+                                    url: '/Employee/Search?inputSearch=' + _inputSearch,
+                                    dataType: 'html',
+                                    type: 'GET',
+                                    async: false,
+                                    data: {
+                                    },
+                                    success: function (response, status, jqXHR) {
+                                        $("#friends__list").html(response);
+                                    },
+                                    error: function (jqXHR, status, err) {
+                                        alert(1);
+                                    },
+                                    complete: function (jqXHR, status) {
+                                    }
+                                });
+                            }
+                        </text>)
+                    )
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="friends__list" id="friends__list">
+        @{
+            if (Model != null && Model.Any())
+            {
+                foreach (var _item in Model)
+                {
+                    <div class="friends__item">
+                        <div class="friends__bg" style="background-color: darkcyan;"></div>
+                        <div class="friends__body">
+                            <div class="friends__ava"><img class="friends__pic" src="@(CommonHelper.Base64Extension(_item.Picture, true))" alt="@_item.Name"></div>
+                            <div class="friends__details">
+                                <div class="friends__user">@_item.Name</div>
+                                <div class="friends__login">@(string.Format("Mobile: {0} - Email: {1}", _item.Mobile, _item.Email))</div>
+                                <div class="friends__text">@(string.Format("{0} | {1} | {2}", _item.Department, _item.JobTitle, _item.JobPosition))</div>@*<a class="friends__status active" href="#">Kết bạn</a>*@
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <h2 id="noti_data_not_found" style="color: red; text-align: center; width: 100%; font-size: 30px; padding-top: 30px;">Không có dữ liệu tìm kiếm.</h2>
+            }
+        }
+    </div>
+    <a id="btn_show_more" class="card1__all" href="javascript:show_more();">Show more</a>
+</div>
+

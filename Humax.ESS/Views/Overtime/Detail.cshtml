@@ -1,0 +1,269 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Humax.ESS.Models.Overtime
+@model OvertimePostModel
+@inject IViewLocalizer T
+
+    <script>
+        $(function () {
+            $('#formSubmit').submit(function (e) {
+                e.preventDefault();
+
+                var _action = $('form#formSubmit').attr('action');
+                var _data = $('form#formSubmit').serializeArray();
+
+                $.ajax({
+                    dataType: 'json',
+                    type: 'POST',
+                    url: _action,
+                    data: _data,
+                    success: function (res, status, jqXHR) {
+                        //console.log(res);
+                        if (res.success == 1) {
+                            toastr.success("Thực hiện thành công");
+
+                            if ($('#gridContainer').length)
+                                $("#gridContainer").dxDataGrid('instance').refresh();
+
+                            ClosePopup();
+                        } else if (res.success == 99) {
+                            toastr.warning("Dữ liệu không đúng định dạng");
+                            var _validation = res.validation;
+                            if (typeof _validation != 'undefined' && _validation.length > 0) {
+                                var _html = "";
+                                for (var key in _validation) {
+                                    var _message = _validation[key]["Message"]
+                                    _html += `<li>${_message}</li>`;
+                                }
+                                
+                                if (_html != '' && _html.length > 0)
+                                    $("#validationMsg").html(_html);
+                            }
+                        } else {
+                            toastr.warning("Có lỗi trong quá trình xử lý");
+                        }
+                    },
+                    error: function (jqXHR, status, err) {
+                        toastr.error("Lỗi Server");
+                    },
+                    complete: function () {
+                        //$("body").removeClass("loading");
+                    }
+                });
+            });
+        });
+    </script>
+
+    <form id="formSubmit" method="post" action="@Url.Action("Post", "Overtime")">
+        <div class="validation-summary-valid text-danger" data-valmsg-summary="true">
+            <ul id="validationMsg">
+                <li style="display:none"></li>
+            </ul>
+        </div>
+
+        @(Html.DevExtreme().Form<OvertimePostModel>()
+        .ShowValidationSummary(false)
+        .ID("form")
+        .ColCount(12)
+        .Items(items => {
+            items.AddSimpleFor(m => m.Id)
+                .ColSpan(12)
+                .Label(l => l.Visible(false))
+                .CssClass("hidden-control");
+
+            items.AddGroup().Caption("Ngày đăng ký").ColSpan(12).ColCount(12)
+            .Items(groupItems => {
+                groupItems.AddSimpleFor(m => m.NgayDangKy)
+                    .ColSpan(12)
+                    .Label(e => e
+                        .Text("Ngày đăng ký")
+                    )
+                    .Editor(e => e
+                        .DateBox()
+                        .ShowClearButton(true)
+                        .Width("100%")
+                        .DisplayFormat("dd-MM-yyyy")
+                        .UseMaskBehavior(true)
+                    )
+                    .IsRequired(true);
+
+                groupItems.AddSimpleFor(m => m.CaLamViecID)
+                    .ColSpan(12)
+                    .Label(e => e
+                        .Text("Ca làm việc")
+                    )
+                    .Editor(e => e
+                        .SelectBox()
+                        .ShowClearButton(true)
+                        .Placeholder("Ca làm việc")
+                        .Width("100%")
+                        .Disabled(false)
+                        .DataSource(d => d.RemoteController()
+                            .Key("Id")
+                            .LoadUrl("/Category/GetCategoryByType?type=NS_CaLamViec")
+                        )
+                        .DisplayExpr("Name")
+                        .ValueExpr("Id")
+                    )
+                    .IsRequired(true);
+            });
+
+            items.AddGroup().Caption("Làm thêm trước ca").ColSpan(12).ColCount(12)
+            .Items(groupItems =>
+            {
+                groupItems.AddSimpleFor(m => m.SoGioLamThemTruocCa)
+                    .ColSpan(7)
+                    .Label(e => e
+                        .Text("Số giờ tăng ca")
+                    )
+                    .Editor(e => e
+                        .NumberBox()
+                        //.Placeholder("")
+                        .Width("100%")
+                        .Format("#,##0.##")
+                        .Step(0.5)
+                        .ShowSpinButtons(true)
+                        .Width("100%")
+                        .Disabled(false)
+                    )
+                    .IsRequired(false);
+
+                groupItems.AddSimple()
+                    .ColSpan(5)
+                    .Label(e => e.Visible(false));
+
+                groupItems.AddSimpleFor(m => m.BDLamThemTruocCa)
+                    .ColSpan(7)
+                    .Label(e => e
+                        .Text("từ giờ")
+                    )
+                    .Editor(e => e
+                        .DateBox()
+                        .Type(DateBoxType.Time)
+                        .Placeholder("HH:mm")
+                        .ShowClearButton(false)
+                        .Width("100%")
+                        .DisplayFormat("HH:mm")
+                        .ShowDropDownButton(false)
+                        .UseMaskBehavior(true)
+                    );
+
+                groupItems.AddSimpleFor(m => m.KTLamThemTruocCa)
+                    .ColSpan(5)
+                    .Label(e => e
+                        .Text("Tới giờ")
+                    )
+                    .Editor(e => e
+                        .DateBox()
+                        .Type(DateBoxType.Time)
+                        .Placeholder("HH:mm")
+                        .ShowClearButton(false)
+                        .Width("100%")
+                        .DisplayFormat("HH:mm")
+                        .ShowDropDownButton(false)
+                        .UseMaskBehavior(true)
+                    );
+            });
+
+            items.AddGroup().Caption("Làm thêm sau ca").ColSpan(12).ColCount(12)
+            .Items(groupItems =>
+            {
+                groupItems.AddSimpleFor(m => m.SoGioLamThemSauCa)
+                    .ColSpan(7)
+                    .Label(e => e
+                        .Text("Số giờ tăng ca")
+                    )
+                    .Editor(e => e
+                        .NumberBox()
+                        //.Placeholder("")
+                        .Width("100%")
+                        .Format("#,##0.##")
+                        .Step(0.5)
+                        .ShowSpinButtons(true)
+                        .Width("100%")
+                        .Disabled(false)
+                    )
+                    .IsRequired(false);
+
+                groupItems.AddSimple()
+                    .ColSpan(5)
+                    .Label(e => e.Visible(false));
+
+                groupItems.AddSimpleFor(m => m.BDLamThemSauCa)
+                    .ColSpan(7)
+                    .Label(e => e
+                        .Text("từ giờ")
+                    )
+                    .Editor(e => e
+                        .DateBox()
+                        .Type(DateBoxType.Time)
+                        .Placeholder("HH:mm")
+                        .ShowClearButton(false)
+                        .Width("100%")
+                        .DisplayFormat("HH:mm")
+                        .ShowDropDownButton(false)
+                        .UseMaskBehavior(true)
+                    );
+
+                groupItems.AddSimpleFor(m => m.KTLamThemSauCa)
+                    .ColSpan(5)
+                    .Label(e => e
+                        .Text("Tới giờ")
+                    )
+                    .Editor(e => e
+                        .DateBox()
+                        .Type(DateBoxType.Time)
+                        .Placeholder("HH:mm")
+                        .ShowClearButton(false)
+                        .Width("100%")
+                        .DisplayFormat("HH:mm")
+                        .ShowDropDownButton(false)
+                        .UseMaskBehavior(true)
+                    );
+            });
+
+            items.AddGroup().Caption("Diến giả").ColSpan(12).ColCount(12)
+            .Items(groupItems =>
+            {
+                groupItems.AddSimpleFor(m => m.LyDoTangCaID)
+                    .ColSpan(12)
+                    .Label(e => e
+                        .Text("Lý do tăng ca")
+                    )
+                    .Editor(e => e
+                        .SelectBox()
+                        .ShowClearButton(true)
+                        .Placeholder("Lý do tăng ca")
+                        .Width("100%")
+                        .Disabled(false)
+                        .DataSource(d => d.RemoteController()
+                            .Key("Id")
+                            .LoadUrl("/Category/GetCategoryByType?type=NS_DsLyDoTangCa")
+                        )
+                        .DisplayExpr("Name")
+                        .ValueExpr("Id")
+                    )
+                    .IsRequired(true);
+
+                groupItems.AddSimpleFor(m => m.LyDoTangCa)
+                    .ColSpan(12)
+                    .Label(e => e
+                        .Text("Diến giải tăng ca")
+                    )
+                    .Editor(e => e
+                        .TextArea()
+                        .Height(45)
+                        .Width("100%")
+                    )
+                    .IsRequired(true);
+            });
+        }).FormData(Model)
+    )
+
+        <button class="group__btn btn btn_blue flr mgt-10 mgr-0" type="submit">
+            <i class="icon dx-icon-check"></i>@T["Lưu"]
+        </button>
+
+        <button class="group__btn btn btn_yellow flr mgt-10 mgr-6" type="button" onclick="ClosePopup();">
+            <i class="icon dx-icon-close"></i>@T["Đóng"]
+        </button>
+    </form>

@@ -1,0 +1,25 @@
+﻿@using Humax.ESS.Models.Trainning;
+@using Microsoft.AspNetCore.Mvc.Localization;
+
+@model List<EvaluateModel>
+
+@inject IViewLocalizer T
+
+@{ 
+    if(Model != null && Model.Any())
+    {
+    <div class="entry__fieldset entry__group">
+        @{
+            foreach (var item in Model)
+            {
+                switch (item.KieuDuLieu)
+                {
+
+                    default:
+                        break;
+                }
+            }
+        }
+    </div>
+    }
+}
